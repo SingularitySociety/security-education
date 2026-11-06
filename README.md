@@ -28,9 +28,17 @@ yarn dev           # http://localhost:5173
 - `yarn video:voice` — 台本から音声だけ再生成（台本を変えたらこれ → `yarn video:render`）
 - `yarn video:render [courseId...]` — 動画だけ再レンダリング
 - `yarn workspace @security-education/video studio` — Remotion Studio でプレビュー
-- `yarn build` — 静的サイトを `packages/web/dist/` に出力（相対パスなので GitHub Pages 等にそのまま置ける）
+- `yarn build` — 静的サイトを `packages/web/dist/` に出力（相対パスなのでサブパスにもそのまま置ける）
 
 生成物（音声・mp4）は git 管理外。
+
+## 公開（GitHub Pages）
+
+https://singularitysociety.github.io/security-education/
+
+- main に push すると `.github/workflows/pages.yml` がビルドして公開する
+- 動画は CI では作れない（`say` が macOS 専用）ので、Release `videos` に添付した mp4 をワークフローが取り込む
+- 動画を作り直したら `yarn video:build && yarn video:publish`（Release の mp4 を差し替え、公開ワークフローを再実行する。`gh` のログインが必要）
 
 ## 確認
 
