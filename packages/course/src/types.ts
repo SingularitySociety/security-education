@@ -88,7 +88,41 @@ export type ConversationScene = Narrated & {
   redFlags: string[];
 };
 
-export type Scene = TitleScene | PointsScene | EmailScene | SmsScene | UrlScene | PasswordsScene | ConversationScene;
+export type CodeLine = {
+  text: string;
+  mark?: "bad" | "good";
+};
+
+export type CodeScene = Narrated & {
+  kind: "code";
+  heading: string;
+  language: string;
+  lines: CodeLine[];
+  notes: string[];
+};
+
+export type FlowStep = {
+  label: string;
+  detail: string;
+  tone: "normal" | "danger" | "safe";
+};
+
+export type FlowScene = Narrated & {
+  kind: "flow";
+  heading: string;
+  steps: FlowStep[];
+};
+
+export type Scene =
+  | TitleScene
+  | PointsScene
+  | EmailScene
+  | SmsScene
+  | UrlScene
+  | PasswordsScene
+  | ConversationScene
+  | CodeScene
+  | FlowScene;
 
 export type Choice = {
   id: string;

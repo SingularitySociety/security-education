@@ -62,6 +62,41 @@ defineProps<{ body: ReviewBody }>();
     </div>
   </div>
 
+  <div v-else-if="body.kind === 'code'" class="space-y-3">
+    <div class="overflow-x-auto rounded-lg bg-slate-900 py-3 text-sm text-slate-100">
+      <div class="px-4 pb-2 text-xs text-slate-400">{{ body.language }}</div>
+      <pre
+        v-for="(line, index) in body.lines"
+        :key="`${index}-${line.text}`"
+        class="border-l-4 px-4 font-mono"
+        :class="
+          line.mark === 'bad'
+            ? 'border-rose-500 bg-rose-500/20'
+            : line.mark === 'good'
+              ? 'border-emerald-500 bg-emerald-500/20'
+              : 'border-transparent'
+        "
+        >{{ line.text || " " }}</pre>
+    </div>
+    <ul class="list-disc space-y-1 pl-5">
+      <li v-for="note in body.notes" :key="note">{{ note }}</li>
+    </ul>
+  </div>
+
+  <ol v-else-if="body.kind === 'flow'" class="space-y-2">
+    <li
+      v-for="(step, index) in body.steps"
+      :key="step.label"
+      class="rounded-lg border-l-4 bg-white p-3 text-sm shadow-sm"
+      :class="
+        step.tone === 'danger' ? 'border-rose-500' : step.tone === 'safe' ? 'border-emerald-500' : 'border-sky-500'
+      "
+    >
+      <span class="font-semibold">{{ index + 1 }}. {{ step.label }}</span>
+      <span class="ml-2 text-slate-600">{{ step.detail }}</span>
+    </li>
+  </ol>
+
   <ul v-else class="space-y-2">
     <li
       v-for="row in body.rows"

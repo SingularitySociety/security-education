@@ -1,7 +1,9 @@
 import type {
+  CodeLine,
   ConversationMessage,
   ConversationScene,
   EmailSample,
+  FlowStep,
   PasswordRow,
   Scene,
   SmsSample,
@@ -34,7 +36,9 @@ export type ReviewBody =
       contactDetail: string;
       messages: ConversationMessage[];
       redFlags: string[];
-    };
+    }
+  | { kind: "code"; language: string; lines: CodeLine[]; notes: string[] }
+  | { kind: "flow"; steps: FlowStep[] };
 
 export type ReviewSection = {
   sceneId: string;
@@ -108,6 +112,13 @@ const headingAndBody = (scene: Scene): Pick<ReviewSection, "heading" | "body"> =
           redFlags: [...scene.redFlags],
         },
       };
+    case "code":
+      return {
+        heading: scene.heading,
+        body: { kind: "code", language: scene.language, lines: [...scene.lines], notes: [...scene.notes] },
+      };
+    case "flow":
+      return { heading: scene.heading, body: { kind: "flow", steps: [...scene.steps] } };
     default:
       return assertNever(scene);
   }
