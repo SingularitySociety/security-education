@@ -3,9 +3,11 @@ import {
   courseCategories,
   courses,
   draftCourses,
+  formatMinutesSeconds,
   groupCoursesByCategory,
   PASS_THRESHOLD_PERCENT,
   QUIZ_QUESTION_COUNT,
+  videoDurationSeconds,
 } from "@security-education/course";
 import StatusBadge from "../components/StatusBadge.vue";
 import { useProgress } from "../lib/progressStore.ts";
@@ -14,6 +16,11 @@ const { courseProgress } = useProgress();
 const groups = groupCoursesByCategory(courseCategories, courses, draftCourses);
 
 const sectionId = (categoryId: string): string => `category-${categoryId}`;
+
+const videoLengthLabel = (courseId: string): string | undefined => {
+  const seconds = videoDurationSeconds(courseId);
+  return seconds === undefined ? undefined : `動画 ${formatMinutesSeconds(seconds)}`;
+};
 
 const scrollToCategory = (categoryId: string) => {
   document.getElementById(sectionId(categoryId))?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -60,6 +67,9 @@ const scrollToCategory = (categoryId: string) => {
               <StatusBadge :progress="courseProgress(course.id)" />
             </div>
             <p class="mt-2 text-sm text-slate-600">{{ course.summary }}</p>
+            <p v-if="videoLengthLabel(course.id)" class="mt-3 text-xs text-slate-500">
+              {{ videoLengthLabel(course.id) }}
+            </p>
           </RouterLink>
         </li>
         <li

@@ -67,7 +67,7 @@ yarn dev           # http://localhost:5173
 ```
 
 - `yarn video:voice` — 台本から音声だけ再生成（台本を変えたらこれ → `yarn video:render`）
-- `yarn video:render [courseId...]` — 動画だけ再レンダリング
+- `yarn video:render [courseId...]` — 動画だけ再レンダリング。描き出した長さを `packages/course/src/videoDurations.json` に書き込み、一覧の「動画 ○分○秒」に使う（このファイルもコミットする）
 - `yarn workspace @security-education/video studio` — Remotion Studio でプレビュー
 - `yarn build` — 静的サイトを `packages/web/dist/` に出力（相対パスなのでサブパスにもそのまま置ける）
 
