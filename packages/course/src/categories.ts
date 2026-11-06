@@ -82,24 +82,8 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "home",
     title: "家庭で気をつけること",
     audience: "家族・保護者",
-    courseIds: [],
-    upcoming: [
-      {
-        title: "子どものゲームとネットを一緒に守る",
-        summary:
-          "課金、無料アイテムの誘い、ボイスチャット、アカウントの貸し借り。設定と家庭のルールを子どもと一緒に作る方法を学びます。",
-      },
-      {
-        title: "ファイル交換と無料ツールの危険",
-        summary:
-          "改造ツールやチートに紛れた危険、友達から届いたファイル、写真に含まれる個人情報など、交換する前に確かめることを学びます。",
-      },
-      {
-        title: "家のWi-Fiとスマート家電を守る",
-        summary:
-          "ルーターの初期パスワードと更新、来客用と家族用の分け方、使わない機器の放置、カメラや音声機器の置き場所を学びます。",
-      },
-    ],
+    courseIds: ["kids-games", "file-exchange", "home-network"],
+    upcoming: [],
   },
   {
     id: "ai-and-tools",

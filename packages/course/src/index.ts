@@ -21,6 +21,9 @@ import { deviceBasicsCourse } from "./courses/deviceBasics.ts";
 import { emailBeforeSendCourse } from "./courses/emailBeforeSend.ts";
 import { personalInfoCourse } from "./courses/personalInfo.ts";
 import { fileSharingCourse } from "./courses/fileSharing.ts";
+import { kidsGamesCourse } from "./courses/kidsGames.ts";
+import { fileExchangeCourse } from "./courses/fileExchange.ts";
+import { homeNetworkCourse } from "./courses/homeNetwork.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -54,6 +57,9 @@ export const courses: readonly Course[] = [
   emailBeforeSendCourse,
   personalInfoCourse,
   fileSharingCourse,
+  kidsGamesCourse,
+  fileExchangeCourse,
+  homeNetworkCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.
