@@ -1,3 +1,4 @@
+import { passwordsCourse } from "./courses/passwords.ts";
 import { phishingCourse } from "./courses/phishing.ts";
 import { smishingCourse } from "./courses/smishing.ts";
 import type { Course } from "./types.ts";
@@ -7,7 +8,7 @@ export * from "./scoring.ts";
 export * from "./progress.ts";
 export * from "./drawQuiz.ts";
 
-export const courses: readonly Course[] = [phishingCourse, smishingCourse];
+export const courses: readonly Course[] = [passwordsCourse, phishingCourse, smishingCourse];
 
 export const findCourse = (courseId: string): Course | undefined => courses.find((course) => course.id === courseId);
 

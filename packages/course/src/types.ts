@@ -58,7 +58,24 @@ export type UrlScene = Narrated & {
   urls: { parts: UrlPart[]; verdict: "safe" | "fake"; note: string }[];
 };
 
-export type Scene = TitleScene | PointsScene | EmailScene | SmsScene | UrlScene;
+export type PasswordPart = {
+  text: string;
+  isPattern: boolean;
+};
+
+export type PasswordRow = {
+  service: string;
+  parts: PasswordPart[];
+  status: "leaked" | "reused" | "guessed";
+};
+
+export type PasswordsScene = Narrated & {
+  kind: "passwords";
+  heading: string;
+  rows: PasswordRow[];
+};
+
+export type Scene = TitleScene | PointsScene | EmailScene | SmsScene | UrlScene | PasswordsScene;
 
 export type Choice = {
   id: string;

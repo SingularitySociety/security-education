@@ -1,13 +1,16 @@
 # セキュリティ教育サイト（プロトタイプ）
 
 短い教育動画を見たあと、確認テストを受けるサイト。題材は Singularity Society
-「[セキュリティ脅威マップ](https://singularitysociety.github.io/societys_statement/development/security/README.html)」の
-「なりすまし・フィッシング系」。
+「[セキュリティ脅威マップ](https://singularitysociety.github.io/societys_statement/development/security/README.html)」を元にしている。
+今後追加するコースの一覧は issue #6。
 
-| コース               | 動画      |
-| -------------------- | --------- |
-| メールのフィッシング | 約2分30秒 |
-| SMSのスミッシング    | 約2分     |
+公開先: https://singularitysociety.github.io/security-education/
+
+| コース                       | 動画      |
+| ---------------------------- | --------- |
+| パスワードとアカウントの基本 | 約3分30秒 |
+| メールのフィッシング         | 約2分30秒 |
+| SMSのスミッシング            | 約2分     |
 
 確認テストは、コースごとの問題プールから毎回ランダムに出題する（出題数は `QUIZ_QUESTION_COUNT`）。選択肢の並びも毎回入れ替わるので、解説では選択肢を記号（a〜d）で指さないこと。
 
@@ -49,5 +52,5 @@ yarn format && yarn lint && yarn typecheck && yarn test && yarn build
 ## コースの追加
 
 `packages/course/src/courses/` にコースを1ファイル追加し、`packages/course/src/index.ts` の `courses` に登録する。
-シーンの種類は `title` / `points` / `email` / `sms` / `url`（`packages/course/src/types.ts`）。
+シーンの種類は `title` / `points` / `email` / `sms` / `url` / `passwords`（`packages/course/src/types.ts`）。
 例の会社名・ドメインはすべて架空（`.example`）にすること。
