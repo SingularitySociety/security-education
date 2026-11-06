@@ -13,7 +13,8 @@
     "test": "node --test \"test/test_*.ts\"",
     "video:voice": "yarn workspace @security-education/video voice",
     "video:render": "yarn workspace @security-education/video render",
-    "video:build": "yarn video:voice && yarn video:render"
+    "video:build": "yarn video:voice && yarn video:render",
+    "video:publish": "gh release upload videos packages/web/public/videos/*.mp4 --clobber && gh workflow run pages.yml"
   },
   "devDependencies": {
     "@eslint/js": "^10",
