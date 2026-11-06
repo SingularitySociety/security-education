@@ -96,19 +96,8 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "smb",
     title: "中小企業の管理",
     audience: "経営者・管理担当",
-    courseIds: ["patching", "data-disposal", "account-lifecycle"],
-    upcoming: [
-      {
-        title: "委託先・取引先とつながるときの基本",
-        summary:
-          "委託先に渡すアカウント、取引先を装う・乗っ取られた取引先からのメール、被害を広げないための初動を学びます。",
-      },
-      {
-        title: "内部不正と情報の持ち出し",
-        summary:
-          "在職中の持ち出しがなぜ問題になるか、悪意がなくても事故になること、会社として決めておくことを学びます。",
-      },
-    ],
+    courseIds: ["patching", "data-disposal", "account-lifecycle", "suppliers", "insider-threat"],
+    upcoming: [],
   },
   {
     id: "incident",
