@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.DS_Store
+packages/video/public/voice/
+packages/web/public/videos/
+out/
