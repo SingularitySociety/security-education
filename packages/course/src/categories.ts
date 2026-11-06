@@ -30,18 +30,33 @@ export const UNCATEGORIZED_CATEGORY: CourseCategory = {
 
 export const courseCategories: readonly CourseCategory[] = [
   {
+    id: "beginners",
+    title: "はじめての人へ",
+    audience: "パソコンやスマホに詳しくない人",
+    courseIds: [],
+    upcoming: [
+      {
+        title: "困ったときは、止まって相談",
+        summary:
+          "怪しいメール・電話・画面を見たら、操作を止めて誰かに聞く。押してしまった後でも、早く相談すれば被害を小さくできることを学びます。",
+      },
+      {
+        title: "スマホとパソコンを安全に使う基本",
+        summary:
+          "更新、画面ロック、アプリは公式の場所から、バックアップ。スマホ決済やQRコードの注意も含めて、毎日の基本を学びます。",
+      },
+    ],
+  },
+  {
     id: "basics",
     title: "まず押さえる基本",
     audience: "すべての人",
     courseIds: ["passwords", "phishing", "smishing"],
     upcoming: [
       {
-        title: "スマホとアプリの安全",
-        summary: "不正アプリ、スマホ決済の不正利用、QRコードの貼り替えなど、スマホで狙われる手口と設定を学びます。",
-      },
-      {
         title: "SNSでの発信と誹謗中傷・デマ",
-        summary: "業務情報や写真の写り込み、デマの拡散、誹謗中傷をしない・されたときの相談先を学びます。",
+        summary:
+          "業務情報や家族の写真の写り込み・位置情報、デマの拡散、誹謗中傷をしない・されたときの相談先を学びます。",
       },
     ],
   },
@@ -51,6 +66,41 @@ export const courseCategories: readonly CourseCategory[] = [
     audience: "すべての人",
     courseIds: ["phone-scams", "online-scams"],
     upcoming: [],
+  },
+  {
+    id: "office",
+    title: "職場の毎日の仕事",
+    audience: "事務・営業など一般の従業員",
+    courseIds: [],
+    upcoming: [
+      {
+        title: "メールを送る前の確認",
+        summary:
+          "宛先・CC・BCC、添付ファイル、宛先の自動補完。誤送信を防ぐ確認と、送ってしまったときの報告を学びます。",
+      },
+      {
+        title: "個人情報を見せない・渡さない",
+        summary:
+          "書類や画面の放置、電話での問い合わせ、印刷・FAX・郵送の取り違え、捨て方まで、うっかり漏らさないための行動を学びます。",
+      },
+      {
+        title: "ファイル共有とクラウドの確認",
+        summary: "「リンクを知っている全員」の意味、閲覧と編集の違い、社外に共有する前と後に確かめることを学びます。",
+      },
+    ],
+  },
+  {
+    id: "support-desk",
+    title: "カスタマーサポート・窓口",
+    audience: "問い合わせ対応・受付の担当",
+    courseIds: [],
+    upcoming: [
+      {
+        title: "問い合わせ相手を確認する",
+        summary:
+          "本人確認の手順、顧客や取引先を装う依頼、急がせる問い合わせや添付ファイル、保留・折り返し・エスカレーションを学びます。",
+      },
+    ],
   },
   {
     id: "workplace",
@@ -70,6 +120,29 @@ export const courseCategories: readonly CourseCategory[] = [
     audience: "会社で働く人",
     courseIds: ["outside-work"],
     upcoming: [],
+  },
+  {
+    id: "home",
+    title: "家庭で気をつけること",
+    audience: "家族・保護者",
+    courseIds: [],
+    upcoming: [
+      {
+        title: "子どものゲームとネットを一緒に守る",
+        summary:
+          "課金、無料アイテムの誘い、ボイスチャット、アカウントの貸し借り。設定と家庭のルールを子どもと一緒に作る方法を学びます。",
+      },
+      {
+        title: "ファイル交換と無料ツールの危険",
+        summary:
+          "改造ツールやチートに紛れた危険、友達から届いたファイル、写真に含まれる個人情報など、交換する前に確かめることを学びます。",
+      },
+      {
+        title: "家のWi-Fiとスマート家電を守る",
+        summary:
+          "ルーターの初期パスワードと更新、来客用と家族用の分け方、使わない機器の放置、カメラや音声機器の置き場所を学びます。",
+      },
+    ],
   },
   {
     id: "ai-and-tools",

@@ -12,6 +12,12 @@ import { useProgress } from "../lib/progressStore.ts";
 
 const { courseProgress } = useProgress();
 const groups = groupCoursesByCategory(courseCategories, courses, draftCourses);
+
+const sectionId = (categoryId: string): string => `category-${categoryId}`;
+
+const scrollToCategory = (categoryId: string) => {
+  document.getElementById(sectionId(categoryId))?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
 </script>
 
 <template>
@@ -22,7 +28,23 @@ const groups = groupCoursesByCategory(courseCategories, courses, draftCourses);
         PASS_THRESHOLD_PERCENT
       }}%以上の正解で合格です。
     </p>
-    <section v-for="group in groups" :key="group.category.id" class="mt-10">
+    <nav class="mt-6 flex flex-wrap gap-2" aria-label="カテゴリー">
+      <button
+        v-for="group in groups"
+        :key="group.category.id"
+        type="button"
+        class="rounded-full border border-slate-300 bg-white px-3 py-1 text-sm text-slate-700 hover:border-sky-400 hover:text-sky-700"
+        @click="scrollToCategory(group.category.id)"
+      >
+        {{ group.category.title }}
+      </button>
+    </nav>
+    <section
+      v-for="group in groups"
+      :id="sectionId(group.category.id)"
+      :key="group.category.id"
+      class="mt-10 scroll-mt-4"
+    >
       <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
         <h2 class="text-xl font-bold">{{ group.category.title }}</h2>
         <span class="rounded-full bg-sky-50 px-3 py-0.5 text-sm text-sky-800">対象：{{ group.category.audience }}</span>
