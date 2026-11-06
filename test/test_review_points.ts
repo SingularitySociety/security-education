@@ -1,13 +1,20 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import {
+  CONVERSATION_EXAMPLE_HEADINGS,
   courses,
   EMAIL_EXAMPLE_HEADING,
   SMS_EXAMPLE_HEADING,
   toReviewSection,
   toReviewSections,
 } from "../packages/course/src/index.ts";
-import type { EmailSample, ReviewBody, Scene } from "../packages/course/src/index.ts";
+import type {
+  ConversationMessage,
+  ConversationScene,
+  EmailSample,
+  ReviewBody,
+  Scene,
+} from "../packages/course/src/index.ts";
 
 const email: EmailSample = {
   fromName: "サンプル銀行",
@@ -141,6 +148,7 @@ const listItemKeys = (body: ReviewBody): string[] => {
       return body.points;
     case "email":
     case "sms":
+    case "conversation":
       return body.redFlags;
     case "urls":
       return body.urls.map((row) => row.url);
@@ -150,6 +158,69 @@ const listItemKeys = (body: ReviewBody): string[] => {
       return [];
   }
 };
+
+describe("toReviewSection for conversations", () => {
+  it("uses a heading per channel and keeps messages and red flags in order", () => {
+    const messages: ConversationMessage[] = [
+      { from: "them", text: "こちら警察です" },
+      { from: "me", text: "えっ" },
+    ];
+    const channels: ConversationScene["channel"][] = ["phone", "chat", "video"];
+    channels.forEach((channel) => {
+      const section = toReviewSection({
+        id: "c",
+        kind: "conversation",
+        channel,
+        contactName: "相手",
+        contactDetail: "説明",
+        messages,
+        redFlags: ["急がせる"],
+        narration: "n",
+      });
+      assert.equal(section.heading, CONVERSATION_EXAMPLE_HEADINGS[channel]);
+      assert.deepEqual(section.body, {
+        kind: "conversation",
+        contactName: "相手",
+        contactDetail: "説明",
+        messages,
+        redFlags: ["急がせる"],
+      });
+    });
+  });
+
+  it("an empty conversation stays empty", () => {
+    const section = toReviewSection({
+      id: "c",
+      kind: "conversation",
+      channel: "chat",
+      contactName: "",
+      contactDetail: "",
+      messages: [],
+      redFlags: [],
+      narration: "",
+    });
+    assert.deepEqual(section.body, {
+      kind: "conversation",
+      contactName: "",
+      contactDetail: "",
+      messages: [],
+      redFlags: [],
+    });
+  });
+});
+
+describe("toReviewSection for an email without a link", () => {
+  it("keeps the email as is", () => {
+    const withoutLink: EmailSample = {
+      fromName: "社長",
+      fromAddress: "ceo@x.example",
+      subject: "至急",
+      body: ["返信して"],
+    };
+    const section = toReviewSection({ id: "e", kind: "email", email: withoutLink, redFlags: [], narration: "n" });
+    assert.deepEqual(section.body, { kind: "email", email: withoutLink, redFlags: [] });
+  });
+});
 
 describe("toReviewSections", () => {
   it("an empty scene list gives no sections", () => {
