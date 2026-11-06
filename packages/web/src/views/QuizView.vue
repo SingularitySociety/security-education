@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, ref, watch } from "vue";
 import { useRouter } from "vue-router";
-import { findCourse, isQuizComplete, scoreQuiz } from "@security-education/course";
-import type { QuizResult } from "@security-education/course";
+import { drawQuiz, findCourse, isQuizComplete, scoreQuiz, QUIZ_QUESTION_COUNT } from "@security-education/course";
+import type { Course, QuizQuestion, QuizResult } from "@security-education/course";
 import CourseNotFound from "../components/CourseNotFound.vue";
 import QuestionCard from "../components/QuestionCard.vue";
 import QuizResultPanel from "../components/QuizResultPanel.vue";
@@ -16,25 +16,36 @@ const { courseProgress, recordAttempt } = useProgress();
 const answers = ref<Record<string, string>>({});
 const result = ref<QuizResult | null>(null);
 
+const drawQuizFor = (target: Course | undefined): QuizQuestion[] =>
+  target ? drawQuiz(target.questionPool, QUIZ_QUESTION_COUNT, Math.random) : [];
+const quiz = ref<QuizQuestion[]>(drawQuizFor(course.value));
+
 if (course.value && !courseProgress(props.courseId).watched) {
   void router.replace({ name: "course", params: { courseId: props.courseId } });
 }
 
-const canSubmit = computed(() => course.value !== undefined && isQuizComplete(course.value.quiz, answers.value));
+const canSubmit = computed(() => quiz.value.length > 0 && isQuizComplete(quiz.value, answers.value));
 
 const resultFor = (questionId: string) =>
   result.value?.questionResults.find((questionResult) => questionResult.questionId === questionId) ?? null;
 
 const submit = () => {
   if (!course.value || !canSubmit.value) return;
-  result.value = scoreQuiz(course.value.quiz, answers.value);
+  result.value = scoreQuiz(quiz.value, answers.value);
   recordAttempt(course.value.id, result.value);
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 
-const retry = () => {
+const startNewAttempt = () => {
+  quiz.value = drawQuizFor(course.value);
   answers.value = {};
   result.value = null;
+};
+
+watch(course, startNewAttempt);
+
+const retry = () => {
+  startNewAttempt();
   window.scrollTo({ top: 0, behavior: "smooth" });
 };
 </script>
@@ -51,7 +62,7 @@ const retry = () => {
 
     <form class="mt-6 grid gap-5" @submit.prevent="submit">
       <QuestionCard
-        v-for="(question, index) in course.quiz"
+        v-for="(question, index) in quiz"
         :key="question.id"
         v-model="answers[question.id]"
         :question="question"

@@ -89,7 +89,7 @@ export const smishingCourse: Course = {
         "まとめです。SMSのリンクは開かない。確認は、公式の入口から。そして、困ったらすぐに相談。このあと、確認テストに進んでください。",
     },
   ],
-  quiz: [
+  questionPool: [
     {
       id: "q1",
       prompt: "次のSMSが届きました。正しい説明はどれですか？",
@@ -161,6 +161,159 @@ export const smishingCourse: Course = {
       correctChoiceId: "d",
       explanation:
         "危険なのは、リンクを開いて入力すること、アプリを入れることです。受信しただけで必ず感染するわけではありません。",
+    },
+    {
+      id: "q6",
+      prompt:
+        "送信元に「サンプル銀行」と表示され、これまでの本物の通知と同じ画面に並んで次のSMSが届きました。正しい判断はどれですか？",
+      sample: {
+        kind: "sms",
+        sms: {
+          sender: "サンプル銀行",
+          text: "【サンプル銀行】お客様の口座で不正な取引を検知しました。至急ご確認ください。",
+          linkUrl: "https://sample-bank.security-check.example/",
+        },
+      },
+      choices: [
+        { id: "a", label: "本物の通知と同じ画面に並んでいるので、本物だ" },
+        {
+          id: "b",
+          label: "送信元の表示は偽装できる。リンクの持ち主も security-check.example なので、公式アプリで確認する",
+        },
+        { id: "c", label: "「至急」とあるので、まずリンクを開いて状況を確かめる" },
+        { id: "d", label: "リンクの中に sample-bank と入っているので安全だ" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "SMSの送信元の名前は偽装でき、本物と同じ画面に並ぶこともあります。リンクのドメインを右から読むと、持ち主は security-check.example です。",
+    },
+    {
+      id: "q7",
+      prompt:
+        "SMSのリンクをうっかり開いてしまいましたが、何も入力せず、何もインストールせずに閉じました。どうしますか？",
+      choices: [
+        { id: "a", label: "念のため、組織で決められた窓口に報告する" },
+        { id: "b", label: "開いたページで「配信停止」のために電話番号を入力する" },
+        { id: "c", label: "すぐにスマホを初期化する" },
+        { id: "d", label: "家族に同じリンクを開いてもらい、安全か確かめる" },
+      ],
+      correctChoiceId: "a",
+      explanation:
+        "何も入力・インストールしていなければ被害の可能性は低いですが、報告しておけば組織全体で同じSMSに備えられます。追加で情報を入力するのは逆効果です。",
+    },
+    {
+      id: "q8",
+      prompt:
+        "知人から「あなたの番号から変なSMSが届いた」と連絡がありました。自分では送った覚えがありません。考えられる原因はどれですか？",
+      choices: [
+        { id: "a", label: "スマホの電波が弱いせい" },
+        { id: "b", label: "以前に入れたアプリが偽アプリで、スマホが勝手にSMSを送っている" },
+        { id: "c", label: "電話番号が古くなったせい" },
+        { id: "d", label: "知人のスマホの設定ミス" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "偽アプリに乗っ取られると、あなたの番号から詐欺SMSがばらまかれます。すぐに担当者や携帯電話会社に相談しましょう。",
+    },
+    {
+      id: "q9",
+      prompt: "次のSMSが届きました。最も適切な対応はどれですか？",
+      sample: {
+        kind: "sms",
+        sms: {
+          sender: "+1 (555) 010-0163",
+          text: "おめでとうございます！10万円分のポイントが当選しました。受け取りには手数料のお支払いが必要です。",
+          linkUrl: "https://point-present.example/get",
+        },
+      },
+      choices: [
+        { id: "a", label: "手数料が少額なら、払って受け取る" },
+        { id: "b", label: "応募した覚えのない当選で、受け取りに支払いが必要なので詐欺を疑い、リンクを開かない" },
+        { id: "c", label: "リンクを開いて、手数料の金額だけ確認する" },
+        { id: "d", label: "返信して、手数料なしで受け取れないか交渉する" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "応募していない当選や、受け取るために支払いが必要な話は詐欺の典型です。返信すると、番号が使われていることを相手に知らせてしまいます。",
+    },
+    {
+      id: "q10",
+      prompt: "SMSに「詳しくはこちらへお電話ください」と問い合わせ番号が書かれていました。どうしますか？",
+      choices: [
+        { id: "a", label: "SMSに書かれた番号なら公式なので、電話する" },
+        { id: "b", label: "電話するなら、公式サイトや請求書など自分で調べた番号にかける" },
+        { id: "c", label: "番号の市外局番が国内なら安全なので、電話する" },
+        { id: "d", label: "非通知にすれば安全なので、電話する" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "SMSに書かれた番号は攻撃者につながっているかもしれません。リンクと同じく、連絡先も自分で調べた公式のものを使いましょう。",
+    },
+    {
+      id: "q11",
+      prompt:
+        "家族の名前で「スマホが壊れたので新しい番号から連絡しています。急ぎでギフトカードを買って、番号を送ってほしい」とSMSが届きました。どうしますか？",
+      choices: [
+        { id: "a", label: "家族が困っているので、すぐにギフトカードを買う" },
+        { id: "b", label: "以前から知っている番号に電話するなど、別の経路で本人に確認する" },
+        { id: "c", label: "SMSで「本当に本人？」と聞き、本人と答えたら買う" },
+        { id: "d", label: "金額が小さければ、確認せずに買う" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "家族や上司を名乗り、ギフトカードを買わせる手口です。同じSMSで聞き返しても、相手は本人だと答えるだけです。必ず別の経路で確認しましょう。",
+    },
+    {
+      id: "q12",
+      prompt: "スミッシングに備えて、スマホで普段からしておくとよいことはどれですか？",
+      choices: [
+        { id: "a", label: "OSとアプリを最新にし、公式ストア以外からのアプリのインストールを許可しない" },
+        { id: "b", label: "画面ロックを外して、すぐに操作できるようにする" },
+        { id: "c", label: "知らない番号からのSMSには、必ず返信する" },
+        { id: "d", label: "すべてのアプリに、すべての権限を許可する" },
+      ],
+      correctChoiceId: "a",
+      explanation:
+        "最新の状態に保つと、知られた弱点を突かれにくくなります。公式ストア以外からのインストールを許可しなければ、偽アプリを入れさせる手口を防げます。",
+    },
+    {
+      id: "q13",
+      prompt: "キャリア決済（携帯電話料金とまとめて払う仕組み）の不正利用に備える方法として、適切なものはどれですか？",
+      choices: [
+        { id: "a", label: "決済の上限額を必要な分まで下げ、利用の通知を受け取るように設定する" },
+        { id: "b", label: "決済用の暗証番号を誕生日にする" },
+        { id: "c", label: "SMSで届いた認証コードを家族と共有しておく" },
+        { id: "d", label: "毎月の請求明細は見ないようにする" },
+      ],
+      correctChoiceId: "a",
+      explanation:
+        "上限額を下げれば、万一のときの被害を小さくできます。利用通知や請求明細を確認する習慣があれば、不正利用にも早く気づけます。",
+    },
+    {
+      id: "q14",
+      prompt: "配送業者「ハヤテ配送」の公式ドメインが hayate.example だとします。公式のURLはどれですか？",
+      choices: [
+        { id: "a", label: "https://hayate.example.redelivery-check.example/" },
+        { id: "b", label: "https://www.hayate.example/tracking" },
+        { id: "c", label: "https://hayate-tracking.example/" },
+        { id: "d", label: "https://www.hayate-example.example/" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "ドメインは右から読みます。公式なのは「www.hayate.example」だけです。「hayate.example.redelivery-check.example」の持ち主は redelivery-check.example、ほかの二つは名前が似た別のドメインです。",
+    },
+    {
+      id: "q15",
+      prompt: "SMSに「https://s.example/a1b2」のような短縮URLが書かれていました。正しい説明はどれですか？",
+      choices: [
+        { id: "a", label: "短縮URLは公式の会社しか使えないので安全だ" },
+        { id: "b", label: "本当の行き先が見えないので、開かずに公式の入口から確認する" },
+        { id: "c", label: "文字数が短いので、ウイルスが入る余地がない" },
+        { id: "d", label: "開けば中身が分かるので、とりあえず開いてよい" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "短縮URLは誰でも作れ、本当の行き先を隠せます。行き先が分からないリンクは開かず、公式アプリや自分で開いた公式サイトから確認しましょう。",
     },
   ],
 };

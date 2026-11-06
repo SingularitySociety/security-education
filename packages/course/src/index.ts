@@ -5,6 +5,7 @@ import type { Course } from "./types.ts";
 export type * from "./types.ts";
 export * from "./scoring.ts";
 export * from "./progress.ts";
+export * from "./drawQuiz.ts";
 
 export const courses: readonly Course[] = [phishingCourse, smishingCourse];
 
