@@ -29,12 +29,12 @@ export const courses: readonly Course[] = [
   phoneScamsCourse,
   bossImpersonationCourse,
   hiringAttacksCourse,
+  onlineScamsCourse,
+  outsideWorkCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.
 export const draftCourses: readonly Course[] = [
-  onlineScamsCourse,
-  outsideWorkCourse,
   aiPromptInjectionCourse,
   aiDataAndToolsCourse,
   pasteCommandsCourse,
