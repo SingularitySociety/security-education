@@ -56,6 +56,6 @@ yarn format && yarn lint && yarn typecheck && yarn test && yarn build
 
 ## コースの追加
 
-`packages/course/src/courses/` にコースを1ファイル追加し、`packages/course/src/index.ts` の `courses` に登録する。
+`packages/course/src/courses/` にコースを1ファイル追加し、`packages/course/src/index.ts` の `courses` に登録し、`packages/course/src/categories.ts` のどれかのカテゴリー（一覧の見出しと対象者）に id を入れる。
 シーンの種類は `title` / `points` / `email` / `sms` / `url` / `passwords` / `conversation`（`packages/course/src/types.ts`）。
 例の会社名・ドメインはすべて架空（`.example`）にすること。
