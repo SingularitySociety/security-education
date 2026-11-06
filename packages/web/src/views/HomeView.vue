@@ -8,11 +8,14 @@ import {
   PASS_THRESHOLD_PERCENT,
   QUIZ_QUESTION_COUNT,
   videoDurationSeconds,
+  watchedSoFarLabel,
 } from "@security-education/course";
 import StatusBadge from "../components/StatusBadge.vue";
+import { usePlayback } from "../lib/playbackStore.ts";
 import { useProgress } from "../lib/progressStore.ts";
 
 const { courseProgress } = useProgress();
+const { coursePlayback } = usePlayback();
 const groups = groupCoursesByCategory(courseCategories, courses, draftCourses);
 
 const sectionId = (categoryId: string): string => `category-${categoryId}`;
@@ -21,6 +24,9 @@ const videoLengthLabel = (courseId: string): string | undefined => {
   const seconds = videoDurationSeconds(courseId);
   return seconds === undefined ? undefined : `動画 ${formatMinutesSeconds(seconds)}`;
 };
+
+const partWatchedLabel = (courseId: string): string | undefined =>
+  courseProgress(courseId).watched ? undefined : watchedSoFarLabel(coursePlayback(courseId).furthestSeconds);
 
 const scrollToCategory = (categoryId: string) => {
   document.getElementById(sectionId(categoryId))?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -67,8 +73,11 @@ const scrollToCategory = (categoryId: string) => {
               <StatusBadge :progress="courseProgress(course.id)" />
             </div>
             <p class="mt-2 text-sm text-slate-600">{{ course.summary }}</p>
-            <p v-if="videoLengthLabel(course.id)" class="mt-3 text-xs text-slate-500">
-              {{ videoLengthLabel(course.id) }}
+            <p class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500">
+              <span v-if="videoLengthLabel(course.id)">{{ videoLengthLabel(course.id) }}</span>
+              <span v-if="partWatchedLabel(course.id)" class="font-semibold text-sky-700">
+                {{ partWatchedLabel(course.id) }}
+              </span>
             </p>
           </RouterLink>
         </li>
