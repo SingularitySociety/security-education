@@ -10,9 +10,11 @@ import {
   toReviewSections,
 } from "../packages/course/src/index.ts";
 import type {
+  CodeLine,
   ConversationMessage,
   ConversationScene,
   EmailSample,
+  FlowStep,
   ReviewBody,
   Scene,
 } from "../packages/course/src/index.ts";
@@ -151,6 +153,10 @@ const listItemKeys = (body: ReviewBody): string[] => {
     case "sms":
     case "conversation":
       return body.redFlags;
+    case "code":
+      return body.notes;
+    case "flow":
+      return body.steps.map((step) => step.label);
     case "urls":
       return body.urls.map((row) => row.url);
     case "passwords":
@@ -207,6 +213,51 @@ describe("toReviewSection for conversations", () => {
       messages: [],
       redFlags: [],
     });
+  });
+});
+
+describe("toReviewSection for code and flow scenes", () => {
+  it("code: keeps language, every line with its mark, and the notes", () => {
+    const lines: CodeLine[] = [
+      { text: "query(input)", mark: "bad" },
+      { text: "" },
+      { text: "query(?, input)", mark: "good" },
+    ];
+    const section = toReviewSection({
+      id: "c",
+      kind: "code",
+      heading: "危ない書き方",
+      language: "JavaScript",
+      lines,
+      notes: ["入力をそのまま使わない"],
+      narration: "n",
+    });
+    assert.equal(section.heading, "危ない書き方");
+    assert.deepEqual(section.body, { kind: "code", language: "JavaScript", lines, notes: ["入力をそのまま使わない"] });
+  });
+
+  it("code and flow: empty lists stay empty", () => {
+    const code = toReviewSection({
+      id: "c",
+      kind: "code",
+      heading: "",
+      language: "",
+      lines: [],
+      notes: [],
+      narration: "",
+    });
+    const flow = toReviewSection({ id: "f", kind: "flow", heading: "", steps: [], narration: "" });
+    assert.deepEqual(code.body, { kind: "code", language: "", lines: [], notes: [] });
+    assert.deepEqual(flow.body, { kind: "flow", steps: [] });
+  });
+
+  it("flow: keeps every step in order with its tone", () => {
+    const steps: FlowStep[] = [
+      { label: "侵入", detail: "弱いパスワード", tone: "danger" },
+      { label: "検知", detail: "アラート", tone: "safe" },
+    ];
+    const section = toReviewSection({ id: "f", kind: "flow", heading: "流れ", steps, narration: "n" });
+    assert.deepEqual(section.body, { kind: "flow", steps });
   });
 });
 
