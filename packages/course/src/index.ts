@@ -13,6 +13,9 @@ import { installSourcesCourse } from "./courses/installSources.ts";
 import { patchingCourse } from "./courses/patching.ts";
 import { dataDisposalCourse } from "./courses/dataDisposal.ts";
 import { accountLifecycleCourse } from "./courses/accountLifecycle.ts";
+import { snsPostingCourse } from "./courses/snsPosting.ts";
+import { targetedAttacksCourse } from "./courses/targetedAttacks.ts";
+import { supportDeskIdentityCourse } from "./courses/supportDeskIdentity.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -38,6 +41,9 @@ export const courses: readonly Course[] = [
   patchingCourse,
   dataDisposalCourse,
   accountLifecycleCourse,
+  snsPostingCourse,
+  targetedAttacksCourse,
+  supportDeskIdentityCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.

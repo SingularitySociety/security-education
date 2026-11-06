@@ -51,14 +51,8 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "basics",
     title: "まず押さえる基本",
     audience: "すべての人",
-    courseIds: ["passwords", "phishing", "smishing"],
-    upcoming: [
-      {
-        title: "SNSでの発信と誹謗中傷・デマ",
-        summary:
-          "業務情報や家族の写真の写り込み・位置情報、デマの拡散、誹謗中傷をしない・されたときの相談先を学びます。",
-      },
-    ],
+    courseIds: ["passwords", "phishing", "smishing", "sns-posting"],
+    upcoming: [],
   },
   {
     id: "scams",
@@ -93,26 +87,15 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "support-desk",
     title: "カスタマーサポート・窓口",
     audience: "問い合わせ対応・受付の担当",
-    courseIds: [],
-    upcoming: [
-      {
-        title: "問い合わせ相手を確認する",
-        summary:
-          "本人確認の手順、顧客や取引先を装う依頼、急がせる問い合わせや添付ファイル、保留・折り返し・エスカレーションを学びます。",
-      },
-    ],
+    courseIds: ["support-desk-identity"],
+    upcoming: [],
   },
   {
     id: "workplace",
     title: "職場を狙うだまし",
     audience: "会社で働く人",
-    courseIds: ["boss-impersonation", "hiring-attacks"],
-    upcoming: [
-      {
-        title: "標的型攻撃と機密情報の守り方",
-        summary: "特定の社員や部署を狙う攻撃と、機密情報を分類して必要な人だけに見せる考え方、共有の仕方を学びます。",
-      },
-    ],
+    courseIds: ["boss-impersonation", "hiring-attacks", "targeted-attacks"],
+    upcoming: [],
   },
   {
     id: "remote",
