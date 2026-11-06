@@ -55,18 +55,19 @@
 ## 構成（yarn workspaces）
 
 - `packages/course` — 台本・クイズ・採点・進捗の純粋関数（動画と Web の共通データ）
-- `packages/video` — Remotion で動画を生成。ナレーションは macOS の `say`（Kyoko）
+- `packages/video` — Remotion で動画を生成。ナレーションは [yomiscript](https://github.com/receptron/yomiscript) の Kokoro。読みは場面ごとに `packages/video/readings/<courseId>.json` へ YomiScript（発音記号）で書き、エンジンはそのとおりに話す（漢字の読み間違いが起きない）
 - `packages/web` — Vue 3 + Tailwind CSS + TypeScript。動画を最後まで見ると確認テストが解放され、80%以上で合格。結果はブラウザの localStorage に保存。再生位置も10秒ごとに保存し、開き直すと続きから再生する（見たところまでは早送りできる。一覧には「約○分まで視聴」と出す）
 
 ## 使い方
 
 ```sh
 yarn install
-yarn video:build   # ナレーション生成 → mp4 を packages/web/public/videos/ に出力（macOS + ffmpeg が必要）
+yarn video:build   # ナレーション生成 → mp4 を packages/web/public/videos/ に出力（ffmpeg が必要。初回は読み上げモデルを取得する）
 yarn dev           # http://localhost:5173
 ```
 
-- `yarn video:voice` — 台本から音声だけ再生成（台本を変えたらこれ → `yarn video:render`）
+- `yarn video:voice [courseId...]` — 読みから音声だけ再生成（→ `yarn video:render`）。台本を変えたら、その場面の読みも書き直す
+- `yarn workspace @security-education/video readings:check [courseId...]` — 読みの元の文字（`<t:…>`）をつなげたものが台本と一致するか確かめる（`yarn test` でも確かめる）
 - `yarn video:render [courseId...]` — 動画だけ再レンダリング。描き出した長さを `packages/course/src/videoDurations.json` に書き込み、一覧の「動画 ○分○秒」に使う（このファイルもコミットする）
 - `yarn workspace @security-education/video studio` — Remotion Studio でプレビュー
 - `yarn build` — 静的サイトを `packages/web/dist/` に出力（相対パスなのでサブパスにもそのまま置ける）
@@ -78,7 +79,7 @@ yarn dev           # http://localhost:5173
 https://singularitysociety.github.io/security-education/
 
 - main に push すると `.github/workflows/pages.yml` がビルドして公開する
-- 動画は CI では作れない（`say` が macOS 専用）ので、Release `videos` に添付した mp4 をワークフローが取り込む
+- 動画の描き出しは重いので CI では行わず、Release `videos` に添付した mp4 をワークフローが取り込む
 - 動画を作り直したら `yarn video:build && yarn video:publish`（Release の mp4 を差し替え、公開ワークフローを再実行する。`gh` のログインが必要）
 
 ## 確認
@@ -92,3 +93,5 @@ yarn format && yarn lint && yarn typecheck && yarn test && yarn build
 `packages/course/src/courses/` にコースを1ファイル追加し、`packages/course/src/index.ts` の `courses` に登録し、`packages/course/src/categories.ts` のどれかのカテゴリー（一覧の見出しと対象者）に id を入れる。動画がまだのコースは `draftCourses` に入れておくと、一覧に「工事中」として出る。まだ書いていないコースはカテゴリーの `upcoming` に題名と概要を書く。
 シーンの種類は `title` / `points` / `email` / `sms` / `url` / `passwords` / `conversation` / `code` / `flow`（`packages/course/src/types.ts`）。会話シーンの右側は「ここが怪しい」が既定で、正しい対応を示す会話には `notesKind: "keyPoints"` を付けて「ここがポイント」にする。
 例の会社名・ドメインはすべて架空（`.example`）にすること。
+
+公開するコースには、場面ごとの読み `packages/video/readings/<courseId>.json`（`{ "<scene id>": ["ja /… ↘/", …] }`、文ごとに一つの発話）も書く。`<t:…>` は1語ごとに付け、つなげると台本と1文字も違わないこと。書き方は `npx yomiscript instructions` が出す。
