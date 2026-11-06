@@ -107,6 +107,7 @@ export const installSourcesCourse: Course = {
       id: "ask-first",
       kind: "conversation",
       channel: "chat",
+      notesKind: "keyPoints",
       contactName: "情報システム担当",
       contactDetail: "社内チャット",
       messages: [

@@ -118,6 +118,7 @@ export const pasteCommandsCourse: Course = {
       id: "ask",
       kind: "conversation",
       channel: "chat",
+      notesKind: "keyPoints",
       contactName: "情報システム担当",
       contactDetail: "社内チャット",
       messages: [

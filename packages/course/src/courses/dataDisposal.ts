@@ -82,6 +82,7 @@ export const dataDisposalCourse: Course = {
       id: "return",
       kind: "conversation",
       channel: "chat",
+      notesKind: "keyPoints",
       contactName: "総務担当",
       contactDetail: "社内チャット",
       messages: [

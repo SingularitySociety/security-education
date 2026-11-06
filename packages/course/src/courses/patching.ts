@@ -80,6 +80,7 @@ export const patchingCourse: Course = {
       id: "notice",
       kind: "conversation",
       channel: "chat",
+      notesKind: "keyPoints",
       contactName: "情報システム担当",
       contactDetail: "社内チャット",
       messages: [
