@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { courses, drawQuiz, shuffled, QUIZ_QUESTION_COUNT } from "../packages/course/src/index.ts";
+import { courses, draftCourses, drawQuiz, shuffled, QUIZ_QUESTION_COUNT } from "../packages/course/src/index.ts";
 import type { QuizQuestion, RandomSource } from "../packages/course/src/index.ts";
 
 const POOL_SIZE_PER_DRAW = 3;
@@ -44,7 +44,7 @@ describe("shuffled", () => {
 });
 
 describe("drawQuiz", () => {
-  courses.forEach((course) => {
+  [...courses, ...draftCourses].forEach((course) => {
     const pool = course.questionPool;
 
     it(`${course.id}: draws distinct questions from the pool with the same choices`, () => {
@@ -98,7 +98,7 @@ describe("drawQuiz", () => {
 });
 
 describe("question pools", () => {
-  courses.forEach((course) => {
+  [...courses, ...draftCourses].forEach((course) => {
     it(`${course.id}: the pool is large enough that one attempt shows only a fraction of it`, () => {
       assert.ok(course.questionPool.length >= QUIZ_QUESTION_COUNT * POOL_SIZE_PER_DRAW);
     });

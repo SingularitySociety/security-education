@@ -4,6 +4,15 @@ import { phoneScamsCourse } from "./courses/phoneScams.ts";
 import { bossImpersonationCourse } from "./courses/bossImpersonation.ts";
 import { hiringAttacksCourse } from "./courses/hiringAttacks.ts";
 import { smishingCourse } from "./courses/smishing.ts";
+import { onlineScamsCourse } from "./courses/onlineScams.ts";
+import { outsideWorkCourse } from "./courses/outsideWork.ts";
+import { aiPromptInjectionCourse } from "./courses/aiPromptInjection.ts";
+import { aiDataAndToolsCourse } from "./courses/aiDataAndTools.ts";
+import { pasteCommandsCourse } from "./courses/pasteCommands.ts";
+import { installSourcesCourse } from "./courses/installSources.ts";
+import { patchingCourse } from "./courses/patching.ts";
+import { dataDisposalCourse } from "./courses/dataDisposal.ts";
+import { accountLifecycleCourse } from "./courses/accountLifecycle.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -20,6 +29,19 @@ export const courses: readonly Course[] = [
   phoneScamsCourse,
   bossImpersonationCourse,
   hiringAttacksCourse,
+];
+
+// Written but not yet published: listed as under construction until their videos are rendered.
+export const draftCourses: readonly Course[] = [
+  onlineScamsCourse,
+  outsideWorkCourse,
+  aiPromptInjectionCourse,
+  aiDataAndToolsCourse,
+  pasteCommandsCourse,
+  installSourcesCourse,
+  patchingCourse,
+  dataDisposalCourse,
+  accountLifecycleCourse,
 ];
 
 export const findCourse = (courseId: string): Course | undefined => courses.find((course) => course.id === courseId);
