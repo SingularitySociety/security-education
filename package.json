@@ -1,0 +1,30 @@
+{
+  "name": "security-education",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspace @security-education/web dev",
+    "build": "yarn workspace @security-education/web build",
+    "typecheck": "tsc -p tsconfig.json --noEmit && yarn workspace @security-education/video typecheck && yarn workspace @security-education/web typecheck",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "node --test \"test/test_*.ts\"",
+    "video:voice": "yarn workspace @security-education/video voice",
+    "video:render": "yarn workspace @security-education/video render",
+    "video:build": "yarn video:voice && yarn video:render"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10",
+    "@types/node": "^26.6.6",
+    "eslint": "^10",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-vue": "^10.12.0",
+    "globals": "^17.14.0",
+    "prettier": "^3.9.10",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.72.1",
+    "vue-eslint-parser": "^10.4.1"
+  }
+}

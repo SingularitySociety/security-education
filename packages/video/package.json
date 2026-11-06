@@ -1,0 +1,26 @@
+{
+  "name": "@security-education/video",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "voice": "node scripts/generate-voice.ts",
+    "render": "node scripts/render-all.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.541",
+    "@remotion/cli": "^4.0.541",
+    "@remotion/renderer": "^4.0.541",
+    "@security-education/course": "0.1.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.541"
+  },
+  "devDependencies": {
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "typescript": "^6.0.3"
+  }
+}
