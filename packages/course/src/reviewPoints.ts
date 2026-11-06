@@ -1,4 +1,12 @@
-import type { EmailSample, PasswordRow, Scene, SmsSample, UrlScene } from "./types.ts";
+import type {
+  ConversationMessage,
+  ConversationScene,
+  EmailSample,
+  PasswordRow,
+  Scene,
+  SmsSample,
+  UrlScene,
+} from "./types.ts";
 
 export type ReviewUrl = {
   url: string;
@@ -19,7 +27,14 @@ export type ReviewBody =
   | { kind: "email"; email: EmailSample; redFlags: string[] }
   | { kind: "sms"; sms: SmsSample; redFlags: string[] }
   | { kind: "urls"; urls: ReviewUrl[] }
-  | { kind: "passwords"; rows: ReviewPassword[] };
+  | { kind: "passwords"; rows: ReviewPassword[] }
+  | {
+      kind: "conversation";
+      contactName: string;
+      contactDetail: string;
+      messages: ConversationMessage[];
+      redFlags: string[];
+    };
 
 export type ReviewSection = {
   sceneId: string;
@@ -30,6 +45,12 @@ export type ReviewSection = {
 
 export const EMAIL_EXAMPLE_HEADING = "例：届いたメール";
 export const SMS_EXAMPLE_HEADING = "例：届いたSMS";
+
+export const CONVERSATION_EXAMPLE_HEADINGS: Record<ConversationScene["channel"], string> = {
+  phone: "例：電話でのやりとり",
+  chat: "例：チャットでのやりとり",
+  video: "例：ビデオ通話でのやりとり",
+};
 
 const VERDICT_LABELS: Record<UrlScene["urls"][number]["verdict"], string> = { safe: "公式", fake: "偽物" };
 
@@ -76,6 +97,17 @@ const headingAndBody = (scene: Scene): Pick<ReviewSection, "heading" | "body"> =
       return { heading: scene.heading, body: { kind: "urls", urls: scene.urls.map(toReviewUrl) } };
     case "passwords":
       return { heading: scene.heading, body: { kind: "passwords", rows: scene.rows.map(toReviewPassword) } };
+    case "conversation":
+      return {
+        heading: CONVERSATION_EXAMPLE_HEADINGS[scene.channel],
+        body: {
+          kind: "conversation",
+          contactName: scene.contactName,
+          contactDetail: scene.contactDetail,
+          messages: [...scene.messages],
+          redFlags: [...scene.redFlags],
+        },
+      };
     default:
       return assertNever(scene);
   }

@@ -5,6 +5,7 @@ import { EmailSceneView } from "./EmailSceneView.tsx";
 import { SmsSceneView } from "./SmsSceneView.tsx";
 import { UrlSceneView } from "./UrlSceneView.tsx";
 import { PasswordsSceneView } from "./PasswordsSceneView.tsx";
+import { ConversationSceneView } from "./ConversationSceneView.tsx";
 
 export const SceneView = ({ scene, narrationFrames }: { scene: Scene; narrationFrames: number }) => {
   switch (scene.kind) {
@@ -20,5 +21,7 @@ export const SceneView = ({ scene, narrationFrames }: { scene: Scene; narrationF
       return <UrlSceneView scene={scene} narrationFrames={narrationFrames} />;
     case "passwords":
       return <PasswordsSceneView scene={scene} narrationFrames={narrationFrames} />;
+    case "conversation":
+      return <ConversationSceneView scene={scene} narrationFrames={narrationFrames} />;
   }
 };
