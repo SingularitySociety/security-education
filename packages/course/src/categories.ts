@@ -57,7 +57,12 @@ export const courseCategories: readonly CourseCategory[] = [
     title: "職場を狙うだまし",
     audience: "会社で働く人",
     courseIds: ["boss-impersonation", "hiring-attacks"],
-    upcoming: [],
+    upcoming: [
+      {
+        title: "標的型攻撃と機密情報の守り方",
+        summary: "特定の社員や部署を狙う攻撃と、機密情報を分類して必要な人だけに見せる考え方、共有の仕方を学びます。",
+      },
+    ],
   },
   {
     id: "remote",
@@ -88,6 +93,43 @@ export const courseCategories: readonly CourseCategory[] = [
         title: "内部不正と情報の持ち出し",
         summary:
           "在職中の持ち出しがなぜ問題になるか、悪意がなくても事故になること、会社として決めておくことを学びます。",
+      },
+    ],
+  },
+  {
+    id: "incident",
+    title: "事故が起きたとき",
+    audience: "会社で働く人・経営者・管理担当",
+    courseIds: [],
+    upcoming: [
+      {
+        title: "インシデント発生時の初動",
+        summary: "感染・誤送信・紛失・乗っ取りに気づいた直後に何をするか、誰に何をいつ報告するかを学びます。",
+      },
+      {
+        title: "バックアップと復旧",
+        summary:
+          "ランサムウェアに備えて、何をどう分けて保管し、本当に戻せるかを試し、止まった業務をどう続けるかを学びます。",
+      },
+    ],
+  },
+  {
+    id: "it-admin",
+    title: "情報システム担当の基本",
+    audience: "社内のIT担当（兼務を含む）",
+    courseIds: [],
+    upcoming: [
+      {
+        title: "IT資産とアカウントの台帳",
+        summary: "機器・ソフト・SaaS・管理者権限を一覧にし、誰が何を管理するかを決める方法を学びます。",
+      },
+      {
+        title: "端末・ネットワーク・SaaSの管理",
+        summary: "多要素認証、端末の管理、ネットワークの分離、SaaSの設定など、社内のIT環境を守る基本を学びます。",
+      },
+      {
+        title: "ログと監視の基本",
+        summary: "何を記録し、どんな動きに気づけばよいか、社内のIT運用で無理なく続けられる監視の始め方を学びます。",
       },
     ],
   },
