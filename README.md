@@ -77,5 +77,5 @@ yarn format && yarn lint && yarn typecheck && yarn test && yarn build
 ## コースの追加
 
 `packages/course/src/courses/` にコースを1ファイル追加し、`packages/course/src/index.ts` の `courses` に登録し、`packages/course/src/categories.ts` のどれかのカテゴリー（一覧の見出しと対象者）に id を入れる。動画がまだのコースは `draftCourses` に入れておくと、一覧に「工事中」として出る。まだ書いていないコースはカテゴリーの `upcoming` に題名と概要を書く。
-シーンの種類は `title` / `points` / `email` / `sms` / `url` / `passwords` / `conversation` / `code` / `flow`（`packages/course/src/types.ts`）。
+シーンの種類は `title` / `points` / `email` / `sms` / `url` / `passwords` / `conversation` / `code` / `flow`（`packages/course/src/types.ts`）。会話シーンの右側は「ここが怪しい」が既定で、正しい対応を示す会話には `notesKind: "keyPoints"` を付けて「ここがポイント」にする。
 例の会社名・ドメインはすべて架空（`.example`）にすること。

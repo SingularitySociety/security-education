@@ -1,4 +1,10 @@
-import type { ConversationMessage, ConversationScene } from "@security-education/course";
+import {
+  CONVERSATION_NOTES_HEADINGS,
+  conversationNotesKind,
+  type ConversationMessage,
+  type ConversationNotesKind,
+  type ConversationScene,
+} from "@security-education/course";
 import { theme } from "../theme.ts";
 import { revealFrame } from "../reveal.ts";
 import { useFadeUp } from "./motion.ts";
@@ -6,6 +12,8 @@ import { RedFlagList, redFlagStartFrames } from "./RedFlags.tsx";
 
 const PHONE_WIDTH_PX = 640;
 const PHONE_HEIGHT_PX = 780;
+
+const NOTES_COLORS: Record<ConversationNotesKind, string> = { redFlags: theme.danger, keyPoints: theme.accent };
 
 const channelLabel = { phone: "通話中", chat: "チャット", video: "ビデオ通話" } as const;
 
@@ -45,6 +53,7 @@ export const ConversationSceneView = ({
   scene: ConversationScene;
   narrationFrames: number;
 }) => {
+  const notesKind = conversationNotesKind(scene);
   const redFlags = scene.redFlags.map((label, index) => ({ target: `flag-${index}`, label }));
   const flagStartFrames = redFlagStartFrames(redFlags, narrationFrames);
   return (
@@ -76,7 +85,12 @@ export const ConversationSceneView = ({
         ))}
       </div>
       <div style={{ flex: 1, maxWidth: 860 }}>
-        <RedFlagList redFlags={redFlags} startFrames={flagStartFrames} />
+        <RedFlagList
+          redFlags={redFlags}
+          startFrames={flagStartFrames}
+          heading={CONVERSATION_NOTES_HEADINGS[notesKind]}
+          color={NOTES_COLORS[notesKind]}
+        />
       </div>
     </div>
   );

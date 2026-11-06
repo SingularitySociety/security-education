@@ -79,6 +79,8 @@ export type ConversationMessage = {
   text: string;
 };
 
+export type ConversationNotesKind = "redFlags" | "keyPoints";
+
 export type ConversationScene = Narrated & {
   kind: "conversation";
   channel: "phone" | "chat" | "video";
@@ -86,6 +88,8 @@ export type ConversationScene = Narrated & {
   contactDetail: string;
   messages: ConversationMessage[];
   redFlags: string[];
+  // Omitted means "redFlags"; "keyPoints" is for conversations that show the right way to respond.
+  notesKind?: ConversationNotesKind;
 };
 
 export type CodeLine = {

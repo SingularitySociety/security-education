@@ -2,6 +2,7 @@ import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import {
   CONVERSATION_EXAMPLE_HEADINGS,
+  CONVERSATION_NOTES_HEADINGS,
   courses,
   draftCourses,
   EMAIL_EXAMPLE_HEADING,
@@ -12,6 +13,7 @@ import {
 import type {
   CodeLine,
   ConversationMessage,
+  ConversationNotesKind,
   ConversationScene,
   EmailSample,
   FlowStep,
@@ -191,6 +193,8 @@ describe("toReviewSection for conversations", () => {
         contactDetail: "説明",
         messages,
         redFlags: ["急がせる"],
+        notesKind: "redFlags",
+        notesHeading: CONVERSATION_NOTES_HEADINGS.redFlags,
       });
     });
   });
@@ -212,7 +216,40 @@ describe("toReviewSection for conversations", () => {
       contactDetail: "",
       messages: [],
       redFlags: [],
+      notesKind: "redFlags",
+      notesHeading: CONVERSATION_NOTES_HEADINGS.redFlags,
     });
+  });
+
+  it("uses the heading of the notes kind, defaulting to red flags", () => {
+    const base: ConversationScene = {
+      id: "c",
+      kind: "conversation",
+      channel: "chat",
+      contactName: "担当",
+      contactDetail: "社内チャット",
+      messages: [],
+      redFlags: ["まず切り離す"],
+      narration: "n",
+    };
+    const cases: { notesKind: ConversationNotesKind | undefined; expected: ConversationNotesKind }[] = [
+      { notesKind: undefined, expected: "redFlags" },
+      { notesKind: "redFlags", expected: "redFlags" },
+      { notesKind: "keyPoints", expected: "keyPoints" },
+    ];
+    cases.forEach(({ notesKind, expected }) => {
+      const scene: ConversationScene = notesKind === undefined ? base : { ...base, notesKind };
+      const section = toReviewSection(scene);
+      assert.equal(section.body.kind, "conversation");
+      if (section.body.kind !== "conversation") return;
+      assert.equal(section.body.notesKind, expected);
+      assert.equal(section.body.notesHeading, CONVERSATION_NOTES_HEADINGS[expected]);
+      assert.deepEqual(section.body.redFlags, ["まず切り離す"]);
+    });
+  });
+
+  it("the two notes headings differ", () => {
+    assert.notEqual(CONVERSATION_NOTES_HEADINGS.redFlags, CONVERSATION_NOTES_HEADINGS.keyPoints);
   });
 });
 

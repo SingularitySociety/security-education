@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import type { RedFlag } from "@security-education/course";
+import { CONVERSATION_NOTES_HEADINGS, type RedFlag } from "@security-education/course";
 import { theme } from "../theme.ts";
 import { revealFrame } from "../reveal.ts";
 import { useFadeUp, useIsShown } from "./motion.ts";
@@ -28,7 +28,17 @@ export const Highlight = ({ startFrame, children }: { startFrame: number | undef
   );
 };
 
-const RedFlagItem = ({ label, number, startFrame }: { label: string; number: number; startFrame: number }) => (
+const RedFlagItem = ({
+  label,
+  number,
+  startFrame,
+  color,
+}: {
+  label: string;
+  number: number;
+  startFrame: number;
+  color: string;
+}) => (
   <div style={{ ...useFadeUp(startFrame), display: "flex", gap: 20, alignItems: "flex-start" }}>
     <div
       style={{
@@ -36,7 +46,7 @@ const RedFlagItem = ({ label, number, startFrame }: { label: string; number: num
         width: 56,
         height: 56,
         borderRadius: 28,
-        backgroundColor: theme.danger,
+        backgroundColor: color,
         fontSize: 32,
         fontWeight: 800,
         display: "flex",
@@ -53,18 +63,23 @@ const RedFlagItem = ({ label, number, startFrame }: { label: string; number: num
 export const RedFlagList = <Target extends string>({
   redFlags,
   startFrames,
+  heading = CONVERSATION_NOTES_HEADINGS.redFlags,
+  color = theme.danger,
 }: {
   redFlags: readonly RedFlag<Target>[];
   startFrames: Map<Target, number>;
+  heading?: string;
+  color?: string;
 }) => (
   <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
-    <div style={{ fontSize: 48, fontWeight: 800, color: theme.danger }}>ここが怪しい</div>
+    <div style={{ fontSize: 48, fontWeight: 800, color }}>{heading}</div>
     {redFlags.map((flag, index) => (
       <RedFlagItem
         key={flag.target}
         label={flag.label}
         number={index + 1}
         startFrame={startFrames.get(flag.target) ?? 0}
+        color={color}
       />
     ))}
   </div>

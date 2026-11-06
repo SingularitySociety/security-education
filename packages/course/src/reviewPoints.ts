@@ -1,6 +1,7 @@
 import type {
   CodeLine,
   ConversationMessage,
+  ConversationNotesKind,
   ConversationScene,
   EmailSample,
   FlowStep,
@@ -36,6 +37,8 @@ export type ReviewBody =
       contactDetail: string;
       messages: ConversationMessage[];
       redFlags: string[];
+      notesKind: ConversationNotesKind;
+      notesHeading: string;
     }
   | { kind: "code"; language: string; lines: CodeLine[]; notes: string[] }
   | { kind: "flow"; steps: FlowStep[] };
@@ -55,6 +58,13 @@ export const CONVERSATION_EXAMPLE_HEADINGS: Record<ConversationScene["channel"],
   chat: "例：チャットでのやりとり",
   video: "例：ビデオ通話でのやりとり",
 };
+
+export const CONVERSATION_NOTES_HEADINGS: Record<ConversationNotesKind, string> = {
+  redFlags: "ここが怪しい",
+  keyPoints: "ここがポイント",
+};
+
+export const conversationNotesKind = (scene: ConversationScene): ConversationNotesKind => scene.notesKind ?? "redFlags";
 
 const VERDICT_LABELS: Record<UrlScene["urls"][number]["verdict"], string> = { safe: "公式", fake: "偽物" };
 
@@ -110,6 +120,8 @@ const headingAndBody = (scene: Scene): Pick<ReviewSection, "heading" | "body"> =
           contactDetail: scene.contactDetail,
           messages: [...scene.messages],
           redFlags: [...scene.redFlags],
+          notesKind: conversationNotesKind(scene),
+          notesHeading: CONVERSATION_NOTES_HEADINGS[conversationNotesKind(scene)],
         },
       };
     case "code":
