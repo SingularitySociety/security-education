@@ -56,7 +56,7 @@
 
 - `packages/course` — 台本・クイズ・採点・進捗の純粋関数（動画と Web の共通データ）
 - `packages/video` — Remotion で動画を生成。ナレーションは macOS の `say`（Kyoko）
-- `packages/web` — Vue 3 + Tailwind CSS + TypeScript。動画を最後まで見ると確認テストが解放され、80%以上で合格。結果はブラウザの localStorage に保存
+- `packages/web` — Vue 3 + Tailwind CSS + TypeScript。動画を最後まで見ると確認テストが解放され、80%以上で合格。結果はブラウザの localStorage に保存。再生位置も10秒ごとに保存し、開き直すと続きから再生する（見たところまでは早送りできる。一覧には「約○分まで視聴」と出す）
 
 ## 使い方
 

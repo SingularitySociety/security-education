@@ -1,26 +1,15 @@
 import { readonly, ref } from "vue";
 import { markWatched, parseProgressMap, progressOf, recordAttempt } from "@security-education/course";
 import type { CourseProgress, ProgressMap, QuizResult } from "@security-education/course";
+import { readStorage, writeStorage } from "./browserStorage.ts";
 
 const STORAGE_KEY = "security-education:progress:v1";
 
-const load = (): ProgressMap => {
-  try {
-    return parseProgressMap(window.localStorage.getItem(STORAGE_KEY));
-  } catch {
-    return {};
-  }
-};
-
-const progressMap = ref<ProgressMap>(load());
+const progressMap = ref<ProgressMap>(parseProgressMap(readStorage(STORAGE_KEY)));
 
 const save = (next: ProgressMap): void => {
   progressMap.value = next;
-  try {
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-  } catch (error) {
-    console.warn(`Failed to save progress to localStorage key "${STORAGE_KEY}"`, error);
-  }
+  writeStorage(STORAGE_KEY, next);
 };
 
 export const useProgress = () => ({

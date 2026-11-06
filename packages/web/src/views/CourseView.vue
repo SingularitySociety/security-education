@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { findCourse, videoFileName } from "@security-education/course";
+import { findCourse, resumeSeconds, shouldSavePlayback, videoFileName } from "@security-education/course";
 import CourseNotFound from "../components/CourseNotFound.vue";
 import CourseReviewPoints from "../components/CourseReviewPoints.vue";
+import { usePlayback } from "../lib/playbackStore.ts";
 import { useProgress } from "../lib/progressStore.ts";
 import { clampSeekTime } from "../lib/seekGuard.ts";
 
@@ -13,11 +14,32 @@ const { courseProgress, markWatched } = useProgress();
 const watched = computed(() => courseProgress(props.courseId).watched);
 const videoSrc = computed(() => `${import.meta.env.BASE_URL}${videoFileName(props.courseId)}`);
 const videoError = ref(false);
+const { coursePlayback, savePosition, saveFinished } = usePlayback();
 const maxWatchedSeconds = ref(0);
+const lastSavedSeconds = ref(0);
+
+const onLoadedMetadata = (event: Event) => {
+  if (!(event.target instanceof HTMLVideoElement)) return;
+  const playback = coursePlayback(props.courseId);
+  const startSeconds = resumeSeconds(playback, event.target.duration);
+  maxWatchedSeconds.value = playback.furthestSeconds;
+  lastSavedSeconds.value = startSeconds;
+  if (startSeconds > 0) event.target.currentTime = startSeconds;
+};
 
 const onTimeUpdate = (event: Event) => {
   if (!(event.target instanceof HTMLVideoElement) || event.target.seeking) return;
-  maxWatchedSeconds.value = Math.max(maxWatchedSeconds.value, event.target.currentTime);
+  const currentSeconds = event.target.currentTime;
+  maxWatchedSeconds.value = Math.max(maxWatchedSeconds.value, currentSeconds);
+  if (!shouldSavePlayback(lastSavedSeconds.value, currentSeconds)) return;
+  savePosition(props.courseId, currentSeconds);
+  lastSavedSeconds.value = currentSeconds;
+};
+
+const onEnded = (event: Event) => {
+  markWatched(props.courseId);
+  if (event.target instanceof HTMLVideoElement) saveFinished(props.courseId, event.target.duration);
+  lastSavedSeconds.value = 0;
 };
 
 const onSeeking = (event: Event) => {
@@ -41,9 +63,10 @@ const onSeeking = (event: Event) => {
         controls
         playsinline
         preload="metadata"
+        @loadedmetadata="onLoadedMetadata"
         @timeupdate="onTimeUpdate"
         @seeking="onSeeking"
-        @ended="markWatched(course.id)"
+        @ended="onEnded"
         @error="videoError = true"
       />
     </div>
