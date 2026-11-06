@@ -54,23 +54,8 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "office",
     title: "職場の毎日の仕事",
     audience: "事務・営業など一般の従業員",
-    courseIds: [],
-    upcoming: [
-      {
-        title: "メールを送る前の確認",
-        summary:
-          "宛先・CC・BCC、添付ファイル、宛先の自動補完。誤送信を防ぐ確認と、送ってしまったときの報告を学びます。",
-      },
-      {
-        title: "個人情報を見せない・渡さない",
-        summary:
-          "書類や画面の放置、電話での問い合わせ、印刷・FAX・郵送の取り違え、捨て方まで、うっかり漏らさないための行動を学びます。",
-      },
-      {
-        title: "ファイル共有とクラウドの確認",
-        summary: "「リンクを知っている全員」の意味、閲覧と編集の違い、社外に共有する前と後に確かめることを学びます。",
-      },
-    ],
+    courseIds: ["email-before-send", "personal-info", "file-sharing"],
+    upcoming: [],
   },
   {
     id: "support-desk",
