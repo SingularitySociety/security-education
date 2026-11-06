@@ -21,7 +21,7 @@ const wrongChoiceOf = (question: QuizQuestion): string => {
 describe("course data", () => {
   courses.forEach((course) => {
     it(`${course.id}: every correctChoiceId points at an existing choice`, () => {
-      course.quiz.forEach((question) => {
+      course.questionPool.forEach((question) => {
         assert.ok(
           question.choices.some((choice) => choice.id === question.correctChoiceId),
           question.id,
@@ -29,7 +29,7 @@ describe("course data", () => {
       });
     });
     it(`${course.id}: ids are unique`, () => {
-      const questionIds = course.quiz.map((question) => question.id);
+      const questionIds = course.questionPool.map((question) => question.id);
       const sceneIds = course.scenes.map((scene) => scene.id);
       assert.equal(new Set(questionIds).size, questionIds.length);
       assert.equal(new Set(sceneIds).size, sceneIds.length);
@@ -41,7 +41,7 @@ describe("course data", () => {
 });
 
 describe("scoreQuiz", () => {
-  const quiz = courses[0]?.quiz ?? [];
+  const quiz = courses[0]?.questionPool ?? [];
 
   it("all correct passes with 100%", () => {
     const result = scoreQuiz(quiz, allCorrect(quiz));
@@ -91,7 +91,7 @@ describe("toScorePercent", () => {
 });
 
 describe("isQuizComplete", () => {
-  const quiz = courses[1]?.quiz ?? [];
+  const quiz = courses[1]?.questionPool ?? [];
   it("is true only when every question has an answer", () => {
     const answers = allCorrect(quiz);
     assert.equal(isQuizComplete(quiz, answers), true);

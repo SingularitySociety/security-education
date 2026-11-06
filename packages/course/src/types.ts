@@ -79,5 +79,5 @@ export type Course = {
   title: string;
   summary: string;
   scenes: Scene[];
-  quiz: QuizQuestion[];
+  questionPool: QuizQuestion[];
 };
