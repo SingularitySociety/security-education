@@ -26,6 +26,8 @@ import { fileExchangeCourse } from "./courses/fileExchange.ts";
 import { homeNetworkCourse } from "./courses/homeNetwork.ts";
 import { incidentFirstResponseCourse } from "./courses/incidentFirstResponse.ts";
 import { backupRecoveryCourse } from "./courses/backupRecovery.ts";
+import { suppliersCourse } from "./courses/suppliers.ts";
+import { insiderThreatCourse } from "./courses/insiderThreat.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -64,6 +66,8 @@ export const courses: readonly Course[] = [
   homeNetworkCourse,
   incidentFirstResponseCourse,
   backupRecoveryCourse,
+  suppliersCourse,
+  insiderThreatCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.
