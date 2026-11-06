@@ -1,0 +1,83 @@
+export type Narrated = {
+  id: string;
+  narration: string;
+};
+
+export type TitleScene = Narrated & {
+  kind: "title";
+  title: string;
+  subtitle: string;
+};
+
+export type PointsScene = Narrated & {
+  kind: "points";
+  heading: string;
+  points: string[];
+};
+
+export type EmailSample = {
+  fromName: string;
+  fromAddress: string;
+  subject: string;
+  body: string[];
+  linkLabel: string;
+  linkUrl: string;
+};
+
+export type RedFlag<Target extends string> = {
+  target: Target;
+  label: string;
+};
+
+export type EmailScene = Narrated & {
+  kind: "email";
+  email: EmailSample;
+  redFlags: RedFlag<"from" | "subject" | "body" | "link">[];
+};
+
+export type SmsSample = {
+  sender: string;
+  text: string;
+  linkUrl: string;
+};
+
+export type SmsScene = Narrated & {
+  kind: "sms";
+  sms: SmsSample;
+  redFlags: RedFlag<"sender" | "text" | "link">[];
+};
+
+export type UrlPart = {
+  text: string;
+  isRegisteredDomain: boolean;
+};
+
+export type UrlScene = Narrated & {
+  kind: "url";
+  heading: string;
+  urls: { parts: UrlPart[]; verdict: "safe" | "fake"; note: string }[];
+};
+
+export type Scene = TitleScene | PointsScene | EmailScene | SmsScene | UrlScene;
+
+export type Choice = {
+  id: string;
+  label: string;
+};
+
+export type QuizQuestion = {
+  id: string;
+  prompt: string;
+  sample?: { kind: "email"; email: EmailSample } | { kind: "sms"; sms: SmsSample };
+  choices: Choice[];
+  correctChoiceId: string;
+  explanation: string;
+};
+
+export type Course = {
+  id: string;
+  title: string;
+  summary: string;
+  scenes: Scene[];
+  quiz: QuizQuestion[];
+};
