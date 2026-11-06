@@ -2,6 +2,7 @@
 import { computed, ref } from "vue";
 import { findCourse, videoFileName } from "@security-education/course";
 import CourseNotFound from "../components/CourseNotFound.vue";
+import CourseReviewPoints from "../components/CourseReviewPoints.vue";
 import { useProgress } from "../lib/progressStore.ts";
 import { clampSeekTime } from "../lib/seekGuard.ts";
 
@@ -68,5 +69,7 @@ const onSeeking = (event: Event) => {
       </button>
       <span v-if="!watched" class="text-sm text-slate-500">動画を最後まで視聴すると、確認テストに進めます。</span>
     </div>
+
+    <CourseReviewPoints v-if="watched" :scenes="course.scenes" />
   </section>
 </template>
