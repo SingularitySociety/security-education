@@ -1,15 +1,23 @@
-import { mkdir } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition } from "@remotion/renderer";
-import { courses, videoFileName } from "@security-education/course";
+import { courses, isVideoDurations, videoFileName, withVideoDuration } from "@security-education/course";
 
 const PROGRESS_LOG_STEP_PERCENT = 20;
 const PERCENT_SCALE = 100;
 
 const packageDir = fileURLToPath(new URL("../", import.meta.url));
 const webPublicDir = fileURLToPath(new URL("../../web/public/", import.meta.url));
+const videoDurationsPath = fileURLToPath(new URL("../../course/src/videoDurations.json", import.meta.url));
+
+const recordVideoDuration = async (courseId: string, durationSeconds: number): Promise<void> => {
+  const parsed: unknown = JSON.parse(await readFile(videoDurationsPath, "utf8"));
+  if (!isVideoDurations(parsed)) throw new Error(`Unexpected content in ${videoDurationsPath}`);
+  const updated = withVideoDuration(parsed, courseId, durationSeconds);
+  await writeFile(videoDurationsPath, `${JSON.stringify(updated, null, 2)}\n`);
+};
 
 const renderCourse = async (serveUrl: string, courseId: string): Promise<void> => {
   const inputProps = { courseId, sceneFrames: [] };
@@ -30,7 +38,9 @@ const renderCourse = async (serveUrl: string, courseId: string): Promise<void> =
       console.log(`${courseId}: ${step * PROGRESS_LOG_STEP_PERCENT}%`);
     },
   });
-  console.log(`${courseId}: wrote ${outputLocation} (${(composition.durationInFrames / composition.fps).toFixed(1)}s)`);
+  const durationSeconds = composition.durationInFrames / composition.fps;
+  await recordVideoDuration(courseId, durationSeconds);
+  console.log(`${courseId}: wrote ${outputLocation} (${durationSeconds.toFixed(1)}s)`);
 };
 
 const main = async (): Promise<void> => {
