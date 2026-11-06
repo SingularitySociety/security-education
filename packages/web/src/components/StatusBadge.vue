@@ -15,5 +15,7 @@ const status = computed(() => {
 </script>
 
 <template>
-  <span class="rounded-full px-3 py-1 text-xs font-semibold" :class="status.tone">{{ status.label }}</span>
+  <span class="shrink-0 whitespace-nowrap rounded-full px-3 py-1 text-xs font-semibold" :class="status.tone">{{
+    status.label
+  }}</span>
 </template>
