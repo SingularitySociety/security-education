@@ -2,6 +2,7 @@
 import {
   courseCategories,
   courses,
+  draftCourses,
   groupCoursesByCategory,
   PASS_THRESHOLD_PERCENT,
   QUIZ_QUESTION_COUNT,
@@ -10,7 +11,7 @@ import StatusBadge from "../components/StatusBadge.vue";
 import { useProgress } from "../lib/progressStore.ts";
 
 const { courseProgress } = useProgress();
-const groups = groupCoursesByCategory(courseCategories, courses);
+const groups = groupCoursesByCategory(courseCategories, courses, draftCourses);
 </script>
 
 <template>
@@ -38,6 +39,22 @@ const groups = groupCoursesByCategory(courseCategories, courses);
             </div>
             <p class="mt-2 text-sm text-slate-600">{{ course.summary }}</p>
           </RouterLink>
+        </li>
+        <li
+          v-for="course in [...group.drafts, ...group.upcoming]"
+          :key="course.title"
+          class="h-full rounded-xl border border-dashed border-slate-300 bg-slate-50 p-5 text-slate-500"
+          aria-disabled="true"
+        >
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-bold">{{ course.title }}</h3>
+            <span
+              class="shrink-0 whitespace-nowrap rounded-full bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800"
+            >
+              工事中
+            </span>
+          </div>
+          <p class="mt-2 text-sm">{{ course.summary }}</p>
         </li>
       </ul>
     </section>

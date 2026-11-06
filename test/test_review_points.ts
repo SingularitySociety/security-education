@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import {
   CONVERSATION_EXAMPLE_HEADINGS,
   courses,
+  draftCourses,
   EMAIL_EXAMPLE_HEADING,
   SMS_EXAMPLE_HEADING,
   toReviewSection,
@@ -227,7 +228,7 @@ describe("toReviewSections", () => {
     assert.deepEqual(toReviewSections([]), []);
   });
 
-  courses.forEach((course) => {
+  [...courses, ...draftCourses].forEach((course) => {
     it(`${course.id}: every scene converts, in order, with a heading and its narration`, () => {
       const sections = toReviewSections(course.scenes);
       assert.deepEqual(

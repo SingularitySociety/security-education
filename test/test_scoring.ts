@@ -2,6 +2,7 @@ import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import {
   courses,
+  draftCourses,
   isQuizComplete,
   scoreQuiz,
   toScorePercent,
@@ -19,7 +20,7 @@ const wrongChoiceOf = (question: QuizQuestion): string => {
 };
 
 describe("course data", () => {
-  courses.forEach((course) => {
+  [...courses, ...draftCourses].forEach((course) => {
     it(`${course.id}: every correctChoiceId points at an existing choice`, () => {
       course.questionPool.forEach((question) => {
         assert.ok(
