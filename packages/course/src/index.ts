@@ -16,6 +16,8 @@ import { accountLifecycleCourse } from "./courses/accountLifecycle.ts";
 import { snsPostingCourse } from "./courses/snsPosting.ts";
 import { targetedAttacksCourse } from "./courses/targetedAttacks.ts";
 import { supportDeskIdentityCourse } from "./courses/supportDeskIdentity.ts";
+import { stopAndAskCourse } from "./courses/stopAndAsk.ts";
+import { deviceBasicsCourse } from "./courses/deviceBasics.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -44,6 +46,8 @@ export const courses: readonly Course[] = [
   snsPostingCourse,
   targetedAttacksCourse,
   supportDeskIdentityCourse,
+  stopAndAskCourse,
+  deviceBasicsCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.

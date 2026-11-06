@@ -33,19 +33,8 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "beginners",
     title: "はじめての人へ",
     audience: "パソコンやスマホに詳しくない人",
-    courseIds: [],
-    upcoming: [
-      {
-        title: "困ったときは、止まって相談",
-        summary:
-          "怪しいメール・電話・画面を見たら、操作を止めて誰かに聞く。押してしまった後でも、早く相談すれば被害を小さくできることを学びます。",
-      },
-      {
-        title: "スマホとパソコンを安全に使う基本",
-        summary:
-          "更新、画面ロック、アプリは公式の場所から、バックアップ。スマホ決済やQRコードの注意も含めて、毎日の基本を学びます。",
-      },
-    ],
+    courseIds: ["stop-and-ask", "device-basics"],
+    upcoming: [],
   },
   {
     id: "basics",
