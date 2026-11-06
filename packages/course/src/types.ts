@@ -50,6 +50,7 @@ export type SmsScene = Narrated & {
 export type UrlPart = {
   text: string;
   isRegisteredDomain: boolean;
+  isLookalike?: boolean;
 };
 
 export type UrlScene = Narrated & {

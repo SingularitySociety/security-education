@@ -70,18 +70,69 @@ export const phishingCourse: Course = {
           verdict: "fake",
           note: "本当の持ち主は account-verify.example",
         },
+      ],
+      narration:
+        "リンク先が本物かどうかは、ドメインで見分けます。ポイントは、ドメインを右から読むことです。一つ目は、公式のドメインです。二つ目は、先頭に銀行の名前がありますが、本当の持ち主は、右側の部分です。右から読めば、見分けられます。",
+    },
+    {
+      id: "lookalike",
+      kind: "url",
+      heading: "似た文字にだまされない",
+      urls: [
         {
           parts: [
             { text: "https://www.", isRegisteredDomain: false },
-            { text: "sarnple-bank.example", isRegisteredDomain: true },
-            { text: "/login", isRegisteredDomain: false },
+            { text: "sample-bank.example", isRegisteredDomain: true },
+          ],
+          verdict: "safe",
+          note: "公式のドメイン",
+        },
+        {
+          parts: [
+            { text: "https://www.", isRegisteredDomain: false },
+            { text: "sa", isRegisteredDomain: true },
+            { text: "rn", isRegisteredDomain: true, isLookalike: true },
+            { text: "ple-bank.example", isRegisteredDomain: true },
           ],
           verdict: "fake",
-          note: "「m」が「r」と「n」に置き換わっている",
+          note: "「m」ではなく「r」と「n」",
+        },
+        {
+          parts: [
+            { text: "https://www.", isRegisteredDomain: false },
+            { text: "samp", isRegisteredDomain: true },
+            { text: "1", isRegisteredDomain: true, isLookalike: true },
+            { text: "e-bank.example", isRegisteredDomain: true },
+          ],
+          verdict: "fake",
+          note: "小文字の「l（エル）」ではなく数字の「1」",
+        },
+        {
+          parts: [
+            { text: "https://www.", isRegisteredDomain: false },
+            { text: "s", isRegisteredDomain: true },
+            { text: "\u0430", isRegisteredDomain: true, isLookalike: true },
+            { text: "mple-bank.example", isRegisteredDomain: true },
+          ],
+          verdict: "fake",
+          note: "ロシア語などの「а」。xn--smple-bank-zqi.example と表示されることも",
         },
       ],
       narration:
-        "リンク先が本物かどうかは、ドメインで見分けます。ポイントは、ドメインを右から読むことです。一つ目は、公式のドメインです。二つ目は、先頭に銀行の名前がありますが、本当の持ち主は、右側の部分です。三つ目は、エムの文字が、アールとエヌに置き換わった、そっくりなドメインです。別の言語の、そっくりな文字が使われることもあります。",
+        "ただし、右から読んでも、だまされることがあります。似た文字を使った、そっくりなドメインです。二つ目は、エムの文字が、アールとエヌの二文字になっています。三つ目は、小文字のエルが、数字のイチになっています。ほかにも、数字のゼロと、アルファベットのオー、大文字のアイと、小文字のエルなど、似た文字はたくさんあります。四つ目は、見た目はまったく同じですが、エーの文字が、ロシア語などで使う、別の文字です。ブラウザによっては、エックス、エヌ、ハイフン、ハイフン、で始まる、まったく違う表示になります。",
+    },
+    {
+      id: "limits",
+      kind: "points",
+      heading: "目で見分けるのには限界がある",
+      points: [
+        "メールの差出人アドレスにも、同じ手口が使われる",
+        "ハイフンや単語を足したり、末尾の「.co.jp」を「.com」に変えたりもする",
+        "見分けようとするより、メールのリンクを使わない",
+        "ブックマーク・公式アプリから開く。自動入力が出なければ疑う",
+      ],
+      narration:
+        "同じ手口は、メールの差出人アドレスにも使われます。ほかにも、ハイフンや、ログイン、サポートなどの単語を足したり、末尾のシーオー、ドット、ジェーピーを、ドットコムに変えたりします。こうした違いを、毎回、目で見分け続けるのは、正直、無理があります。大切なのは、見分けようとするより、メールのリンクを使わないことです。ブックマークや公式アプリから開けば、偽のドメインにたどり着くことはありません。パスワードマネージャーの自動入力が出ないときも、偽サイトのサインです。",
     },
     {
       id: "variants",
@@ -360,6 +411,73 @@ export const phishingCourse: Course = {
       correctChoiceId: "a",
       explanation:
         "社内の管理者を名乗っていても、ドメインは社外のものです。期限を切って急がせ、ログインさせようとするのは、パスワードを盗む典型的な手口です。",
+    },
+    {
+      id: "q16",
+      prompt: "公式のドメインが sample-bank.example のとき、次のうち公式でないものはどれですか？",
+      choices: [
+        { id: "a", label: "https://www.sample-bank.example/" },
+        { id: "b", label: "https://login.sample-bank.example/" },
+        { id: "c", label: "https://www.samp1e-bank.example/" },
+        { id: "d", label: "https://sample-bank.example/help" },
+      ],
+      correctChoiceId: "c",
+      explanation:
+        "「samp1e-bank.example」は、小文字の「l（エル）」の代わりに数字の「1」を使ったそっくりなドメインです。ほかの三つは、右から読むとすべて sample-bank.example です。",
+    },
+    {
+      id: "q17",
+      prompt:
+        "メールのリンクを開くと、アドレス欄に「xn--」で始まるドメインが表示されました。メールの本文では見慣れた会社名のドメインに見えていました。正しい説明はどれですか？",
+      choices: [
+        { id: "a", label: "暗号化された安全な通信の印なので、そのまま使ってよい" },
+        {
+          id: "b",
+          label: "見た目が同じ別の言語の文字を使ったドメインの可能性がある。入力せず閉じ、公式の入口から開き直す",
+        },
+        { id: "c", label: "ブラウザの不具合なので、再読み込みすれば直る" },
+        { id: "d", label: "会社が海外のサーバーを使っているだけなので問題ない" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "ロシア語などの文字には、アルファベットとまったく同じに見えるものがあります。そうした文字を含むドメインは、ブラウザで「xn--」で始まる表示になることがあります。",
+    },
+    {
+      id: "q18",
+      prompt: "次のメールの差出人について、正しい説明はどれですか？",
+      sample: {
+        kind: "email",
+        email: {
+          fromName: "サンプル銀行 カスタマーサポート",
+          fromAddress: "support@sarnple-bank.example",
+          subject: "ご登録情報の確認のお願い",
+          body: ["システム更新に伴い、ご登録情報の確認をお願いしております。", "下記よりログインしてご確認ください。"],
+          linkLabel: "ログインして確認する",
+          linkUrl: "https://www.sarnple-bank.example/login",
+        },
+      },
+      choices: [
+        { id: "a", label: "ドメインが sample-bank.example なので、銀行からの本物のメールだ" },
+        { id: "b", label: "「m」ではなく「r」と「n」を並べた、そっくりなドメインから送られている" },
+        { id: "c", label: "表示名に「カスタマーサポート」とあるので、本物だ" },
+        { id: "d", label: "件名が丁寧なので、本物だ" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "差出人アドレスにも、似た文字のドメインが使われます。「sarnple」は「r」と「n」の二文字で「m」に見せています。リンクも同じドメインです。",
+    },
+    {
+      id: "q19",
+      prompt: "似た文字を使ったそっくりなドメインに、だまされないための方法として最も確実なのはどれですか？",
+      choices: [
+        { id: "a", label: "リンクのドメインを毎回、一文字ずつ虫眼鏡で確認する" },
+        { id: "b", label: "メールのリンクは使わず、ブックマークや公式アプリから開く" },
+        { id: "c", label: "ドメインに会社名が入っていれば信用する" },
+        { id: "d", label: "鍵マーク（https）が付いていれば信用する" },
+      ],
+      correctChoiceId: "b",
+      explanation:
+        "似た文字は数が多く、目で見分け続けるのには限界があります。自分で開いた公式の入口を使えば、そっくりなドメインにたどり着くことはありません。",
     },
   ],
 };
