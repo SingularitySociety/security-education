@@ -28,6 +28,9 @@ import { incidentFirstResponseCourse } from "./courses/incidentFirstResponse.ts"
 import { backupRecoveryCourse } from "./courses/backupRecovery.ts";
 import { suppliersCourse } from "./courses/suppliers.ts";
 import { insiderThreatCourse } from "./courses/insiderThreat.ts";
+import { itInventoryCourse } from "./courses/itInventory.ts";
+import { itEnvironmentCourse } from "./courses/itEnvironment.ts";
+import { loggingBasicsCourse } from "./courses/loggingBasics.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -68,6 +71,9 @@ export const courses: readonly Course[] = [
   backupRecoveryCourse,
   suppliersCourse,
   insiderThreatCourse,
+  itInventoryCourse,
+  itEnvironmentCourse,
+  loggingBasicsCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.

@@ -110,21 +110,8 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "it-admin",
     title: "情報システム担当の基本",
     audience: "社内のIT担当（兼務を含む）",
-    courseIds: [],
-    upcoming: [
-      {
-        title: "IT資産とアカウントの台帳",
-        summary: "機器・ソフト・SaaS・管理者権限を一覧にし、誰が何を管理するかを決める方法を学びます。",
-      },
-      {
-        title: "端末・ネットワーク・SaaSの管理",
-        summary: "多要素認証、端末の管理、ネットワークの分離、SaaSの設定など、社内のIT環境を守る基本を学びます。",
-      },
-      {
-        title: "ログと監視の基本",
-        summary: "何を記録し、どんな動きに気づけばよいか、社内のIT運用で無理なく続けられる監視の始め方を学びます。",
-      },
-    ],
+    courseIds: ["it-inventory", "it-environment", "logging-basics"],
+    upcoming: [],
   },
   {
     id: "developers",
