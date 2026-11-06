@@ -1,4 +1,4 @@
-import type { UrlScene } from "@security-education/course";
+import type { UrlPart, UrlScene } from "@security-education/course";
 import { theme } from "../theme.ts";
 import { revealFrame } from "../reveal.ts";
 import { useFadeUp } from "./motion.ts";
@@ -7,10 +7,25 @@ type UrlRow = UrlScene["urls"][number];
 
 const verdictLabel = { safe: "公式", fake: "偽物" } as const;
 
-const UrlRowView = ({ row, startFrame }: { row: UrlRow; startFrame: number }) => {
+const partStyle = (part: UrlPart, verdictColor: string) => {
+  if (!part.isRegisteredDomain) return { color: theme.textMuted };
+  const domainStyle = { color: verdictColor, fontWeight: 800, textDecoration: "underline" };
+  return part.isLookalike
+    ? { ...domainStyle, color: theme.text, backgroundColor: theme.danger, borderRadius: 6 }
+    : domainStyle;
+};
+
+const COMPACT_ROW_THRESHOLD = 3;
+
+const layoutFor = (rowCount: number) =>
+  rowCount > COMPACT_ROW_THRESHOLD
+    ? { rowPadding: "18px 32px", rowGap: 20, headingMargin: 36 }
+    : { rowPadding: "28px 36px", rowGap: 32, headingMargin: 56 };
+
+const UrlRowView = ({ row, startFrame, padding }: { row: UrlRow; startFrame: number; padding: string }) => {
   const verdictColor = row.verdict === "safe" ? theme.safe : theme.danger;
   return (
-    <div style={{ ...useFadeUp(startFrame), backgroundColor: theme.surface, borderRadius: 20, padding: "28px 36px" }}>
+    <div style={{ ...useFadeUp(startFrame), backgroundColor: theme.surface, borderRadius: 20, padding }}>
       <div style={{ display: "flex", alignItems: "center", gap: 28 }}>
         <div
           style={{
@@ -25,15 +40,8 @@ const UrlRowView = ({ row, startFrame }: { row: UrlRow; startFrame: number }) =>
           {verdictLabel[row.verdict]}
         </div>
         <div style={{ fontFamily: "Menlo, monospace", fontSize: 40 }}>
-          {row.parts.map((part) => (
-            <span
-              key={part.text}
-              style={
-                part.isRegisteredDomain
-                  ? { color: verdictColor, fontWeight: 800, textDecoration: "underline" }
-                  : { color: theme.textMuted }
-              }
-            >
+          {row.parts.map((part, index) => (
+            <span key={`${index}-${part.text}`} style={partStyle(part, verdictColor)}>
               {part.text}
             </span>
           ))}
@@ -44,17 +52,23 @@ const UrlRowView = ({ row, startFrame }: { row: UrlRow; startFrame: number }) =>
   );
 };
 
-export const UrlSceneView = ({ scene, narrationFrames }: { scene: UrlScene; narrationFrames: number }) => (
-  <div>
-    <div style={{ ...useFadeUp(0), fontSize: 76, fontWeight: 800, marginBottom: 56 }}>{scene.heading}</div>
-    <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-      {scene.urls.map((row, index) => (
-        <UrlRowView
-          key={row.parts.map((part) => part.text).join("")}
-          row={row}
-          startFrame={revealFrame(index + 1, scene.urls.length + 1, narrationFrames)}
-        />
-      ))}
+export const UrlSceneView = ({ scene, narrationFrames }: { scene: UrlScene; narrationFrames: number }) => {
+  const layout = layoutFor(scene.urls.length);
+  return (
+    <div>
+      <div style={{ ...useFadeUp(0), fontSize: 76, fontWeight: 800, marginBottom: layout.headingMargin }}>
+        {scene.heading}
+      </div>
+      <div style={{ display: "flex", flexDirection: "column", gap: layout.rowGap }}>
+        {scene.urls.map((row, index) => (
+          <UrlRowView
+            key={row.parts.map((part) => part.text).join("")}
+            row={row}
+            padding={layout.rowPadding}
+            startFrame={revealFrame(index + 1, scene.urls.length + 1, narrationFrames)}
+          />
+        ))}
+      </div>
     </div>
-  </div>
-);
+  );
+};
