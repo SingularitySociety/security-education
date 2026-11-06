@@ -54,8 +54,12 @@ defineProps<{ body: ReviewBody }>();
         </p>
       </div>
     </div>
-    <div v-if="body.redFlags.length > 0" class="rounded-lg bg-rose-50 p-3 text-sm text-rose-900">
-      <div class="font-semibold">ここが怪しい</div>
+    <div
+      v-if="body.redFlags.length > 0"
+      class="rounded-lg p-3 text-sm"
+      :class="body.notesKind === 'keyPoints' ? 'bg-sky-50 text-sky-900' : 'bg-rose-50 text-rose-900'"
+    >
+      <div class="font-semibold">{{ body.notesHeading }}</div>
       <ul class="mt-1 list-disc space-y-1 pl-5">
         <li v-for="flag in body.redFlags" :key="flag">{{ flag }}</li>
       </ul>

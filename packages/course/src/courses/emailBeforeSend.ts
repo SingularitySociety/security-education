@@ -109,6 +109,7 @@ export const emailBeforeSendCourse: Course = {
       id: "noticed",
       kind: "conversation",
       channel: "chat",
+      notesKind: "keyPoints",
       contactName: "鈴木課長（営業部）",
       contactDetail: "社内チャット（想定シナリオ）",
       messages: [

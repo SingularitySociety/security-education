@@ -121,6 +121,7 @@ export const hiringAttacksCourse: Course = {
       id: "fake-applicant",
       kind: "conversation",
       channel: "video",
+      notesKind: "keyPoints",
       contactName: "応募者 佐々木",
       contactDetail: "リモート勤務のエンジニア職に応募",
       messages: [
