@@ -117,31 +117,15 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "developers",
     title: "開発者向け",
     audience: "システムを作る・運用する人",
-    courseIds: [],
-    upcoming: [
-      {
-        title: "クラウドの基本設定",
-        summary: "IAMの権限、公開されたストレージ、漏れたアクセスキーなど、クラウドで起きやすい事故を学びます。",
-      },
-      {
-        title: "Webアプリケーションのセキュリティ",
-        summary: "XSS、SQLインジェクション、CSRFなど、Webアプリの代表的な弱点と直し方を学びます。",
-      },
-      {
-        title: "APIのセキュリティ",
-        summary: "認可の不備で他人のデータに届く問題や、レート制限の欠如など、APIの弱点を学びます。",
-      },
-      { title: "安全な設計", summary: "最小権限や信頼の境界など、作る前に考えておく設計の原則を学びます。" },
-      {
-        title: "侵入に気づく仕組み",
-        summary: "侵入されることを前提に、何を検出し、どうアラートを出し、誰がいつ対応するかを学びます。",
-      },
-      {
-        title: "ログとフォレンジック調査",
-        summary:
-          "何をどれだけ記録して守るか、何が・いつから・どこまで取られたかを突き止める手順と証拠の保全を学びます。",
-      },
+    courseIds: [
+      "cloud-basics",
+      "web-app-security",
+      "api-security",
+      "secure-design",
+      "intrusion-detection",
+      "forensics",
     ],
+    upcoming: [],
   },
 ];
 
