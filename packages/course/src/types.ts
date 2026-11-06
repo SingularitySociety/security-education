@@ -20,9 +20,7 @@ export type EmailSample = {
   fromAddress: string;
   subject: string;
   body: string[];
-  linkLabel: string;
-  linkUrl: string;
-};
+} & ({ linkLabel: string; linkUrl: string } | { linkLabel?: never; linkUrl?: never });
 
 export type RedFlag<Target extends string> = {
   target: Target;
@@ -76,7 +74,21 @@ export type PasswordsScene = Narrated & {
   rows: PasswordRow[];
 };
 
-export type Scene = TitleScene | PointsScene | EmailScene | SmsScene | UrlScene | PasswordsScene;
+export type ConversationMessage = {
+  from: "them" | "me";
+  text: string;
+};
+
+export type ConversationScene = Narrated & {
+  kind: "conversation";
+  channel: "phone" | "chat" | "video";
+  contactName: string;
+  contactDetail: string;
+  messages: ConversationMessage[];
+  redFlags: string[];
+};
+
+export type Scene = TitleScene | PointsScene | EmailScene | SmsScene | UrlScene | PasswordsScene | ConversationScene;
 
 export type Choice = {
   id: string;

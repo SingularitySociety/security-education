@@ -36,22 +36,24 @@ export const EmailSceneView = ({ scene, narrationFrames }: { scene: EmailScene; 
             </p>
           ))}
         </Highlight>
-        <Highlight startFrame={startFrames.get("link")}>
-          <div style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start" }}>
-            <div
-              style={{
-                backgroundColor: "#2563eb",
-                color: "white",
-                padding: "16px 36px",
-                borderRadius: 12,
-                fontWeight: 700,
-              }}
-            >
-              {email.linkLabel}
+        {email.linkLabel !== undefined && (
+          <Highlight startFrame={startFrames.get("link")}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 8, alignItems: "flex-start" }}>
+              <div
+                style={{
+                  backgroundColor: "#2563eb",
+                  color: "white",
+                  padding: "16px 36px",
+                  borderRadius: 12,
+                  fontWeight: 700,
+                }}
+              >
+                {email.linkLabel}
+              </div>
+              <div style={{ fontSize: 24, color: "#6b7280" }}>{email.linkUrl}</div>
             </div>
-            <div style={{ fontSize: 24, color: "#6b7280" }}>{email.linkUrl}</div>
-          </div>
-        </Highlight>
+          </Highlight>
+        )}
       </div>
       <div style={{ flex: 2 }}>
         <RedFlagList redFlags={scene.redFlags} startFrames={startFrames} />

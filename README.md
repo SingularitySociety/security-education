@@ -11,6 +11,9 @@
 | パスワードとアカウントの基本 | 約3分30秒 |
 | メールのフィッシング         | 約3分30秒 |
 | SMSのスミッシング            | 約2分     |
+| 電話と画面でだます手口       | 約7分     |
+| 上司や同僚を名乗る指示       | 約5分30秒 |
+| 採用を使った攻撃             | 約6分     |
 
 確認テストは、コースごとの問題プールから毎回ランダムに出題する（出題数は `QUIZ_QUESTION_COUNT`）。選択肢の並びも毎回入れ替わるので、解説では選択肢を記号（a〜d）で指さないこと。
 
@@ -52,5 +55,5 @@ yarn format && yarn lint && yarn typecheck && yarn test && yarn build
 ## コースの追加
 
 `packages/course/src/courses/` にコースを1ファイル追加し、`packages/course/src/index.ts` の `courses` に登録する。
-シーンの種類は `title` / `points` / `email` / `sms` / `url` / `passwords`（`packages/course/src/types.ts`）。
+シーンの種類は `title` / `points` / `email` / `sms` / `url` / `passwords` / `conversation`（`packages/course/src/types.ts`）。
 例の会社名・ドメインはすべて架空（`.example`）にすること。
