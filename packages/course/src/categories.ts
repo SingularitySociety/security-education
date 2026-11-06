@@ -114,18 +114,8 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "incident",
     title: "事故が起きたとき",
     audience: "会社で働く人・経営者・管理担当",
-    courseIds: [],
-    upcoming: [
-      {
-        title: "インシデント発生時の初動",
-        summary: "感染・誤送信・紛失・乗っ取りに気づいた直後に何をするか、誰に何をいつ報告するかを学びます。",
-      },
-      {
-        title: "バックアップと復旧",
-        summary:
-          "ランサムウェアに備えて、何をどう分けて保管し、本当に戻せるかを試し、止まった業務をどう続けるかを学びます。",
-      },
-    ],
+    courseIds: ["incident-first-response", "backup-recovery"],
+    upcoming: [],
   },
   {
     id: "it-admin",
