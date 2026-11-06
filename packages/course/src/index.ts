@@ -35,10 +35,13 @@ export const courses: readonly Course[] = [
   installSourcesCourse,
   aiPromptInjectionCourse,
   aiDataAndToolsCourse,
+  patchingCourse,
+  dataDisposalCourse,
+  accountLifecycleCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.
-export const draftCourses: readonly Course[] = [patchingCourse, dataDisposalCourse, accountLifecycleCourse];
+export const draftCourses: readonly Course[] = [];
 
 export const findCourse = (courseId: string): Course | undefined => courses.find((course) => course.id === courseId);
 
