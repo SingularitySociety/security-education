@@ -10,6 +10,7 @@ export type * from "./types.ts";
 export * from "./scoring.ts";
 export * from "./progress.ts";
 export * from "./drawQuiz.ts";
+export * from "./reviewPoints.ts";
 
 export const courses: readonly Course[] = [
   passwordsCourse,
