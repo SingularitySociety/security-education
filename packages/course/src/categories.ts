@@ -48,6 +48,7 @@ export const courseCategories: readonly CourseCategory[] = [
       "mfa-methods",
       "master-account",
       "browser-data-theft",
+      "realtime-phishing",
     ],
     upcoming: [],
   },
@@ -55,7 +56,15 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "scams",
     title: "電話やネットの詐欺",
     audience: "すべての人",
-    courseIds: ["phone-scams", "online-scams", "fake-police", "ai-voice-impersonation"],
+    courseIds: [
+      "phone-scams",
+      "online-scams",
+      "fake-police",
+      "ai-voice-impersonation",
+      "financial-support-takeover",
+      "investment-romance-scams",
+      "fake-side-jobs",
+    ],
     upcoming: [],
   },
   {
@@ -111,7 +120,7 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "incident",
     title: "事故が起きたとき",
     audience: "会社で働く人・経営者・管理担当",
-    courseIds: ["incident-first-response", "backup-recovery", "business-sns-takeover"],
+    courseIds: ["incident-first-response", "backup-recovery", "business-sns-takeover", "email-takeover-abuse"],
     upcoming: [],
   },
   {
