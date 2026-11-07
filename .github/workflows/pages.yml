@@ -27,6 +27,9 @@ jobs:
           node-version: 24
           cache: yarn
       - run: yarn install --frozen-lockfile
+        env:
+          # The narration engine uses onnxruntime's bundled CPU runtime; its install script would fetch CUDA files.
+          ONNXRUNTIME_NODE_INSTALL: skip
       # Narration needs macOS `say`, so videos are rendered locally and attached to a release.
       - run: gh release download "$VIDEOS_RELEASE_TAG" --pattern "*.mp4" --dir packages/web/public/videos
         env:
