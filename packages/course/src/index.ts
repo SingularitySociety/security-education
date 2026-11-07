@@ -72,6 +72,11 @@ import { consentPhishingCourse } from "./courses/consentPhishing.ts";
 import { otIotSitesCourse } from "./courses/otIotSites.ts";
 import { payrollTakeoverCourse } from "./courses/payrollTakeover.ts";
 import type { Course } from "./types.ts";
+import { courseCategories } from "./categories.ts";
+import { checklistGroups } from "./checklist.ts";
+import { buildSitePages } from "./sitePages.ts";
+import type { SitePage } from "./sitePages.ts";
+import { videoDurationSeconds } from "./videoDuration.ts";
 
 export type * from "./types.ts";
 export * from "./scoring.ts";
@@ -83,6 +88,8 @@ export * from "./categories.ts";
 export * from "./videoDuration.ts";
 export * from "./checklist.ts";
 export * from "./checklistProgress.ts";
+export * from "./sitePages.ts";
+export * from "./pageHtml.ts";
 
 export const courses: readonly Course[] = [
   passwordsCourse,
@@ -168,3 +175,6 @@ export const findCourse = (courseId: string): Course | undefined => courses.find
 export const voiceFileName = (courseId: string, sceneId: string): string => `voice/${courseId}/${sceneId}.wav`;
 
 export const videoFileName = (courseId: string): string => `videos/${courseId}.mp4`;
+
+export const sitePages = (): SitePage[] =>
+  buildSitePages({ courses, categories: courseCategories, checklistGroups, videoSeconds: videoDurationSeconds });

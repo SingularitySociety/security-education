@@ -2,6 +2,7 @@ import { Composition, staticFile } from "remotion";
 import type { CalculateMetadataFunction } from "remotion";
 import { courses, findCourse } from "@security-education/course";
 import { CourseVideo, type CourseVideoProps } from "./CourseVideo.tsx";
+import { OG_IMAGE_HEIGHT_PX, OG_IMAGE_WIDTH_PX, OgImage } from "./OgImage.tsx";
 import { durationsFileName, isVoiceDurations, sceneFramesFor } from "./voice.ts";
 
 const FPS = 30;
@@ -46,5 +47,14 @@ export const Root = () => (
         height={HEIGHT_PX}
       />
     ))}
+    <Composition
+      id="og-image"
+      component={OgImage}
+      defaultProps={{ title: "", tagline: "" }}
+      durationInFrames={PLACEHOLDER_FRAMES}
+      fps={FPS}
+      width={OG_IMAGE_WIDTH_PX}
+      height={OG_IMAGE_HEIGHT_PX}
+    />
   </>
 );

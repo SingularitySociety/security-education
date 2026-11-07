@@ -7,6 +7,7 @@
     "studio": "remotion studio src/index.ts",
     "voice": "node scripts/generate-voice.ts",
     "render": "node scripts/render-all.ts",
+    "og": "node scripts/render-og.ts",
     "readings:check": "node scripts/check-readings.ts",
     "readings:kana": "node scripts/readings-as-kana.ts",
     "typecheck": "tsc --noEmit"
