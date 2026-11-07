@@ -20,6 +20,9 @@ jobs:
           node-version: 24
           cache: yarn
       - run: yarn install --frozen-lockfile
+        env:
+          # The narration engine uses onnxruntime's bundled CPU runtime; its install script would fetch CUDA files.
+          ONNXRUNTIME_NODE_INSTALL: skip
       - run: yarn lint
       - run: yarn typecheck
       - run: yarn test
