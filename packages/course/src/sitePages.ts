@@ -1,3 +1,4 @@
+import type { AudiencePage } from "./audiencePages.ts";
 import type { CourseCategory } from "./categories.ts";
 import type { ChecklistGroup } from "./checklist.ts";
 import { toReviewSections } from "./reviewPoints.ts";
@@ -31,6 +32,7 @@ export type SitePage = {
 export type SiteContent = {
   courses: readonly Course[];
   categories: readonly CourseCategory[];
+  audiences: readonly AudiencePage[];
   checklistGroups: readonly ChecklistGroup[];
   videoSeconds: (courseId: string) => number | undefined;
 };
@@ -45,6 +47,12 @@ export const fileUrl = (relativePath: string): string => `${SITE_URL}${relativeP
 export const coursePath = (courseId: string): string => `courses/${courseId}`;
 
 export const quizPath = (courseId: string): string => `courses/${courseId}/quiz`;
+
+export const categoryPath = (categoryId: string): string => `categories/${categoryId}`;
+
+export const audiencePath = (audienceId: string): string => `for/${audienceId}`;
+
+const LISTED_TITLES_IN_DESCRIPTION = 3;
 
 const pageTitle = (heading: string): string => `${heading}｜${SITE_NAME}`;
 
@@ -84,6 +92,83 @@ const courseJsonLd = (course: Course, seconds: number | undefined): JsonLd => ({
   hasCourseInstance: { "@type": "CourseInstance", courseMode: "online", courseWorkload: workloadIso(seconds) },
 });
 
+const coursesByIds = (content: SiteContent, courseIds: readonly string[]): Course[] =>
+  courseIds.flatMap((id) => content.courses.filter((course) => course.id === id));
+
+const itemListJsonLd = (name: string, courses: readonly Course[]): JsonLd => ({
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name,
+  itemListElement: courses.map((course, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    url: pageUrl(coursePath(course.id)),
+    name: course.title,
+  })),
+});
+
+const categoryDescription = (category: CourseCategory, courses: readonly Course[]): string => {
+  const titles = courses.slice(0, LISTED_TITLES_IN_DESCRIPTION).map((course) => `「${course.title}」`);
+  const more = courses.length > LISTED_TITLES_IN_DESCRIPTION ? "など" : "";
+  return `${category.title}（対象：${category.audience}）のコース${courses.length}本。${titles.join("")}${more}を、無料の動画と確認テストで学べます。`;
+};
+
+const categoryPage = (category: CourseCategory, content: SiteContent): SitePage => {
+  const courses = coursesByIds(content, category.courseIds);
+  return {
+    path: categoryPath(category.id),
+    title: pageTitle(category.title),
+    heading: category.title,
+    tagline: `対象：${category.audience}`,
+    description: categoryDescription(category, courses),
+    ogImageKey: `category-${category.id}`,
+    indexable: true,
+    jsonLd: [itemListJsonLd(category.title, courses)],
+    sections: [{ heading: "コース", items: courses.map(courseLink) }],
+  };
+};
+
+const checklistTexts = (content: SiteContent, groupIds: readonly string[]): PageLink[] =>
+  content.checklistGroups
+    .filter((group) => groupIds.includes(group.id))
+    .flatMap((group) => group.items.map((item) => ({ text: item.text })));
+
+const audienceSitePage = (audience: AudiencePage, content: SiteContent): SitePage => {
+  const stepSections = audience.steps.map((step) => ({
+    heading: step.heading,
+    items: [{ text: step.note }, ...coursesByIds(content, step.courseIds).map(courseLink)],
+  }));
+  return {
+    path: audiencePath(audience.id),
+    title: pageTitle(audience.title),
+    heading: audience.title,
+    tagline: audience.tagline,
+    description: audience.description,
+    ogImageKey: `for-${audience.id}`,
+    indexable: true,
+    jsonLd: [
+      itemListJsonLd(
+        audience.title,
+        coursesByIds(
+          content,
+          audience.steps.flatMap((step) => step.courseIds),
+        ),
+      ),
+    ],
+    sections: [
+      { heading: "はじめに", items: audience.intro.map((text) => ({ text })), layout: "paragraphs" },
+      ...stepSections,
+      {
+        heading: "チェックリスト",
+        items: [
+          ...checklistTexts(content, audience.checklistGroupIds),
+          { text: "安全チェックリスト", path: "checklist" },
+        ],
+      },
+    ],
+  };
+};
+
 const homePage = (content: SiteContent): SitePage => ({
   path: "",
   title: `${SITE_NAME}｜詐欺・乗っ取り・情報漏えいから身を守る無料の動画とテスト`,
@@ -104,10 +189,19 @@ const homePage = (content: SiteContent): SitePage => ({
     },
   ],
   sections: [
-    { heading: "チェックリスト", items: [{ text: "安全チェックリスト", path: "checklist" }] },
+    {
+      heading: "目的から選ぶ",
+      items: [
+        ...content.audiences.map((audience) => ({ text: audience.title, path: audiencePath(audience.id) })),
+        { text: "安全チェックリスト", path: "checklist" },
+      ],
+    },
     ...content.categories.map((category) => ({
       heading: `${category.title}（対象：${category.audience}）`,
-      items: category.courseIds.flatMap((id) => content.courses.filter((course) => course.id === id)).map(courseLink),
+      items: [
+        { text: `${category.title}のページ`, path: categoryPath(category.id) },
+        ...coursesByIds(content, category.courseIds).map(courseLink),
+      ],
     })),
   ],
 });
@@ -158,6 +252,8 @@ const quizPage = (course: Course): SitePage => ({
 export const buildSitePages = (content: SiteContent): SitePage[] => [
   homePage(content),
   checklistPage(content),
+  ...content.audiences.map((audience) => audienceSitePage(audience, content)),
+  ...content.categories.map((category) => categoryPage(category, content)),
   ...content.courses.flatMap((course) => [coursePage(course, content), quizPage(course)]),
 ];
 
