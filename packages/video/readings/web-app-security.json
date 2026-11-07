@@ -1,105 +1,105 @@
 {
- "intro": [
-  "ja /kono<t:この> ɾessɯɴ<t:レッスン> wa<t:は> ‖<t:、> webɯapɯɾikeːɕoɴ<t:ウェブアプリケーション> o<t:を> tsɯkɯɾɯ<t:作る> kaihatsɯɕa<t:開発者> mɯke<t:向け> desɯ<t:です。> ↘/",
-  "ja /kɯɾosɯsaitosɯkɯɾipɯtiŋɡɯ<t:クロスサイトスクリプティング> ‖<t:、> esɯkʲɯːeɾɯiɲdʑekɯɕoɴ<t:エスキューエルインジェクション> ‖<t:、> ɕiːsaːɸɯ<t:シーサーフ> to<t:と> itta<t:いった> daiçoːteki<t:代表的> na<t:な> dʑakɯteɴ<t:弱点> no<t:の> ɯmaɾekata<t:生まれ方> to<t:と> ɸɯseɡikata<t:防ぎ方> o<t:を> ‖<t:、> koːdo<t:コード> de<t:で> taɕikamemasɯ<t:確かめます。> ↘/",
-  "ja /tehoɴ<t:手本> ɲi<t:に> sɯɾɯ<t:する> no<t:の> wa<t:は> ‖<t:、> aipiːeː<t:アイピーエー> no<t:の> ‖<t:、> andzeɴ<t:安全> na<t:な> webɯsaito<t:ウェブサイト> no<t:の> tsɯkɯɾikata<t:作り方> ‖<t:、> kaiteː<t:改訂> dainanahaɴ<t:第七版> desɯ<t:です。> ↘/"
- ],
- "why": [
-  "ja /webɯapɯɾikeːɕoɴ<t:ウェブアプリケーション> no<t:の> dʑakɯteɴ<t:弱点> no<t:の> oːkɯ<t:多く> wa<t:は> ‖<t:、> soto<t:外> kaɾa<t:から> kita<t:来た> atai<t:値> no<t:の> atsɯkai<t:扱い> kaɾa<t:から> ɯmaɾemasɯ<t:生まれます。> ↘/",
-  "ja /ɸoːmɯ<t:フォーム> no<t:の> ɲɯːɾʲokɯ<t:入力> ‖<t:、> jɯːaːɾɯeɾɯ<t:ユーアールエル> ‖<t:、> kɯkkiː<t:クッキー> nado<t:など> wa<t:は> ‖<t:、> koːɡekiɕa<t:攻撃者> ɡa<t:が> bɯɾaɯdza<t:ブラウザ> o<t:を> toːsadzɯ<t:通さず> ɲi<t:に> ‖<t:、> dʑijɯː<t:自由> ɲi<t:に> tsɯkɯtte<t:作って> okɯɾemasɯ<t:送れます。> ↘/",
-  "ja /sono<t:その> atai<t:値> o<t:を> eitɕitiːemɯeɾɯ<t:エイチティーエムエル> ja<t:や> esɯkʲɯːeɾɯ<t:エスキューエル> ɲi<t:に> madzeɾɯ<t:混ぜる> to<t:と> ‖<t:、> meːɾeː<t:命令> to<t:と> ɕite<t:して> kaiɕakɯ<t:解釈> saɾeɾɯ<t:される> koto<t:こと> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
-  "ja /aipiːeː<t:アイピーエー> e<t:へ> no<t:の> webɯsaito<t:ウェブサイト> no<t:の> dzeːdʑakɯseː<t:脆弱性> no<t:の> todokede<t:届出> dewa<t:では> ‖<t:、> koɾe<t:これ> made<t:まで> no<t:の> ɾɯikeː<t:累計> de<t:で> ‖<t:、> kɯɾosɯsaitosɯkɯɾipɯtiŋɡɯ<t:クロスサイトスクリプティング> ɡa<t:が> mottomo<t:最も> oːkɯ<t:多く> ‖<t:、> tsɯide<t:次いで> esɯkʲɯːeɾɯiɲdʑekɯɕoɴ<t:エスキューエルインジェクション> desɯ<t:です。> ↘/",
-  "ja /koɾe<t:これ> wa<t:は> todokede<t:届出> no<t:の> keːkoː<t:傾向> de<t:で> ‖<t:、> kikeɴ<t:危険> no<t:の> oːkisa<t:大きさ> no<t:の> dʑɯɴi<t:順位> dewa<t:では> aɾimaseɴ<t:ありません。> ↘/",
-  "ja /taisakɯ<t:対策> wa<t:は> ‖<t:、> dʑakɯteɴ<t:弱点> o<t:を> tsɯkɯɾikomanai<t:作り込まない> komponteki<t:根本的> kaiketsɯ<t:解決> o<t:を> hontai<t:本体> ɲi<t:に> ɕi<t:し> ‖<t:、> eːkʲoː<t:影響> o<t:を> tɕiːsakɯ<t:小さく> sɯɾɯ<t:する> hokenteki<t:保険的> taisakɯ<t:対策> o<t:を> kasanemasɯ<t:重ねます。> ↘/"
- ],
- "xss-flow": [
-  "ja /kɯɾosɯsaitosɯkɯɾipɯtiŋɡɯ<t:クロスサイトスクリプティング> wa<t:は> ‖<t:、> ɾijoːɕa<t:利用者> ɡa<t:が> ɲɯːɾʲokɯ<t:入力> ɕita<t:した> atai<t:値> o<t:を> ‖<t:、> sonomama<t:そのまま> peːdʑi<t:ページ> ɲi<t:に> ɕɯtsɯɾʲokɯ<t:出力> sɯɾɯ<t:する> koto<t:こと> de<t:で> okimasɯ<t:起きます。> ↘/",
-  "ja /koːɡekiɕa<t:攻撃者> ɡa<t:が> ‖<t:、> komentoɾaɴ<t:コメント欄> ɲi<t:に> sɯkɯɾipɯto<t:スクリプト> no<t:の> taɡɯ<t:タグ> o<t:を> madzete<t:混ぜて> toːkoː<t:投稿> ɕimasɯ<t:します。> ↘/",
-  "ja /soɾe<t:それ> ɡa<t:が> esɯkeːpɯ<t:エスケープ> saɾedzɯ<t:されず> ɲi<t:に> ɕɯtsɯɾʲokɯ<t:出力> saɾeɾɯ<t:される> to<t:と> ‖<t:、> etsɯɾaɴ<t:閲覧> ɕita<t:した> çito<t:人> no<t:の> bɯɾaɯdza<t:ブラウザ> de<t:で> dʑikkoː<t:実行> saɾemasɯ<t:されます。> ↘/",
-  "ja /sono<t:その> sɯkɯɾipɯto<t:スクリプト> wa<t:は> ‖<t:、> etsɯɾaɴ<t:閲覧> ɕita<t:した> çito<t:人> no<t:の> keŋɡeɴ<t:権限> de<t:で> katte<t:勝手> ɲi<t:に> soːsa<t:操作> o<t:を> ɕitaɾi<t:したり> ‖<t:、> ɲise<t:偽> no<t:の> ɲɯːɾʲokɯ<t:入力> ɡameɴ<t:画面> o<t:を> daɕitaɾi<t:出したり> dekimasɯ<t:できます。> ↘/",
-  "ja /kɯkkiː<t:クッキー> ɲi<t:に> eitɕitiːtiːpiːonɾiː<t:エイチティーティーピーオンリー> dzokɯseː<t:属性> o<t:を> tsɯkete<t:付けて> mo<t:も> ‖<t:、> koːɕita<t:こうした> soːsa<t:操作> made<t:まで> wa<t:は> ɸɯseɡemaseɴ<t:防げません。> ↘/"
- ],
- "xss-code": [
-  "ja /komponteki<t:根本的> na<t:な> taisakɯ<t:対策> wa<t:は> ‖<t:、> peːdʑi<t:ページ> ɲi<t:に> ɕɯtsɯɾʲokɯ<t:出力> sɯɾɯ<t:する> toki<t:とき> ɲi<t:に> esɯkeːpɯ<t:エスケープ> sɯɾɯ<t:する> koto<t:こと> desɯ<t:です。> ↘/",
-  "ja /akai<t:赤い> ɡʲoː<t:行> no<t:の> joːɲi<t:ように> ‖<t:、> innaːeitɕitiːemɯeɾɯ<t:インナーエイチティーエムエル> ɲi<t:に> atai<t:値> o<t:を> sonomama<t:そのまま> iɾeɾɯ<t:入れる> to<t:と> ‖<t:、> taɡɯ<t:タグ> to<t:と> ɕite<t:して> kaiɕakɯ<t:解釈> saɾemasɯ<t:されます。> ↘/",
-  "ja /midoɾi<t:緑> no<t:の> ɡʲoː<t:行> no<t:の> joːɲi<t:ように> ‖<t:、> tekisɯtokontento<t:テキストコンテント> o<t:を> tsɯkaeba<t:使えば> ‖<t:、> modʑi<t:文字> to<t:と> ɕite<t:して> çoːdʑi<t:表示> saɾemasɯ<t:されます。> ↘/",
-  "ja /esɯkeːpɯ<t:エスケープ> no<t:の> hoːhoː<t:方法> wa<t:は> ‖<t:、> hombɯɴ<t:本文> ‖<t:、> dzokɯseː<t:属性> ‖<t:、> jɯːaːɾɯeɾɯ<t:ユーアールエル> nado<t:など> ‖<t:、> ɕɯtsɯɾʲokɯ<t:出力> sɯɾɯ<t:する> baɕo<t:場所> ɲi<t:に> jotte<t:よって> kawaɾimasɯ<t:変わります。> ↘/",
-  "ja /dʑibɯɴ<t:自分> de<t:で> okikae<t:置き換え> o<t:を> kakadzɯ<t:書かず> ‖<t:、> tempɯɾeːto<t:テンプレート> no<t:の> dʑidoː<t:自動> esɯkeːpɯ<t:エスケープ> nado<t:など> no<t:の> ɕikɯmi<t:仕組み> ɲi<t:に> makasemaɕoː<t:任せましょう。> ↘/",
-  "ja /nama<t:生> no<t:の> mama<t:まま> dasɯ<t:出す> ‖<t:、> to<t:と> iɯ<t:いう> ɕiteː<t:指定> o<t:を> tsɯkeɾɯ<t:付ける> to<t:と> ‖<t:、> sono<t:その> mamoɾi<t:守り> ɡa<t:が> hadzɯɾemasɯ<t:外れます。> ↘/",
-  "ja /ɾijoːɕa<t:利用者> ɡa<t:が> ɲɯːɾʲokɯ<t:入力> ɕita<t:した> jɯːaːɾɯeɾɯ<t:ユーアールエル> o<t:を> ɾiŋkɯsaki<t:リンク先> ɲi<t:に> sɯɾɯ<t:する> toki<t:とき> wa<t:は> ‖<t:、> eitɕitiːtiːpiː<t:エイチティーティーピー> ka<t:か> eitɕitiːtiːpiːesɯ<t:エイチティーティーピーエス> de<t:で> hadʑimaɾɯ<t:始まる> mono<t:もの> dake<t:だけ> o<t:を> kʲoka<t:許可> ɕimasɯ<t:します。> ↘/"
- ],
- "sqli-code": [
-  "ja /esɯkʲɯːeɾɯiɲdʑekɯɕoɴ<t:エスキューエルインジェクション> wa<t:は> ‖<t:、> ɾijoːɕa<t:利用者> no<t:の> ɲɯːɾʲokɯ<t:入力> o<t:を> ‖<t:、> esɯkʲɯːeɾɯ<t:エスキューエル> no<t:の> bɯɴ<t:文> ɲi<t:に> modʑiɾetsɯ<t:文字列> to<t:と> ɕite<t:して> tsɯnaɡeɾɯ<t:つなげる> koto<t:こと> de<t:で> okimasɯ<t:起きます。> ↘/",
-  "ja /akai<t:赤い> ɡʲoː<t:行> dewa<t:では> ‖<t:、> jɯːaːɾɯeɾɯ<t:ユーアールエル> no<t:の> atai<t:値> o<t:を> ‖<t:、> sonomama<t:そのまま> bɯɴ<t:文> no<t:の> naka<t:中> ɲi<t:に> ɾeŋketsɯ<t:連結> ɕite<t:して> imasɯ<t:います。> ↘/",
-  "ja /atai<t:値> ɲi<t:に> iɴjoːɸɯ<t:引用符> nado<t:など> ɡa<t:が> ɸɯkɯmaɾeɾɯ<t:含まれる> to<t:と> ‖<t:、> bɯɴ<t:文> no<t:の> imi<t:意味> ɡa<t:が> kakikawaɾimasɯ<t:書き換わります。> ↘/",
-  "ja /komponteki<t:根本的> na<t:な> taisakɯ<t:対策> wa<t:は> ‖<t:、> pɯɾeːsɯhoɾɯda<t:プレースホルダ> desɯ<t:です。> ↘/",
-  "ja /midoɾi<t:緑> no<t:の> ɡʲoː<t:行> no<t:の> joːɲi<t:ように> ‖<t:、> bɯɴ<t:文> no<t:の> naka<t:中> ɲi<t:に> atai<t:値> no<t:の> baɕo<t:場所> o<t:を> ɕimesɯ<t:示す> kiɡoː<t:記号> o<t:を> oki<t:置き> ‖<t:、> atai<t:値> wa<t:は> betsɯ<t:別> ɲi<t:に> wataɕite<t:渡して> ‖<t:、> ɾaibɯɾaɾi<t:ライブラリ> ja<t:や> deːtabeːsɯ<t:データベース> no<t:の> ɕikɯmi<t:仕組み> de<t:で> waɾiatemasɯ<t:割り当てます。> ↘/",
-  "ja /kiɡoː<t:記号> no<t:の> kakikata<t:書き方> wa<t:は> ‖<t:、> tsɯkaɯ<t:使う> seːçiɴ<t:製品> ɲi<t:に> jotte<t:よって> tɕiɡaimasɯ<t:違います。> ↘/",
-  "ja /aipiːeː<t:アイピーエー> wa<t:は> ‖<t:、> esɯkʲɯːeɾɯbɯɴ<t:エスキューエル文> no<t:の> kɯmitate<t:組み立て> o<t:を> ‖<t:、> sɯbete<t:すべて> pɯɾeːsɯhoɾɯda<t:プレースホルダ> de<t:で> dʑissoː<t:実装> sɯɾɯ<t:する> joː<t:よう> sɯsɯmete<t:勧めて> imasɯ<t:います。> ↘/",
-  "ja /awasete<t:あわせて> ‖<t:、> deːtabeːsɯ<t:データベース> ɲi<t:に> tsɯnaɡɯ<t:つなぐ> akaɯnto<t:アカウント> no<t:の> keŋɡeɴ<t:権限> o<t:を> ɕiboɾimasɯ<t:絞ります。> ↘/"
- ],
- "validate": [
-  "ja /ɲɯːɾʲokɯ<t:入力> no<t:の> keɴɕoː<t:検証> mo<t:も> okonaimasɯ<t:行います。> ↘/",
-  "ja /kata<t:型> ja<t:や> ketasɯː<t:桁数> ‖<t:、> keːɕiki<t:形式> ɡa<t:が> ɕijoː<t:仕様> doːɾi<t:どおり> ka<t:か> o<t:を> ‖<t:、> kanaɾadzɯ<t:必ず> saːbaːɡawa<t:サーバー側> de<t:で> taɕikame<t:確かめ> ‖<t:、> awanakeɾeba<t:合わなければ> kotowaɾimasɯ<t:断ります。> ↘/",
-  "ja /bɯɾaɯdzaɡawa<t:ブラウザ側> no<t:の> kakɯɲiɴ<t:確認> wa<t:は> ‖<t:、> koːɡekiɕa<t:攻撃者> ɡa<t:が> kantaɴ<t:簡単> ɲi<t:に> tobasemasɯ<t:飛ばせます。> ↘/",
-  "ja /tadaɕi<t:ただし> ‖<t:、> aipiːeː<t:アイピーエー> wa<t:は> ‖<t:、> ɲɯːɾʲokɯ<t:入力> no<t:の> keɴɕoː<t:検証> o<t:を> hokenteki<t:保険的> taisakɯ<t:対策> to<t:と> itɕidzɯkete<t:位置づけて> imasɯ<t:います。> ↘/",
-  "ja /iɾoiɾo<t:いろいろ> na<t:な> modʑi<t:文字> o<t:を> jɯɾɯsɯ<t:許す> ɾaɴ<t:欄> dewa<t:では> ɸɯseɡikiɾenai<t:防ぎきれない> kaɾa<t:から> desɯ<t:です。> ↘/",
-  "ja /hontai<t:本体> wa<t:は> ‖<t:、> ɕɯtsɯɾʲokɯdʑi<t:出力時> no<t:の> esɯkeːpɯ<t:エスケープ> to<t:と> pɯɾeːsɯhoɾɯda<t:プレースホルダ> desɯ<t:です。> ↘/"
- ],
- "csrf-flow": [
-  "ja /ɕiːsaːɸɯ<t:シーサーフ> wa<t:は> ‖<t:、> ɾijoːɕa<t:利用者> ɡa<t:が> ito<t:意図> ɕite<t:して> inai<t:いない> soːsa<t:操作> o<t:を> ‖<t:、> hoɲɲiɴ<t:本人> no<t:の> namae<t:名前> de<t:で> dʑikkoː<t:実行> saseɾɯ<t:させる> koːɡeki<t:攻撃> desɯ<t:です。> ↘/",
-  "ja /ɾijoːɕa<t:利用者> ɡa<t:が> ‖<t:、> aɾɯ<t:ある> saːbisɯ<t:サービス> ɲi<t:に> ɾoɡɯiɴ<t:ログイン> ɕita<t:した> mama<t:まま> ‖<t:、> betsɯ<t:別> no<t:の> saito<t:サイト> no<t:の> wana<t:罠> no<t:の> peːdʑi<t:ページ> o<t:を> çiɾakimasɯ<t:開きます。> ↘/",
-  "ja /wana<t:罠> no<t:の> peːdʑi<t:ページ> wa<t:は> ‖<t:、> sono<t:その> saːbisɯ<t:サービス> ɲi<t:に> setteː<t:設定> heŋkoː<t:変更> o<t:を> dʑidoː<t:自動> de<t:で> okɯɾimasɯ<t:送ります。> ↘/",
-  "ja /kɯkkiː<t:クッキー> de<t:で> hoɲɲiɴ<t:本人> o<t:を> taɕikameɾɯ<t:確かめる> saːbisɯ<t:サービス> dewa<t:では> ‖<t:、> bɯɾaɯdza<t:ブラウザ> ɡa<t:が> kono<t:この> soːɕiɴ<t:送信> ɲi<t:に> kɯkkiː<t:クッキー> o<t:を> tsɯkeɾɯ<t:付ける> to<t:と> ‖<t:、> hoɲɲiɴ<t:本人> no<t:の> tadaɕii<t:正しい> soːsa<t:操作> ɲi<t:に> miete<t:見えて> ɕimaimasɯ<t:しまいます。> ↘/",
-  "ja /kɯkkiː<t:クッキー> ɡa<t:が> tsɯkɯ<t:付く> ka<t:か> doː<t:どう> ka<t:か> wa<t:は> ‖<t:、> seimɯsaito<t:セイムサイト> dzokɯseː<t:属性> ja<t:や> soːɕiɴ<t:送信> no<t:の> hoːhoː<t:方法> ‖<t:、> bɯɾaɯdza<t:ブラウザ> ɲi<t:に> jotte<t:よって> kawaɾimasɯ<t:変わります。> ↘/"
- ],
- "csrf-code": [
-  "ja /taisakɯ<t:対策> no<t:の> hontai<t:本体> wa<t:は> ‖<t:、> toːkɯɴ<t:トークン> desɯ<t:です。> ↘/",
-  "ja /saːbaː<t:サーバー> ɡa<t:が> ‖<t:、> daisaɴɕa<t:第三者> ɲi<t:に> wa<t:は> sɯisokɯ<t:推測> dekinai<t:できない> atai<t:値> o<t:を> tsɯkɯtte<t:作って> seɕɕoɴ<t:セッション> ɲi<t:に> mɯsɯbitsɯke<t:結び付け> ‖<t:、> toːɾokɯ<t:登録> ja<t:や> heŋkoː<t:変更> no<t:の> ɡameɴ<t:画面> o<t:を> dasɯ<t:出す> toki<t:とき> ɲi<t:に> ‖<t:、> ɸoːmɯ<t:フォーム> no<t:の> kakɯɕi<t:隠し> koːmokɯ<t:項目> ɲi<t:に> ɯmekomimasɯ<t:埋め込みます。> ↘/",
-  "ja /ɕoɾi<t:処理> o<t:を> dʑikkoː<t:実行> sɯɾɯ<t:する> ɡawa<t:側> dewa<t:では> ‖<t:、> midoɾi<t:緑> no<t:の> ɡʲoː<t:行> no<t:の> joːɲi<t:ように> ‖<t:、> okɯɾaɾete<t:送られて> kita<t:きた> atai<t:値> ɡa<t:が> seɕɕoɴ<t:セッション> no<t:の> atai<t:値> to<t:と> ittɕi<t:一致> sɯɾɯ<t:する> ka<t:か> o<t:を> ɕoːɡoː<t:照合> ɕi<t:し> ‖<t:、> nakeɾeba<t:なければ> ‖<t:、> matawa<t:または> tɕiɡaeba<t:違えば> ‖<t:、> ɕoɾi<t:処理> sedzɯ<t:せず> ɲi<t:に> kotowaɾimasɯ<t:断ります。> ↘/",
-  "ja /wana<t:罠> no<t:の> peːdʑi<t:ページ> wa<t:は> kono<t:この> atai<t:値> o<t:を> ɕiɾanai<t:知らない> node<t:ので> ‖<t:、> ɲise<t:偽> no<t:の> soːɕiɴ<t:送信> wa<t:は> kotowaɾaɾemasɯ<t:断られます。> ↘/",
-  "ja /toːkɯɴ<t:トークン> wa<t:は> jɯːaːɾɯeɾɯ<t:ユーアールエル> ɲi<t:に> nosedzɯ<t:載せず> ‖<t:、> dʑɯːjoː<t:重要> na<t:な> ɕoɾi<t:処理> wa<t:は> posɯto<t:ポスト> de<t:で> ɯketsɯkemasɯ<t:受け付けます。> ↘/",
-  "ja /kɯkkiː<t:クッキー> no<t:の> seimɯsaito<t:セイムサイト> dzokɯseː<t:属性> wa<t:は> ‖<t:、> hoka<t:ほか> no<t:の> saito<t:サイト> kaɾa<t:から> no<t:の> soːɕiɴ<t:送信> ɲi<t:に> kɯkkiː<t:クッキー> o<t:を> tsɯkiɲikɯkɯ<t:付きにくく> ɕimasɯ<t:します> ɡa<t:が> ‖<t:、> bɯɾaɯdza<t:ブラウザ> ɲi<t:に> jotte<t:よって> atsɯkai<t:扱い> ɲi<t:に> sa<t:差> ɡa<t:が> aɾɯ<t:ある> node<t:ので> hodʑo<t:補助> to<t:と> kaŋɡae<t:考え> ‖<t:、> meːdʑi<t:明示> ɕite<t:して> setteː<t:設定> ɕimasɯ<t:します。> ↘/"
- ],
- "session": [
-  "ja /seɕɕoɴ<t:セッション> kanɾi<t:管理> ɲi<t:に> mo<t:も> kihoɴ<t:基本> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
-  "ja /ɾoɡɯiɴ<t:ログイン> ɕita<t:した> hoɲɲiɴ<t:本人> o<t:を> ɕimesɯ<t:示す> seɕɕoɴaidiː<t:セッションアイディー> wa<t:は> ‖<t:、> dʑibɯɴ<t:自分> de<t:で> tsɯkɯɾadzɯ<t:作らず> ‖<t:、> ɸɯɾeːmɯwaːkɯ<t:フレームワーク> no<t:の> ɕikɯmi<t:仕組み> de<t:で> sɯisokɯ<t:推測> dekinai<t:できない> atai<t:値> ɲi<t:に> ɕimasɯ<t:します。> ↘/",
-  "ja /jɯːaːɾɯeɾɯ<t:ユーアールエル> ɲi<t:に> noseɾɯ<t:載せる> to<t:と> ‖<t:、> saɴɕoːmoto<t:参照元> no<t:の> dʑoːhoː<t:情報> ja<t:や> ɾiɾeki<t:履歴> kaɾa<t:から> moɾeɾɯ<t:漏れる> node<t:ので> ‖<t:、> kɯkkiː<t:クッキー> de<t:で> ɯkewataɕimasɯ<t:受け渡します。> ↘/",
-  "ja /ɾoɡɯiɴ<t:ログイン> ɲi<t:に> seːkoː<t:成功> ɕitaɾa<t:したら> ‖<t:、> ataɾaɕii<t:新しい> seɕɕoɴ<t:セッション> o<t:を> hadʑimemasɯ<t:始めます。> ↘/",
-  "ja /ɾoɡɯimmae<t:ログイン前> no<t:の> atai<t:値> o<t:を> tsɯkaitsɯdzɯkeɾɯ<t:使い続ける> to<t:と> ‖<t:、> koːɡekiɕa<t:攻撃者> ɡa<t:が> joːi<t:用意> ɕita<t:した> atai<t:値> o<t:を> tsɯkawasaɾeɾɯ<t:使わされる> koto<t:こと> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
-  "ja /kɯkkiː<t:クッキー> ɲi<t:に> wa<t:は> ‖<t:、> aŋɡoːka<t:暗号化> ɕita<t:した> tsɯːɕiɴ<t:通信> de<t:で> dake<t:だけ> okɯɾɯ<t:送る> sekʲɯa<t:セキュア> dzokɯseː<t:属性> ‖<t:、> sɯkɯɾipɯto<t:スクリプト> kaɾa<t:から> jomenakɯ<t:読めなく> sɯɾɯ<t:する> eitɕitiːtiːpiːonɾiː<t:エイチティーティーピーオンリー> dzokɯseː<t:属性> ‖<t:、> soɕite<t:そして> seimɯsaito<t:セイムサイト> dzokɯseː<t:属性> o<t:を> tsɯkemasɯ<t:付けます。> ↘/",
-  "ja /jɯːkoː<t:有効> kiɡeɴ<t:期限> wa<t:は> çitsɯjoː<t:必要> idʑoː<t:以上> ɲi<t:に> naɡakɯ<t:長く> sedzɯ<t:せず> ‖<t:、> ɾoɡɯaɯto<t:ログアウト> ɕitaɾa<t:したら> saːbaːɡawa<t:サーバー側> demo<t:でも> haki<t:破棄> ɕimasɯ<t:します。> ↘/"
- ],
- "errors": [
-  "ja /eɾaː<t:エラー> no<t:の> çoːdʑi<t:表示> ɲi<t:に> mo<t:も> tɕɯːi<t:注意> ɕimasɯ<t:します。> ↘/",
-  "ja /ɾeːɡai<t:例外> no<t:の> kɯwaɕii<t:詳しい> naijoː<t:内容> o<t:を> ɡameɴ<t:画面> ɲi<t:に> kaesɯ<t:返す> to<t:と> ‖<t:、> deːtabeːsɯ<t:データベース> no<t:の> ɕɯɾɯi<t:種類> ja<t:や> ‖<t:、> ɕippai<t:失敗> ɕita<t:した> esɯkʲɯːeɾɯbɯɴ<t:エスキューエル文> ‖<t:、> ɸaiɾɯ<t:ファイル> no<t:の> okibaɕo<t:置き場所> ɡa<t:が> ‖<t:、> koːɡeki<t:攻撃> no<t:の> teɡakaɾi<t:手がかり> ɲi<t:に> naɾimasɯ<t:なります。> ↘/",
-  "ja /aipiːeː<t:アイピーエー> mo<t:も> ‖<t:、> eɾaːmesseːdʑi<t:エラーメッセージ> o<t:を> sonomama<t:そのまま> bɯɾaɯdza<t:ブラウザ> ɲi<t:に> çoːdʑi<t:表示> ɕinai<t:しない> joː<t:よう> sɯsɯmete<t:勧めて> imasɯ<t:います。> ↘/",
-  "ja /kɯwaɕii<t:詳しい> naijoː<t:内容> wa<t:は> saːbaː<t:サーバー> no<t:の> ɾoɡɯ<t:ログ> ɲi<t:に> nokoɕi<t:残し> ‖<t:、> ɾijoːɕa<t:利用者> ɲi<t:に> wa<t:は> ‖<t:、> saːbaː<t:サーバー> ɡa<t:が> tsɯkɯtta<t:作った> toiawase<t:問い合わせ> baŋɡoː<t:番号> dake<t:だけ> o<t:を> kaeɕimasɯ<t:返します。> ↘/",
-  "ja /ɾoɡɯ<t:ログ> ɲi<t:に> mo<t:も> ‖<t:、> pasɯwaːdo<t:パスワード> ja<t:や> kodʑiɴ<t:個人> dʑoːhoː<t:情報> o<t:を> sonomama<t:そのまま> dasadzɯ<t:出さず> ‖<t:、> ɸɯsete<t:伏せて> kaɾa<t:から> nokoɕimasɯ<t:残します。> ↘/",
-  "ja /ɾoɡɯiɴ<t:ログイン> ɲi<t:に> ɕippai<t:失敗> ɕita<t:した> toki<t:とき> wa<t:は> ‖<t:、> aidiː<t:アイディー> ka<t:か> pasɯwaːdo<t:パスワード> ɡa<t:が> tɕiɡaimasɯ<t:違います> ‖<t:、> to<t:と> kaeɕimasɯ<t:返します。> ↘/",
-  "ja /dotɕiɾa<t:どちら> ɡa<t:が> tɕiɡaɯ<t:違う> ka<t:か> o<t:を> oɕieɾɯ<t:教える> to<t:と> ‖<t:、> toːɾokɯdzɯmi<t:登録済み> no<t:の> aidiː<t:アイディー> o<t:を> waɾidasɯ<t:割り出す> teɡakaɾi<t:手がかり> ɲi<t:に> naɾimasɯ<t:なります。> ↘/"
- ],
- "deps": [
-  "ja /dʑibɯɴ<t:自分> no<t:の> koːdo<t:コード> ɡa<t:が> tadaɕikɯtemo<t:正しくても> ‖<t:、> tsɯkatte<t:使って> iɾɯ<t:いる> ɾaibɯɾaɾi<t:ライブラリ> ɲi<t:に> dzeːdʑakɯseː<t:脆弱性> ɡa<t:が> mitsɯkaɾɯ<t:見つかる> koto<t:こと> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
-  "ja /aipiːeː<t:アイピーエー> wa<t:は> ‖<t:、> dzeːdʑakɯseː<t:脆弱性> dʑoːhoː<t:情報> o<t:を> keːdzokɯteki<t:継続的> ɲi<t:に> ɲɯːɕɯ<t:入手> ɕi<t:し> ‖<t:、> koːɕiɴ<t:更新> ja<t:や> kaiçi<t:回避> o<t:を> sɯɾɯ<t:する> joː<t:よう> motomete<t:求めて> imasɯ<t:います。> ↘/",
-  "ja /ɾokkɯɸaiɾɯ<t:ロックファイル> de<t:で> tsɯkatte<t:使って> iɾɯ<t:いる> haɴ<t:版> o<t:を> haakɯ<t:把握> ɕi<t:し> ‖<t:、> eːkʲoː<t:影響> o<t:を> ɯkeɾɯ<t:受ける> ka<t:か> o<t:を> taɕikamete<t:確かめて> ‖<t:、> ɕɯːseːbaɴ<t:修正版> ka<t:か> koːɕiki<t:公式> no<t:の> kaiçisakɯ<t:回避策> o<t:を> ate<t:当て> ‖<t:、> tesɯto<t:テスト> ɕite<t:して> kaɾa<t:から> hombaɴ<t:本番> ɲi<t:に> daɕimasɯ<t:出します。> ↘/",
-  "ja /tsɯkatte<t:使って> inai<t:いない> idzoɴ<t:依存> ja<t:や> saːbisɯ<t:サービス> wa<t:は> sakɯdʑo<t:削除> ɕimasɯ<t:します。> ↘/"
- ],
- "review": [
-  "ja /koːdoɾebʲɯː<t:コードレビュー> de<t:で> ‖<t:、> konna<t:こんな> ɕiteki<t:指摘> o<t:を> ɯketa<t:受けた> to<t:と> ɕimasɯ<t:します。> ↘/",
-  "ja /kono<t:この> keɴsakɯ<t:検索> ‖<t:、> esɯkʲɯːeɾɯ<t:エスキューエル> o<t:を> modʑiɾetsɯ<t:文字列> de<t:で> tsɯnaide<t:つないで> imasɯne<t:いますね。> ↘/",
-  "ja /ɲɯːɾʲokɯ<t:入力> tɕekkɯ<t:チェック> o<t:を> ɕite<t:して> iɾɯ<t:いる> kaɾa<t:から> daidʑoːbɯ<t:大丈夫> da<t:だ> to<t:と> omoɯ<t:思う> ka<t:か> mo<t:も> ɕiɾemaseɴ<t:しれません。> ↘/",
-  "ja /demo<t:でも> ‖<t:、> ɲɯːɾʲokɯ<t:入力> tɕekkɯ<t:チェック> wa<t:は> hodʑo<t:補助> de<t:で> ‖<t:、> komponteki<t:根本的> na<t:な> taisakɯ<t:対策> wa<t:は> ‖<t:、> pɯɾeːsɯhoɾɯda<t:プレースホルダ> desɯ<t:です。> ↘/",
-  "ja /onadʑi<t:同じ> kakikata<t:書き方> ɡa<t:が> ‖<t:、> hoka<t:ほか> no<t:の> baɕo<t:場所> ɲi<t:に> mo<t:も> nai<t:ない> ka<t:か> saɡaɕimaɕoː<t:探しましょう。> ↘/",
-  "ja /ɾebʲɯː<t:レビュー> no<t:の> ɕiteki<t:指摘> wa<t:は> ‖<t:、> semeɾɯ<t:責める> tame<t:ため> de<t:で> wa<t:は> nakɯ<t:なく> ‖<t:、> tɕiːmɯ<t:チーム> de<t:で> dʑakɯteɴ<t:弱点> o<t:を> ɸɯseɡɯ<t:防ぐ> tame<t:ため> no<t:の> ɕikɯmi<t:仕組み> desɯ<t:です。> ↘/"
- ],
- "summary": [
-  "ja /matome<t:まとめ> desɯ<t:です。> ↘/",
-  "ja /soto<t:外> kaɾa<t:から> kita<t:来た> atai<t:値> wa<t:は> ɕinɾai<t:信頼> ɕinai<t:しない。> ↘/",
-  "ja /peːdʑi<t:ページ> ɲi<t:に> dasɯ<t:出す> toki<t:とき> wa<t:は> ‖<t:、> baɕo<t:場所> ɲi<t:に> awasete<t:合わせて> esɯkeːpɯ<t:エスケープ> ɕi<t:し> ‖<t:、> dʑidoː<t:自動> esɯkeːpɯ<t:エスケープ> o<t:を> hadzɯsanai<t:外さない。> ↘/",
-  "ja /esɯkʲɯːeɾɯ<t:エスキューエル> wa<t:は> pɯɾeːsɯhoɾɯda<t:プレースホルダ> de<t:で> kɯmitateɾɯ<t:組み立てる。> ↘/",
-  "ja /dʑɯːjoː<t:重要> na<t:な> ɕoɾi<t:処理> wa<t:は> ‖<t:、> saːbaː<t:サーバー> de<t:で> toːkɯɴ<t:トークン> o<t:を> ɕoːɡoː<t:照合> ɕite<t:して> kaɾa<t:から> dʑikkoː<t:実行> ɕi<t:し> ‖<t:、> seimɯsaito<t:セイムサイト> dzokɯseː<t:属性> wa<t:は> hodʑo<t:補助> to<t:と> ɕite<t:して> meːdʑi<t:明示> sɯɾɯ<t:する。> ↘/",
-  "ja /seɕɕoɴ<t:セッション> wa<t:は> ɕikɯmi<t:仕組み> ɲi<t:に> makase<t:任せ> ‖<t:、> eɾaː<t:エラー> de<t:で> naibɯ<t:内部> o<t:を> misedzɯ<t:見せず> ‖<t:、> idzoɴ<t:依存> ɾaibɯɾaɾi<t:ライブラリ> wa<t:は> taɕikamete<t:確かめて> koːɕiɴ<t:更新> sɯɾɯ<t:する。> ↘/",
-  "ja /kono<t:この> ato<t:あと> ‖<t:、> kakɯɲiɴ<t:確認> tesɯto<t:テスト> ɲi<t:に> sɯsɯnde<t:進んで> kɯdasai<t:ください。> ↘/"
- ]
+  "intro": [
+    "ja /kono<t:この> ɾessɯɴ<t:レッスン> wa<t:は> ‖<t:、> webɯapɯɾikeːɕoɴ<t:ウェブアプリケーション> o<t:を> tsɯkɯɾɯ<t:作る> kaihatsɯɕa<t:開発者> mɯke<t:向け> desɯ<t:です。> ↘/",
+    "ja /kɯɾosɯsaitosɯkɯɾipɯtiŋɡɯ<t:クロスサイトスクリプティング> ‖<t:、> esɯkʲɯːeɾɯiɲdʑekɯɕoɴ<t:エスキューエルインジェクション> ‖<t:、> ɕiːsaːɸɯ<t:シーサーフ> to<t:と> itta<t:いった> daiçoːteki<t:代表的> na<t:な> dʑakɯteɴ<t:弱点> no<t:の> ɯmaɾekata<t:生まれ方> to<t:と> ɸɯseɡikata<t:防ぎ方> o<t:を> ‖<t:、> koːdo<t:コード> de<t:で> taɕikamemasɯ<t:確かめます。> ↘/",
+    "ja /tehoɴ<t:手本> ɲi<t:に> sɯɾɯ<t:する> no<t:の> wa<t:は> ‖<t:、> aipiːeː<t:アイピーエー> no<t:の> ‖<t:、> andzeɴ<t:安全> na<t:な> webɯsaito<t:ウェブサイト> no<t:の> tsɯkɯɾikata<t:作り方> ‖<t:、> kaiteː<t:改訂> dainanahaɴ<t:第七版> desɯ<t:です。> ↘/"
+  ],
+  "why": [
+    "ja /webɯapɯɾikeːɕoɴ<t:ウェブアプリケーション> no<t:の> dʑakɯteɴ<t:弱点> no<t:の> oːkɯ<t:多く> wa<t:は> ‖<t:、> soto<t:外> kaɾa<t:から> kita<t:来た> atai<t:値> no<t:の> atsɯkai<t:扱い> kaɾa<t:から> ɯmaɾemasɯ<t:生まれます。> ↘/",
+    "ja /ɸoːmɯ<t:フォーム> no<t:の> ɲɯːɾʲokɯ<t:入力> ‖<t:、> jɯːaːɾɯeɾɯ<t:ユーアールエル> ‖<t:、> kɯkkiː<t:クッキー> nado<t:など> wa<t:は> ‖<t:、> koːɡekiɕa<t:攻撃者> ɡa<t:が> bɯɾaɯdza<t:ブラウザ> o<t:を> toːsadzɯ<t:通さず> ɲi<t:に> ‖<t:、> dʑijɯː<t:自由> ɲi<t:に> tsɯkɯtte<t:作って> okɯɾemasɯ<t:送れます。> ↘/",
+    "ja /sono<t:その> atai<t:値> o<t:を> eitɕitiːemɯeɾɯ<t:エイチティーエムエル> ja<t:や> esɯkʲɯːeɾɯ<t:エスキューエル> ɲi<t:に> madzeɾɯ<t:混ぜる> to<t:と> ‖<t:、> meːɾeː<t:命令> to<t:と> ɕite<t:して> kaiɕakɯ<t:解釈> saɾeɾɯ<t:される> koto<t:こと> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
+    "ja /aipiːeː<t:アイピーエー> e<t:へ> no<t:の> webɯsaito<t:ウェブサイト> no<t:の> dzeːdʑakɯseː<t:脆弱性> no<t:の> todokede<t:届出> dewa<t:では> ‖<t:、> koɾe<t:これ> made<t:まで> no<t:の> ɾɯikeː<t:累計> de<t:で> ‖<t:、> kɯɾosɯsaitosɯkɯɾipɯtiŋɡɯ<t:クロスサイトスクリプティング> ɡa<t:が> mottomo<t:最も> oːkɯ<t:多く> ‖<t:、> tsɯide<t:次いで> esɯkʲɯːeɾɯiɲdʑekɯɕoɴ<t:エスキューエルインジェクション> desɯ<t:です。> ↘/",
+    "ja /koɾe<t:これ> wa<t:は> todokede<t:届出> no<t:の> keːkoː<t:傾向> de<t:で> ‖<t:、> kikeɴ<t:危険> no<t:の> oːkisa<t:大きさ> no<t:の> dʑɯɴi<t:順位> dewa<t:では> aɾimaseɴ<t:ありません。> ↘/",
+    "ja /taisakɯ<t:対策> wa<t:は> ‖<t:、> dʑakɯteɴ<t:弱点> o<t:を> tsɯkɯɾikomanai<t:作り込まない> komponteki<t:根本的> kaiketsɯ<t:解決> o<t:を> hontai<t:本体> ɲi<t:に> ɕi<t:し> ‖<t:、> eːkʲoː<t:影響> o<t:を> tɕiːsakɯ<t:小さく> sɯɾɯ<t:する> hokenteki<t:保険的> taisakɯ<t:対策> o<t:を> kasanemasɯ<t:重ねます。> ↘/"
+  ],
+  "xss-flow": [
+    "ja /kɯɾosɯsaitosɯkɯɾipɯtiŋɡɯ<t:クロスサイトスクリプティング> wa<t:は> ‖<t:、> ɾijoːɕa<t:利用者> ɡa<t:が> ɲɯːɾʲokɯ<t:入力> ɕita<t:した> atai<t:値> o<t:を> ‖<t:、> sonomama<t:そのまま> peːdʑi<t:ページ> ɲi<t:に> ɕɯtsɯɾʲokɯ<t:出力> sɯɾɯ<t:する> koto<t:こと> de<t:で> okimasɯ<t:起きます。> ↘/",
+    "ja /koːɡekiɕa<t:攻撃者> ɡa<t:が> ‖<t:、> komentoɾaɴ<t:コメント欄> ɲi<t:に> sɯkɯɾipɯto<t:スクリプト> no<t:の> taɡɯ<t:タグ> o<t:を> madzete<t:混ぜて> toːkoː<t:投稿> ɕimasɯ<t:します。> ↘/",
+    "ja /soɾe<t:それ> ɡa<t:が> esɯkeːpɯ<t:エスケープ> saɾedzɯ<t:されず> ɲi<t:に> ɕɯtsɯɾʲokɯ<t:出力> saɾeɾɯ<t:される> to<t:と> ‖<t:、> etsɯɾaɴ<t:閲覧> ɕita<t:した> çito<t:人> no<t:の> bɯɾaɯdza<t:ブラウザ> de<t:で> dʑikkoː<t:実行> saɾemasɯ<t:されます。> ↘/",
+    "ja /sono<t:その> sɯkɯɾipɯto<t:スクリプト> wa<t:は> ‖<t:、> etsɯɾaɴ<t:閲覧> ɕita<t:した> çito<t:人> no<t:の> keŋɡeɴ<t:権限> de<t:で> katte<t:勝手> ɲi<t:に> soːsa<t:操作> o<t:を> ɕitaɾi<t:したり> ‖<t:、> ɲise<t:偽> no<t:の> ɲɯːɾʲokɯ<t:入力> ɡameɴ<t:画面> o<t:を> daɕitaɾi<t:出したり> dekimasɯ<t:できます。> ↘/",
+    "ja /kɯkkiː<t:クッキー> ɲi<t:に> eitɕitiːtiːpiːonɾiː<t:エイチティーティーピーオンリー> dzokɯseː<t:属性> o<t:を> tsɯkete<t:付けて> mo<t:も> ‖<t:、> koːɕita<t:こうした> soːsa<t:操作> made<t:まで> wa<t:は> ɸɯseɡemaseɴ<t:防げません。> ↘/"
+  ],
+  "xss-code": [
+    "ja /komponteki<t:根本的> na<t:な> taisakɯ<t:対策> wa<t:は> ‖<t:、> peːdʑi<t:ページ> ɲi<t:に> ɕɯtsɯɾʲokɯ<t:出力> sɯɾɯ<t:する> toki<t:とき> ɲi<t:に> esɯkeːpɯ<t:エスケープ> sɯɾɯ<t:する> koto<t:こと> desɯ<t:です。> ↘/",
+    "ja /akai<t:赤い> ɡʲoː<t:行> no<t:の> joːɲi<t:ように> ‖<t:、> innaːeitɕitiːemɯeɾɯ<t:インナーエイチティーエムエル> ɲi<t:に> atai<t:値> o<t:を> sonomama<t:そのまま> iɾeɾɯ<t:入れる> to<t:と> ‖<t:、> taɡɯ<t:タグ> to<t:と> ɕite<t:して> kaiɕakɯ<t:解釈> saɾemasɯ<t:されます。> ↘/",
+    "ja /midoɾi<t:緑> no<t:の> ɡʲoː<t:行> no<t:の> joːɲi<t:ように> ‖<t:、> tekisɯtokontento<t:テキストコンテント> o<t:を> tsɯkaeba<t:使えば> ‖<t:、> modʑi<t:文字> to<t:と> ɕite<t:して> çoːdʑi<t:表示> saɾemasɯ<t:されます。> ↘/",
+    "ja /esɯkeːpɯ<t:エスケープ> no<t:の> hoːhoː<t:方法> wa<t:は> ‖<t:、> hombɯɴ<t:本文> ‖<t:、> dzokɯseː<t:属性> ‖<t:、> jɯːaːɾɯeɾɯ<t:ユーアールエル> nado<t:など> ‖<t:、> ɕɯtsɯɾʲokɯ<t:出力> sɯɾɯ<t:する> baɕo<t:場所> ɲi<t:に> jotte<t:よって> kawaɾimasɯ<t:変わります。> ↘/",
+    "ja /dʑibɯɴ<t:自分> de<t:で> okikae<t:置き換え> o<t:を> kakadzɯ<t:書かず> ‖<t:、> tempɯɾeːto<t:テンプレート> no<t:の> dʑidoː<t:自動> esɯkeːpɯ<t:エスケープ> nado<t:など> no<t:の> ɕikɯmi<t:仕組み> ɲi<t:に> makasemaɕoː<t:任せましょう。> ↘/",
+    "ja /nama<t:生> no<t:の> mama<t:まま> dasɯ<t:出す> ‖<t:、> to<t:と> iɯ<t:いう> ɕiteː<t:指定> o<t:を> tsɯkeɾɯ<t:付ける> to<t:と> ‖<t:、> sono<t:その> mamoɾi<t:守り> ɡa<t:が> hadzɯɾemasɯ<t:外れます。> ↘/",
+    "ja /ɾijoːɕa<t:利用者> ɡa<t:が> ɲɯːɾʲokɯ<t:入力> ɕita<t:した> jɯːaːɾɯeɾɯ<t:ユーアールエル> o<t:を> ɾiŋkɯsaki<t:リンク先> ɲi<t:に> sɯɾɯ<t:する> toki<t:とき> wa<t:は> ‖<t:、> eitɕitiːtiːpiː<t:エイチティーティーピー> ka<t:か> eitɕitiːtiːpiːesɯ<t:エイチティーティーピーエス> de<t:で> hadʑimaɾɯ<t:始まる> mono<t:もの> dake<t:だけ> o<t:を> kʲoka<t:許可> ɕimasɯ<t:します。> ↘/"
+  ],
+  "sqli-code": [
+    "ja /esɯkʲɯːeɾɯiɲdʑekɯɕoɴ<t:エスキューエルインジェクション> wa<t:は> ‖<t:、> ɾijoːɕa<t:利用者> no<t:の> ɲɯːɾʲokɯ<t:入力> o<t:を> ‖<t:、> esɯkʲɯːeɾɯ<t:エスキューエル> no<t:の> bɯɴ<t:文> ɲi<t:に> modʑiɾetsɯ<t:文字列> to<t:と> ɕite<t:して> tsɯnaɡeɾɯ<t:つなげる> koto<t:こと> de<t:で> okimasɯ<t:起きます。> ↘/",
+    "ja /akai<t:赤い> ɡʲoː<t:行> dewa<t:では> ‖<t:、> jɯːaːɾɯeɾɯ<t:ユーアールエル> no<t:の> atai<t:値> o<t:を> ‖<t:、> sonomama<t:そのまま> bɯɴ<t:文> no<t:の> naka<t:中> ɲi<t:に> ɾeŋketsɯ<t:連結> ɕite<t:して> imasɯ<t:います。> ↘/",
+    "ja /atai<t:値> ɲi<t:に> iɴjoːɸɯ<t:引用符> nado<t:など> ɡa<t:が> ɸɯkɯmaɾeɾɯ<t:含まれる> to<t:と> ‖<t:、> bɯɴ<t:文> no<t:の> imi<t:意味> ɡa<t:が> kakikawaɾimasɯ<t:書き換わります。> ↘/",
+    "ja /komponteki<t:根本的> na<t:な> taisakɯ<t:対策> wa<t:は> ‖<t:、> pɯɾeːsɯhoɾɯda<t:プレースホルダ> desɯ<t:です。> ↘/",
+    "ja /midoɾi<t:緑> no<t:の> ɡʲoː<t:行> no<t:の> joːɲi<t:ように> ‖<t:、> bɯɴ<t:文> no<t:の> naka<t:中> ɲi<t:に> atai<t:値> no<t:の> baɕo<t:場所> o<t:を> ɕimesɯ<t:示す> kiɡoː<t:記号> o<t:を> oki<t:置き> ‖<t:、> atai<t:値> wa<t:は> betsɯ<t:別> ɲi<t:に> wataɕite<t:渡して> ‖<t:、> ɾaibɯɾaɾi<t:ライブラリ> ja<t:や> deːtabeːsɯ<t:データベース> no<t:の> ɕikɯmi<t:仕組み> de<t:で> waɾiatemasɯ<t:割り当てます。> ↘/",
+    "ja /kiɡoː<t:記号> no<t:の> kakikata<t:書き方> wa<t:は> ‖<t:、> tsɯkaɯ<t:使う> seːçiɴ<t:製品> ɲi<t:に> jotte<t:よって> tɕiɡaimasɯ<t:違います。> ↘/",
+    "ja /aipiːeː<t:アイピーエー> wa<t:は> ‖<t:、> esɯkʲɯːeɾɯbɯɴ<t:エスキューエル文> no<t:の> kɯmitate<t:組み立て> o<t:を> ‖<t:、> sɯbete<t:すべて> pɯɾeːsɯhoɾɯda<t:プレースホルダ> de<t:で> dʑissoː<t:実装> sɯɾɯ<t:する> joː<t:よう> sɯsɯmete<t:勧めて> imasɯ<t:います。> ↘/",
+    "ja /awasete<t:あわせて> ‖<t:、> deːtabeːsɯ<t:データベース> ɲi<t:に> tsɯnaɡɯ<t:つなぐ> akaɯnto<t:アカウント> no<t:の> keŋɡeɴ<t:権限> o<t:を> ɕiboɾimasɯ<t:絞ります。> ↘/"
+  ],
+  "validate": [
+    "ja /ɲɯːɾʲokɯ<t:入力> no<t:の> keɴɕoː<t:検証> mo<t:も> okonaimasɯ<t:行います。> ↘/",
+    "ja /kata<t:型> ja<t:や> ketasɯː<t:桁数> ‖<t:、> keːɕiki<t:形式> ɡa<t:が> ɕijoː<t:仕様> doːɾi<t:どおり> ka<t:か> o<t:を> ‖<t:、> kanaɾadzɯ<t:必ず> saːbaːɡawa<t:サーバー側> de<t:で> taɕikame<t:確かめ> ‖<t:、> awanakeɾeba<t:合わなければ> kotowaɾimasɯ<t:断ります。> ↘/",
+    "ja /bɯɾaɯdzaɡawa<t:ブラウザ側> no<t:の> kakɯɲiɴ<t:確認> wa<t:は> ‖<t:、> koːɡekiɕa<t:攻撃者> ɡa<t:が> kantaɴ<t:簡単> ɲi<t:に> tobasemasɯ<t:飛ばせます。> ↘/",
+    "ja /tadaɕi<t:ただし> ‖<t:、> aipiːeː<t:アイピーエー> wa<t:は> ‖<t:、> ɲɯːɾʲokɯ<t:入力> no<t:の> keɴɕoː<t:検証> o<t:を> hokenteki<t:保険的> taisakɯ<t:対策> to<t:と> itɕidzɯkete<t:位置づけて> imasɯ<t:います。> ↘/",
+    "ja /iɾoiɾo<t:いろいろ> na<t:な> modʑi<t:文字> o<t:を> jɯɾɯsɯ<t:許す> ɾaɴ<t:欄> dewa<t:では> ɸɯseɡikiɾenai<t:防ぎきれない> kaɾa<t:から> desɯ<t:です。> ↘/",
+    "ja /hontai<t:本体> wa<t:は> ‖<t:、> ɕɯtsɯɾʲokɯdʑi<t:出力時> no<t:の> esɯkeːpɯ<t:エスケープ> to<t:と> pɯɾeːsɯhoɾɯda<t:プレースホルダ> desɯ<t:です。> ↘/"
+  ],
+  "csrf-flow": [
+    "ja /ɕiːsaːɸɯ<t:シーサーフ> wa<t:は> ‖<t:、> ɾijoːɕa<t:利用者> ɡa<t:が> ito<t:意図> ɕite<t:して> inai<t:いない> soːsa<t:操作> o<t:を> ‖<t:、> hoɲɲiɴ<t:本人> no<t:の> namae<t:名前> de<t:で> dʑikkoː<t:実行> saseɾɯ<t:させる> koːɡeki<t:攻撃> desɯ<t:です。> ↘/",
+    "ja /ɾijoːɕa<t:利用者> ɡa<t:が> ‖<t:、> aɾɯ<t:ある> saːbisɯ<t:サービス> ɲi<t:に> ɾoɡɯiɴ<t:ログイン> ɕita<t:した> mama<t:まま> ‖<t:、> betsɯ<t:別> no<t:の> saito<t:サイト> no<t:の> wana<t:罠> no<t:の> peːdʑi<t:ページ> o<t:を> çiɾakimasɯ<t:開きます。> ↘/",
+    "ja /wana<t:罠> no<t:の> peːdʑi<t:ページ> wa<t:は> ‖<t:、> sono<t:その> saːbisɯ<t:サービス> ɲi<t:に> setteː<t:設定> heŋkoː<t:変更> o<t:を> dʑidoː<t:自動> de<t:で> okɯɾimasɯ<t:送ります。> ↘/",
+    "ja /kɯkkiː<t:クッキー> de<t:で> hoɲɲiɴ<t:本人> o<t:を> taɕikameɾɯ<t:確かめる> saːbisɯ<t:サービス> dewa<t:では> ‖<t:、> bɯɾaɯdza<t:ブラウザ> ɡa<t:が> kono<t:この> soːɕiɴ<t:送信> ɲi<t:に> kɯkkiː<t:クッキー> o<t:を> tsɯkeɾɯ<t:付ける> to<t:と> ‖<t:、> hoɲɲiɴ<t:本人> no<t:の> tadaɕii<t:正しい> soːsa<t:操作> ɲi<t:に> miete<t:見えて> ɕimaimasɯ<t:しまいます。> ↘/",
+    "ja /kɯkkiː<t:クッキー> ɡa<t:が> tsɯkɯ<t:付く> ka<t:か> doː<t:どう> ka<t:か> wa<t:は> ‖<t:、> seimɯsaito<t:セイムサイト> dzokɯseː<t:属性> ja<t:や> soːɕiɴ<t:送信> no<t:の> hoːhoː<t:方法> ‖<t:、> bɯɾaɯdza<t:ブラウザ> ɲi<t:に> jotte<t:よって> kawaɾimasɯ<t:変わります。> ↘/"
+  ],
+  "csrf-code": [
+    "ja /taisakɯ<t:対策> no<t:の> hontai<t:本体> wa<t:は> ‖<t:、> toːkɯɴ<t:トークン> desɯ<t:です。> ↘/",
+    "ja /saːbaː<t:サーバー> ɡa<t:が> ‖<t:、> daisaɴɕa<t:第三者> ɲi<t:に> wa<t:は> sɯisokɯ<t:推測> dekinai<t:できない> atai<t:値> o<t:を> tsɯkɯtte<t:作って> seɕɕoɴ<t:セッション> ɲi<t:に> mɯsɯbitsɯke<t:結び付け> ‖<t:、> toːɾokɯ<t:登録> ja<t:や> heŋkoː<t:変更> no<t:の> ɡameɴ<t:画面> o<t:を> dasɯ<t:出す> toki<t:とき> ɲi<t:に> ‖<t:、> ɸoːmɯ<t:フォーム> no<t:の> kakɯɕi<t:隠し> koːmokɯ<t:項目> ɲi<t:に> ɯmekomimasɯ<t:埋め込みます。> ↘/",
+    "ja /ɕoɾi<t:処理> o<t:を> dʑikkoː<t:実行> sɯɾɯ<t:する> ɡawa<t:側> dewa<t:では> ‖<t:、> midoɾi<t:緑> no<t:の> ɡʲoː<t:行> no<t:の> joːɲi<t:ように> ‖<t:、> okɯɾaɾete<t:送られて> kita<t:きた> atai<t:値> ɡa<t:が> seɕɕoɴ<t:セッション> no<t:の> atai<t:値> to<t:と> ittɕi<t:一致> sɯɾɯ<t:する> ka<t:か> o<t:を> ɕoːɡoː<t:照合> ɕi<t:し> ‖<t:、> nakeɾeba<t:なければ> ‖<t:、> matawa<t:または> tɕiɡaeba<t:違えば> ‖<t:、> ɕoɾi<t:処理> sedzɯ<t:せず> ɲi<t:に> kotowaɾimasɯ<t:断ります。> ↘/",
+    "ja /wana<t:罠> no<t:の> peːdʑi<t:ページ> wa<t:は> kono<t:この> atai<t:値> o<t:を> ɕiɾanai<t:知らない> node<t:ので> ‖<t:、> ɲise<t:偽> no<t:の> soːɕiɴ<t:送信> wa<t:は> kotowaɾaɾemasɯ<t:断られます。> ↘/",
+    "ja /toːkɯɴ<t:トークン> wa<t:は> jɯːaːɾɯeɾɯ<t:ユーアールエル> ɲi<t:に> nosedzɯ<t:載せず> ‖<t:、> dʑɯːjoː<t:重要> na<t:な> ɕoɾi<t:処理> wa<t:は> posɯto<t:ポスト> de<t:で> ɯketsɯkemasɯ<t:受け付けます。> ↘/",
+    "ja /kɯkkiː<t:クッキー> no<t:の> seimɯsaito<t:セイムサイト> dzokɯseː<t:属性> wa<t:は> ‖<t:、> hoka<t:ほか> no<t:の> saito<t:サイト> kaɾa<t:から> no<t:の> soːɕiɴ<t:送信> ɲi<t:に> kɯkkiː<t:クッキー> o<t:を> tsɯkiɲikɯkɯ<t:付きにくく> ɕimasɯ<t:します> ɡa<t:が> ‖<t:、> bɯɾaɯdza<t:ブラウザ> ɲi<t:に> jotte<t:よって> atsɯkai<t:扱い> ɲi<t:に> sa<t:差> ɡa<t:が> aɾɯ<t:ある> node<t:ので> hodʑo<t:補助> to<t:と> kaŋɡae<t:考え> ‖<t:、> meːdʑi<t:明示> ɕite<t:して> setteː<t:設定> ɕimasɯ<t:します。> ↘/"
+  ],
+  "session": [
+    "ja /seɕɕoɴ<t:セッション> kanɾi<t:管理> ɲi<t:に> mo<t:も> kihoɴ<t:基本> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
+    "ja /ɾoɡɯiɴ<t:ログイン> ɕita<t:した> hoɲɲiɴ<t:本人> o<t:を> ɕimesɯ<t:示す> seɕɕoɴaidiː<t:セッションアイディー> wa<t:は> ‖<t:、> dʑibɯɴ<t:自分> de<t:で> tsɯkɯɾadzɯ<t:作らず> ‖<t:、> ɸɯɾeːmɯwaːkɯ<t:フレームワーク> no<t:の> ɕikɯmi<t:仕組み> de<t:で> sɯisokɯ<t:推測> dekinai<t:できない> atai<t:値> ɲi<t:に> ɕimasɯ<t:します。> ↘/",
+    "ja /jɯːaːɾɯeɾɯ<t:ユーアールエル> ɲi<t:に> noseɾɯ<t:載せる> to<t:と> ‖<t:、> saɴɕoːmoto<t:参照元> no<t:の> dʑoːhoː<t:情報> ja<t:や> ɾiɾeki<t:履歴> kaɾa<t:から> moɾeɾɯ<t:漏れる> node<t:ので> ‖<t:、> kɯkkiː<t:クッキー> de<t:で> ɯkewataɕimasɯ<t:受け渡します。> ↘/",
+    "ja /ɾoɡɯiɴ<t:ログイン> ɲi<t:に> seːkoː<t:成功> ɕitaɾa<t:したら> ‖<t:、> ataɾaɕii<t:新しい> seɕɕoɴ<t:セッション> o<t:を> hadʑimemasɯ<t:始めます。> ↘/",
+    "ja /ɾoɡɯimmae<t:ログイン前> no<t:の> atai<t:値> o<t:を> tsɯkaitsɯdzɯkeɾɯ<t:使い続ける> to<t:と> ‖<t:、> koːɡekiɕa<t:攻撃者> ɡa<t:が> joːi<t:用意> ɕita<t:した> atai<t:値> o<t:を> tsɯkawasaɾeɾɯ<t:使わされる> koto<t:こと> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
+    "ja /kɯkkiː<t:クッキー> ɲi<t:に> wa<t:は> ‖<t:、> aŋɡoːka<t:暗号化> ɕita<t:した> tsɯːɕiɴ<t:通信> de<t:で> dake<t:だけ> okɯɾɯ<t:送る> sekʲɯa<t:セキュア> dzokɯseː<t:属性> ‖<t:、> sɯkɯɾipɯto<t:スクリプト> kaɾa<t:から> jomenakɯ<t:読めなく> sɯɾɯ<t:する> eitɕitiːtiːpiːonɾiː<t:エイチティーティーピーオンリー> dzokɯseː<t:属性> ‖<t:、> soɕite<t:そして> seimɯsaito<t:セイムサイト> dzokɯseː<t:属性> o<t:を> tsɯkemasɯ<t:付けます。> ↘/",
+    "ja /jɯːkoː<t:有効> kiɡeɴ<t:期限> wa<t:は> çitsɯjoː<t:必要> idʑoː<t:以上> ɲi<t:に> naɡakɯ<t:長く> sedzɯ<t:せず> ‖<t:、> ɾoɡɯaɯto<t:ログアウト> ɕitaɾa<t:したら> saːbaːɡawa<t:サーバー側> demo<t:でも> haki<t:破棄> ɕimasɯ<t:します。> ↘/"
+  ],
+  "errors": [
+    "ja /eɾaː<t:エラー> no<t:の> çoːdʑi<t:表示> ɲi<t:に> mo<t:も> tɕɯːi<t:注意> ɕimasɯ<t:します。> ↘/",
+    "ja /ɾeːɡai<t:例外> no<t:の> kɯwaɕii<t:詳しい> naijoː<t:内容> o<t:を> ɡameɴ<t:画面> ɲi<t:に> kaesɯ<t:返す> to<t:と> ‖<t:、> deːtabeːsɯ<t:データベース> no<t:の> ɕɯɾɯi<t:種類> ja<t:や> ‖<t:、> ɕippai<t:失敗> ɕita<t:した> esɯkʲɯːeɾɯbɯɴ<t:エスキューエル文> ‖<t:、> ɸaiɾɯ<t:ファイル> no<t:の> okibaɕo<t:置き場所> ɡa<t:が> ‖<t:、> koːɡeki<t:攻撃> no<t:の> teɡakaɾi<t:手がかり> ɲi<t:に> naɾimasɯ<t:なります。> ↘/",
+    "ja /aipiːeː<t:アイピーエー> mo<t:も> ‖<t:、> eɾaːmesseːdʑi<t:エラーメッセージ> o<t:を> sonomama<t:そのまま> bɯɾaɯdza<t:ブラウザ> ɲi<t:に> çoːdʑi<t:表示> ɕinai<t:しない> joː<t:よう> sɯsɯmete<t:勧めて> imasɯ<t:います。> ↘/",
+    "ja /kɯwaɕii<t:詳しい> naijoː<t:内容> wa<t:は> saːbaː<t:サーバー> no<t:の> ɾoɡɯ<t:ログ> ɲi<t:に> nokoɕi<t:残し> ‖<t:、> ɾijoːɕa<t:利用者> ɲi<t:に> wa<t:は> ‖<t:、> saːbaː<t:サーバー> ɡa<t:が> tsɯkɯtta<t:作った> toiawase<t:問い合わせ> baŋɡoː<t:番号> dake<t:だけ> o<t:を> kaeɕimasɯ<t:返します。> ↘/",
+    "ja /ɾoɡɯ<t:ログ> ɲi<t:に> mo<t:も> ‖<t:、> pasɯwaːdo<t:パスワード> ja<t:や> kodʑiɴ<t:個人> dʑoːhoː<t:情報> o<t:を> sonomama<t:そのまま> dasadzɯ<t:出さず> ‖<t:、> ɸɯsete<t:伏せて> kaɾa<t:から> nokoɕimasɯ<t:残します。> ↘/",
+    "ja /ɾoɡɯiɴ<t:ログイン> ɲi<t:に> ɕippai<t:失敗> ɕita<t:した> toki<t:とき> wa<t:は> ‖<t:、> aidiː<t:アイディー> ka<t:か> pasɯwaːdo<t:パスワード> ɡa<t:が> tɕiɡaimasɯ<t:違います> ‖<t:、> to<t:と> kaeɕimasɯ<t:返します。> ↘/",
+    "ja /dotɕiɾa<t:どちら> ɡa<t:が> tɕiɡaɯ<t:違う> ka<t:か> o<t:を> oɕieɾɯ<t:教える> to<t:と> ‖<t:、> toːɾokɯdzɯmi<t:登録済み> no<t:の> aidiː<t:アイディー> o<t:を> waɾidasɯ<t:割り出す> teɡakaɾi<t:手がかり> ɲi<t:に> naɾimasɯ<t:なります。> ↘/"
+  ],
+  "deps": [
+    "ja /dʑibɯɴ<t:自分> no<t:の> koːdo<t:コード> ɡa<t:が> tadaɕikɯtemo<t:正しくても> ‖<t:、> tsɯkatte<t:使って> iɾɯ<t:いる> ɾaibɯɾaɾi<t:ライブラリ> ɲi<t:に> dzeːdʑakɯseː<t:脆弱性> ɡa<t:が> mitsɯkaɾɯ<t:見つかる> koto<t:こと> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
+    "ja /aipiːeː<t:アイピーエー> wa<t:は> ‖<t:、> dzeːdʑakɯseː<t:脆弱性> dʑoːhoː<t:情報> o<t:を> keːdzokɯteki<t:継続的> ɲi<t:に> ɲɯːɕɯ<t:入手> ɕi<t:し> ‖<t:、> koːɕiɴ<t:更新> ja<t:や> kaiçi<t:回避> o<t:を> sɯɾɯ<t:する> joː<t:よう> motomete<t:求めて> imasɯ<t:います。> ↘/",
+    "ja /ɾokkɯɸaiɾɯ<t:ロックファイル> de<t:で> tsɯkatte<t:使って> iɾɯ<t:いる> haɴ<t:版> o<t:を> haakɯ<t:把握> ɕi<t:し> ‖<t:、> eːkʲoː<t:影響> o<t:を> ɯkeɾɯ<t:受ける> ka<t:か> o<t:を> taɕikamete<t:確かめて> ‖<t:、> ɕɯːseːbaɴ<t:修正版> ka<t:か> koːɕiki<t:公式> no<t:の> kaiçisakɯ<t:回避策> o<t:を> ate<t:当て> ‖<t:、> tesɯto<t:テスト> ɕite<t:して> kaɾa<t:から> hombaɴ<t:本番> ɲi<t:に> daɕimasɯ<t:出します。> ↘/",
+    "ja /tsɯkatte<t:使って> inai<t:いない> idzoɴ<t:依存> ja<t:や> saːbisɯ<t:サービス> wa<t:は> sakɯdʑo<t:削除> ɕimasɯ<t:します。> ↘/"
+  ],
+  "review": [
+    "ja /koːdoɾebʲɯː<t:コードレビュー> de<t:で> ‖<t:、> konna<t:こんな> ɕiteki<t:指摘> o<t:を> ɯketa<t:受けた> to<t:と> ɕimasɯ<t:します。> ↘/",
+    "ja /kono<t:この> keɴsakɯ<t:検索> ‖<t:、> esɯkʲɯːeɾɯ<t:エスキューエル> o<t:を> modʑiɾetsɯ<t:文字列> de<t:で> tsɯnaide<t:つないで> imasɯne<t:いますね。> ↘/",
+    "ja /ɲɯːɾʲokɯ<t:入力> tɕekkɯ<t:チェック> o<t:を> ɕite<t:して> iɾɯ<t:いる> kaɾa<t:から> daidʑoːbɯ<t:大丈夫> da<t:だ> to<t:と> omoɯ<t:思う> ka<t:か> mo<t:も> ɕiɾemaseɴ<t:しれません。> ↘/",
+    "ja /demo<t:でも> ‖<t:、> ɲɯːɾʲokɯ<t:入力> tɕekkɯ<t:チェック> wa<t:は> hodʑo<t:補助> de<t:で> ‖<t:、> komponteki<t:根本的> na<t:な> taisakɯ<t:対策> wa<t:は> ‖<t:、> pɯɾeːsɯhoɾɯda<t:プレースホルダ> desɯ<t:です。> ↘/",
+    "ja /onadʑi<t:同じ> kakikata<t:書き方> ɡa<t:が> ‖<t:、> hoka<t:ほか> no<t:の> baɕo<t:場所> ɲi<t:に> mo<t:も> nai<t:ない> ka<t:か> saɡaɕimaɕoː<t:探しましょう。> ↘/",
+    "ja /ɾebʲɯː<t:レビュー> no<t:の> ɕiteki<t:指摘> wa<t:は> ‖<t:、> semeɾɯ<t:責める> tame<t:ため> de<t:で> wa<t:は> nakɯ<t:なく> ‖<t:、> tɕiːmɯ<t:チーム> de<t:で> dʑakɯteɴ<t:弱点> o<t:を> ɸɯseɡɯ<t:防ぐ> tame<t:ため> no<t:の> ɕikɯmi<t:仕組み> desɯ<t:です。> ↘/"
+  ],
+  "summary": [
+    "ja /matome<t:まとめ> desɯ<t:です。> ↘/",
+    "ja /soto<t:外> kaɾa<t:から> kita<t:来た> atai<t:値> wa<t:は> ɕinɾai<t:信頼> ɕinai<t:しない。> ↘/",
+    "ja /peːdʑi<t:ページ> ɲi<t:に> dasɯ<t:出す> toki<t:とき> wa<t:は> ‖<t:、> baɕo<t:場所> ɲi<t:に> awasete<t:合わせて> esɯkeːpɯ<t:エスケープ> ɕi<t:し> ‖<t:、> dʑidoː<t:自動> esɯkeːpɯ<t:エスケープ> o<t:を> hadzɯsanai<t:外さない。> ↘/",
+    "ja /esɯkʲɯːeɾɯ<t:エスキューエル> wa<t:は> pɯɾeːsɯhoɾɯda<t:プレースホルダ> de<t:で> kɯmitateɾɯ<t:組み立てる。> ↘/",
+    "ja /dʑɯːjoː<t:重要> na<t:な> ɕoɾi<t:処理> wa<t:は> ‖<t:、> saːbaː<t:サーバー> de<t:で> toːkɯɴ<t:トークン> o<t:を> ɕoːɡoː<t:照合> ɕite<t:して> kaɾa<t:から> dʑikkoː<t:実行> ɕi<t:し> ‖<t:、> seimɯsaito<t:セイムサイト> dzokɯseː<t:属性> wa<t:は> hodʑo<t:補助> to<t:と> ɕite<t:して> meːdʑi<t:明示> sɯɾɯ<t:する。> ↘/",
+    "ja /seɕɕoɴ<t:セッション> wa<t:は> ɕikɯmi<t:仕組み> ɲi<t:に> makase<t:任せ> ‖<t:、> eɾaː<t:エラー> de<t:で> naibɯ<t:内部> o<t:を> misedzɯ<t:見せず> ‖<t:、> idzoɴ<t:依存> ɾaibɯɾaɾi<t:ライブラリ> wa<t:は> taɕikamete<t:確かめて> koːɕiɴ<t:更新> sɯɾɯ<t:する。> ↘/",
+    "ja /kono<t:この> ato<t:あと> ‖<t:、> kakɯɲiɴ<t:確認> tesɯto<t:テスト> ɲi<t:に> sɯsɯnde<t:進んで> kɯdasai<t:ください。> ↘/"
+  ]
 }
