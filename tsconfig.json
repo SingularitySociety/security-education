@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": { "types": ["node"] },
-  "include": ["packages/course/src", "packages/web/src/lib/seekGuard.ts", "test"]
+  "include": ["packages/course/src", "packages/web/src/lib/seekGuard.ts", "packages/web/scripts", "test"]
 }
