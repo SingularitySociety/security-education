@@ -33,7 +33,7 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "browser-extensions",
         text: "拡張機能は必要なものだけにし、使わないものは外す",
-        courseIds: ["browser-data-theft", "install-sources"],
+        courseIds: ["browser-extensions", "browser-data-theft", "install-sources"],
       },
       {
         id: "browser-warning-phone",

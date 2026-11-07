@@ -59,6 +59,15 @@ import { mobileAppsPaymentsCourse } from "./courses/mobileAppsPayments.ts";
 import { exposedEntryPointsCourse } from "./courses/exposedEntryPoints.ts";
 import { ddosContinuityCourse } from "./courses/ddosContinuity.ts";
 import { aiAgentsAtWorkCourse } from "./courses/aiAgentsAtWork.ts";
+import { trackingStalkerwareCourse } from "./courses/trackingStalkerware.ts";
+import { sextortionCourse } from "./courses/sextortion.ts";
+import { digitalLegacyCourse } from "./courses/digitalLegacy.ts";
+import { secretsInCodeCourse } from "./courses/secretsInCode.ts";
+import { protectParentsCourse } from "./courses/protectParents.ts";
+import { browserExtensionsCourse } from "./courses/browserExtensions.ts";
+import { fakeBillingCourse } from "./courses/fakeBilling.ts";
+import { p2pTradeScamsCourse } from "./courses/p2pTradeScams.ts";
+import { fakeJobOffersCourse } from "./courses/fakeJobOffers.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -134,6 +143,15 @@ export const courses: readonly Course[] = [
   exposedEntryPointsCourse,
   ddosContinuityCourse,
   aiAgentsAtWorkCourse,
+  trackingStalkerwareCourse,
+  sextortionCourse,
+  digitalLegacyCourse,
+  secretsInCodeCourse,
+  protectParentsCourse,
+  browserExtensionsCourse,
+  fakeBillingCourse,
+  p2pTradeScamsCourse,
+  fakeJobOffersCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.
