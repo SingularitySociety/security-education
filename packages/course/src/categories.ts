@@ -53,6 +53,7 @@ export const courseCategories: readonly CourseCategory[] = [
       "mobile-apps-payments",
       "browser-extensions",
       "tracking-stalkerware",
+      "consent-phishing",
     ],
     upcoming: [],
   },
@@ -93,7 +94,7 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "workplace",
     title: "職場を狙うだまし",
     audience: "会社で働く人",
-    courseIds: ["boss-impersonation", "hiring-attacks", "targeted-attacks", "chat-impersonation"],
+    courseIds: ["boss-impersonation", "hiring-attacks", "targeted-attacks", "chat-impersonation", "payroll-takeover"],
     upcoming: [],
   },
   {
@@ -121,7 +122,15 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "smb",
     title: "中小企業の管理",
     audience: "経営者・管理担当",
-    courseIds: ["patching", "data-disposal", "account-lifecycle", "suppliers", "insider-threat", "supply-chain-breach"],
+    courseIds: [
+      "patching",
+      "data-disposal",
+      "account-lifecycle",
+      "suppliers",
+      "insider-threat",
+      "supply-chain-breach",
+      "ot-iot-sites",
+    ],
     upcoming: [],
   },
   {

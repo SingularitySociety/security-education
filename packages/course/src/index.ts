@@ -68,6 +68,9 @@ import { browserExtensionsCourse } from "./courses/browserExtensions.ts";
 import { fakeBillingCourse } from "./courses/fakeBilling.ts";
 import { p2pTradeScamsCourse } from "./courses/p2pTradeScams.ts";
 import { fakeJobOffersCourse } from "./courses/fakeJobOffers.ts";
+import { consentPhishingCourse } from "./courses/consentPhishing.ts";
+import { otIotSitesCourse } from "./courses/otIotSites.ts";
+import { payrollTakeoverCourse } from "./courses/payrollTakeover.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -152,6 +155,9 @@ export const courses: readonly Course[] = [
   fakeBillingCourse,
   p2pTradeScamsCourse,
   fakeJobOffersCourse,
+  consentPhishingCourse,
+  otIotSitesCourse,
+  payrollTakeoverCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.
