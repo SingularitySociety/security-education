@@ -7,8 +7,11 @@ import { courses, isVideoDurations, videoFileName, withVideoDuration } from "@se
 
 const PROGRESS_LOG_STEP_PERCENT = 20;
 const PERCENT_SCALE = 100;
-// Narration only: a higher audio bitrate mostly adds size, and the Pages site has a total size limit.
+// The Pages site has a total size limit. Narration needs little audio bitrate, and mostly still slides
+// stay readable at 720p with a high CRF.
 const AUDIO_BITRATE = "64k";
+const OUTPUT_SCALE = 2 / 3;
+const VIDEO_CRF = 28;
 
 const packageDir = fileURLToPath(new URL("../", import.meta.url));
 const webPublicDir = fileURLToPath(new URL("../../web/public/", import.meta.url));
@@ -32,6 +35,9 @@ const renderCourse = async (serveUrl: string, courseId: string): Promise<void> =
     composition,
     codec: "h264",
     audioBitrate: AUDIO_BITRATE,
+    scale: OUTPUT_SCALE,
+    crf: VIDEO_CRF,
+    x264Preset: "slow",
     inputProps,
     outputLocation,
     onProgress: ({ progress }) => {
