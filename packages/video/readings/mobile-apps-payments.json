@@ -45,6 +45,16 @@
     "ja /doɾe<t:どれ> mo<t:も> ‖<t:、> hontoː<t:本当> ɲi<t:に> çitsɯjoːna<t:必要な> toki<t:とき> iɡai<t:以外> wa<t:は> ‖<t:、> kʲoka<t:許可> ɕimaseɴ<t:しません。> ↘/",
     "ja /ɡameɴ<t:画面> no<t:の> ɕidʑi<t:指示> doːɾi<t:どおり> ɲi<t:に> kʲoka<t:許可> o<t:を> osaseɾɯ<t:押させる> no<t:の> wa<t:は> ‖<t:、> jokɯ<t:よく> aɾɯ<t:ある> teɡɯtɕi<t:手口> desɯ<t:です。> ↘/"
   ],
+  "rooting": [
+    "ja /sɯmaho<t:スマホ> no<t:の> ‖<t:、> ɾɯːtoka<t:ルート化> ja<t:や> datsɯɡokɯ<t:脱獄> to<t:と> jobaɾeɾɯ<t:呼ばれる> kaidzoː<t:改造> mo<t:も> ‖<t:、> ɕinaide<t:しないで> kɯdasai<t:ください。> ↘/",
+    "ja /kihoɴ<t:基本> soɸɯto<t:ソフト> ɲi<t:に> kakatte<t:かかって> iɾɯ<t:いる> seːɡeɴ<t:制限> o<t:を> hadzɯɕi<t:外し> ‖<t:、> honɾai<t:本来> dekinai<t:できない> soːsa<t:操作> o<t:を> dekiɾɯ<t:できる> joː<t:よう> ɲi<t:に> sɯɾɯ<t:する> koto<t:こと> desɯ<t:です。> ↘/",
+    "ja /sɯɾɯto<t:すると> ‖<t:、> sɯmaho<t:スマホ> ja<t:や> apɯɾi<t:アプリ> o<t:を> mamoɾɯ<t:守る> ɕikɯmi<t:仕組み> ɡa<t:が> hataɾakanakɯ<t:働かなく> naɾi<t:なり> ‖<t:、> ɸɯseːna<t:不正な> apɯɾi<t:アプリ> ɲi<t:に> ‖<t:、> ɸɯkai<t:深い> tokoɾo<t:ところ> made<t:まで> ajatsɯɾaɾeɾɯ<t:操られる> osoɾe<t:おそれ> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
+    "ja /koːɕiɴ<t:更新> ja<t:や> ɕɯːɾi<t:修理> ‖<t:、> ɡiŋkoː<t:銀行> ja<t:や> kessai<t:決済> no<t:の> apɯɾi<t:アプリ> nado<t:など> ɲi<t:に> ‖<t:、> seːɡeɴ<t:制限> ja<t:や> ɸɯɡɯai<t:不具合> ɡa<t:が> deɾɯ<t:出る> koto<t:こと> mo<t:も> aɾimasɯ<t:あります。> ↘/",
+    "ja /aipiːeː<t:アイピーエー> wa<t:は> ‖<t:、> sekʲɯɾiti<t:セキュリティ> o<t:を> kaidʑo<t:解除> sɯɾɯ<t:する> soːsa<t:操作> da<t:だ> to<t:と> itte<t:言って> kaidzoː<t:改造> sase<t:させ> ‖<t:、> ɸɯseːna<t:不正な> apɯɾi<t:アプリ> o<t:を> iɾesaseta<t:入れさせた> teɡɯtɕi<t:手口> o<t:を> hoːkokɯ<t:報告> ɕite<t:して> imasɯ<t:います。> ↘/",
+    "ja /mɯɾʲoː<t:無料> de<t:で> tsɯkaeɾɯ<t:使える> ‖<t:、> seːɡeɴ<t:制限> o<t:を> kaidʑo<t:解除> dekiɾɯ<t:できる> ‖<t:、> to<t:と> ɯtaɯ<t:うたう> tedʑɯɴ<t:手順> ja<t:や> tsɯːɾɯ<t:ツール> ɲi<t:に> wa<t:は> ɕitaɡaimaseɴ<t:従いません。> ↘/",
+    "ja /tɕɯːko<t:中古> no<t:の> sɯmaho<t:スマホ> wa<t:は> ‖<t:、> ɕokika<t:初期化> saɾeta<t:された> dʑoːtai<t:状態> ka<t:か> o<t:を> taɕikamemasɯ<t:確かめます。> ↘/",
+    "ja /kaiɕa<t:会社> no<t:の> baai<t:場合> wa<t:は> ‖<t:、> kaiɕa<t:会社> no<t:の> tammatsɯ<t:端末> ja<t:や> ɕiɡoto<t:仕事> ɲi<t:に> tsɯkaɯ<t:使う> tammatsɯ<t:端末> de<t:で> wa<t:は> ‖<t:、> keɕɕite<t:決して> kaidzoː<t:改造> ɕimaseɴ<t:しません。> ↘/"
+  ],
   "fake-support": [
     "ja /kessai<t:決済> to<t:と> apɯɾi<t:アプリ> wa<t:は> ‖<t:、> iɕɕo<t:一緒> ɲi<t:に> neɾawaɾemasɯ<t:狙われます。> ↘/",
     "ja /tatoeba<t:たとえば> ‖<t:、> kessai<t:決済> saːbisɯ<t:サービス> no<t:の> sapoːto<t:サポート> o<t:を> nanoɾɯ<t:名乗る> aite<t:相手> kaɾa<t:から> ‖<t:、> ɸɯseːna<t:不正な> kessai<t:決済> o<t:を> mitsɯketa<t:見つけた> node<t:ので> ‖<t:、> hoɡo<t:保護> no<t:の> tame<t:ため> ɲi<t:に> ‖<t:、> kono<t:この> ɾiŋkɯ<t:リンク> kaɾa<t:から> andzeɴ<t:安全> kakɯɲiɴ<t:確認> apɯɾi<t:アプリ> o<t:を> iɾete<t:入れて> kɯdasai<t:ください> ‖<t:、> to<t:と> ɾenɾakɯ<t:連絡> ɡa<t:が> kimasɯ<t:来ます。> ↘/",
