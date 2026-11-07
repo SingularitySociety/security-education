@@ -53,14 +53,13 @@ export const courseCategories: readonly CourseCategory[] = [
   },
   {
     id: "takeover",
-    title: "アカウント・ブラウザ・スマホの乗っ取り",
+    title: "乗っ取りと情報漏えい",
     audience: "すべての人",
     courseIds: [
       "browser-data-theft",
       "browser-extensions",
       "consent-phishing",
       "mobile-apps-payments",
-      "financial-support-takeover",
       "email-takeover-abuse",
       "after-data-leak",
     ],
@@ -70,12 +69,12 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "scams",
     title: "電話やメッセージでだます詐欺",
     audience: "すべての人",
-    courseIds: ["phone-scams", "fake-police", "ai-voice-impersonation", "fake-billing"],
+    courseIds: ["phone-scams", "fake-police", "financial-support-takeover", "ai-voice-impersonation", "fake-billing"],
     upcoming: [],
   },
   {
     id: "money-scams",
-    title: "もうけ話・副業・買い物の詐欺",
+    title: "もうけ話・仕事・買い物の詐欺",
     audience: "すべての人",
     courseIds: [
       "online-scams",
@@ -145,7 +144,7 @@ export const courseCategories: readonly CourseCategory[] = [
   },
   {
     id: "smb",
-    title: "中小企業の管理",
+    title: "中小企業のセキュリティ管理",
     audience: "経営者・管理担当",
     courseIds: [
       "patching",
@@ -160,7 +159,7 @@ export const courseCategories: readonly CourseCategory[] = [
   },
   {
     id: "incident",
-    title: "事故が起きたとき",
+    title: "事故への備えと対応",
     audience: "会社で働く人・経営者・管理担当",
     courseIds: [
       "incident-first-response",
