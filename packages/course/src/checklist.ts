@@ -258,7 +258,12 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "account-connected-apps",
         text: "アカウントの「連携アプリ」を見直し、使っていない連携は解除する",
-        courseIds: ["ai-agents-at-work", "browser-extensions"],
+        courseIds: ["ai-agents-at-work", "browser-extensions", "consent-phishing"],
+      },
+      {
+        id: "account-no-unknown-app-consent",
+        text: "知らない相手から届いたリンクの先で、アプリへのアクセスの許可を求められても、「許可」を押さない",
+        courseIds: ["consent-phishing"],
       },
       {
         id: "account-legacy-contact",
@@ -405,6 +410,11 @@ export const checklistGroups: readonly ChecklistGroup[] = [
         text: "委託先ごとに、預けているデータ・接続の方法・事故のときの連絡先を台帳にまとめる",
         courseIds: ["supply-chain-breach", "incident-reporting"],
       },
+      {
+        id: "work-payroll-account-change",
+        text: "給与の振込口座の変更は、決めた手続きで受け付け、本人に別の経路で確かめ、二人で承認し、変更したら本人にも知らせる",
+        courseIds: ["payroll-takeover"],
+      },
     ],
   },
   {
@@ -425,6 +435,11 @@ export const checklistGroups: readonly ChecklistGroup[] = [
         id: "dev-offline-runbook",
         text: "夜間・休日も含めた連絡網と対応手順を、止まるかもしれないシステムの外（紙など）にも置く",
         courseIds: ["ddos-continuity"],
+      },
+      {
+        id: "dev-site-devices",
+        text: "店舗・工場の機器を台帳に載せ、使い終わったら必要なデータを保存してから中のデータと設定を消し、クラウドの連携や業者の遠隔接続も止めて、止まったことを確かめる",
+        courseIds: ["ot-iot-sites"],
       },
     ],
   },
