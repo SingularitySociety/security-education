@@ -50,6 +50,7 @@ export const courseCategories: readonly CourseCategory[] = [
       "browser-data-theft",
       "realtime-phishing",
       "after-data-leak",
+      "mobile-apps-payments",
     ],
     upcoming: [],
   },
@@ -65,6 +66,7 @@ export const courseCategories: readonly CourseCategory[] = [
       "financial-support-takeover",
       "investment-romance-scams",
       "fake-side-jobs",
+      "shopping-site-scams",
     ],
     upcoming: [],
   },
@@ -107,7 +109,7 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "ai-and-tools",
     title: "AI と開発ツールを使うとき",
     audience: "AI や開発者向けのツールを使う人",
-    courseIds: ["ai-prompt-injection", "ai-data-and-tools", "paste-commands", "install-sources"],
+    courseIds: ["ai-prompt-injection", "ai-data-and-tools", "paste-commands", "install-sources", "ai-agents-at-work"],
     upcoming: [],
   },
   {
@@ -135,7 +137,7 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "it-admin",
     title: "情報システム担当の基本",
     audience: "社内のIT担当（兼務を含む）",
-    courseIds: ["it-inventory", "it-environment", "logging-basics"],
+    courseIds: ["it-inventory", "it-environment", "logging-basics", "exposed-entry-points", "ddos-continuity"],
     upcoming: [],
   },
   {
