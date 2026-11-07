@@ -293,7 +293,7 @@ export const payrollTakeoverCourse: Course = {
       ],
       correctChoiceId: "a",
       explanation:
-        "aだけが、案内された「kyuyo.sample-corp.example」の中のページです。ほかは、会社名を含んでいても別のドメインです。",
+        "「https://kyuyo.sample-corp.example/login」だけが、案内された「kyuyo.sample-corp.example」の中のページです。ほかは、会社名を含んでいても別のドメインです。",
     },
     {
       id: "q4",
