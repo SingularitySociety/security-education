@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { kanaOf } from "../packages/video/src/japaneseMora.ts";
+import { kanaOf, moraicNasalBefore } from "../packages/video/src/japaneseMora.ts";
 
 describe("kanaOf", () => {
   it("reads moras, palatalized moras and loanword sounds", () => {
@@ -42,5 +42,27 @@ describe("kanaOf nasals", () => {
     assert.deepEqual(kanaOf("ŋa").unknown, ["ŋa"]);
     assert.equal(kanaOf("kaɴi").kana, "カンイ");
     assert.equal(kanaOf("ma").kana, "マ");
+  });
+});
+
+describe("moraicNasalBefore", () => {
+  it("follows the next consonant", () => {
+    assert.equal(moraicNasalBefore("pa"), "m");
+    assert.equal(moraicNasalBefore("ta"), "n");
+    assert.equal(moraicNasalBefore("dzɯ"), "n");
+    assert.equal(moraicNasalBefore("tɕi"), "ɲ");
+    assert.equal(moraicNasalBefore("dʑi"), "ɲ");
+    assert.equal(moraicNasalBefore("ka"), "ŋ");
+    assert.equal(moraicNasalBefore("ɕo"), "ɴ");
+    assert.equal(moraicNasalBefore("a"), "ɴ");
+    assert.equal(moraicNasalBefore(""), "ɴ");
+  });
+
+  it("flags a moraic nasal that does not match the next sound", () => {
+    assert.deepEqual(kanaOf("ɲiɲɕoː").unknown, ["ɲ→ɴ"]);
+    assert.deepEqual(kanaOf("ɲiɴɕoː").unknown, []);
+    assert.deepEqual(kanaOf("deɴwa").unknown, []);
+    assert.deepEqual(kanaOf("kaɴ").unknown, []);
+    assert.deepEqual(kanaOf("kan").unknown, ["n→ɴ"]);
   });
 });

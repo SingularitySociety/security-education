@@ -1,7 +1,7 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { courses } from "@security-education/course";
+import { courses, draftCourses } from "@security-education/course";
 import type { Course } from "@security-education/course";
 import { isCourseReadings, readingProblems, readingsFileName } from "../src/readings.ts";
 
@@ -22,7 +22,9 @@ const problemsOf = async (course: Course): Promise<string[]> => {
 
 const main = async (): Promise<void> => {
   const requested = process.argv.slice(2);
-  const targets = courses.filter((course) => requested.length === 0 || requested.includes(course.id));
+  const targets = [...courses, ...draftCourses].filter(
+    (course) => requested.length === 0 || requested.includes(course.id),
+  );
   const problems = (await Promise.all(targets.map(problemsOf))).flat();
   problems.forEach((problem) => console.log(problem));
   console.log(`${targets.length} courses checked, ${problems.length} problems`);

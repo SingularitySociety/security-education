@@ -15,6 +15,8 @@ const run = promisify(execFile);
 
 const SAMPLE_RATE_HZ = 48000;
 const SENTENCE_GAP_SECONDS = 0.3;
+// Kokoro speaks about a quarter slower than the narration pace the videos were timed for.
+const NARRATION_TEMPO = 1.25;
 const packageDir = fileURLToPath(new URL("../", import.meta.url));
 const publicDir = path.join(packageDir, "public");
 
@@ -73,7 +75,18 @@ const synthesizeScene = async (katarite: Katarite, utterances: readonly string[]
     speeches.push(await katarite.speak(utterance));
   }
   const rawPath = await writeWav(joinWithGaps(speeches), path.join(workDir, `${path.basename(wavPath)}.raw.wav`));
-  await runTool("ffmpeg", ["-y", "-loglevel", "error", "-i", rawPath, "-ar", String(SAMPLE_RATE_HZ), wavPath]);
+  await runTool("ffmpeg", [
+    "-y",
+    "-loglevel",
+    "error",
+    "-i",
+    rawPath,
+    "-filter:a",
+    `atempo=${NARRATION_TEMPO}`,
+    "-ar",
+    String(SAMPLE_RATE_HZ),
+    wavPath,
+  ]);
   return probeDurationSeconds(wavPath);
 };
 

@@ -1,6 +1,14 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
-import { isCourseReadings, MAX_SPAN_CHARS, readingProblem } from "../packages/video/src/readings.ts";
+import { readFileSync } from "node:fs";
+import { courses } from "../packages/course/src/index.ts";
+import {
+  isCourseReadings,
+  MAX_SPAN_CHARS,
+  readingProblem,
+  readingProblems,
+  readingsFileName,
+} from "../packages/video/src/readings.ts";
 
 const RAIN = "ja /ame<t:雨> desɯ<t:です。> ↘/";
 
@@ -64,12 +72,27 @@ describe("readingProblem sounds", () => {
   it("accepts geminates, the moraic nasal and long vowels", () => {
     assert.equal(readingProblem("切手", ["ja /kitte<t:切手> ↘/"]), undefined);
     assert.equal(readingProblem("マッチ", ["ja /mattɕi<t:マッチ> ↘/"]), undefined);
-    assert.equal(readingProblem("認証", ["ja /ɲiɲɕoː<t:認証> ↘/"]), undefined);
+    assert.equal(readingProblem("認証", ["ja /ɲiɴɕoː<t:認証> ↘/"]), undefined);
     assert.equal(readingProblem("一致", ["ja /iʔtɕi<t:一致> ↘/"]), undefined);
   });
 
   it("rejects utterances that are not one Japanese utterance", () => {
     assert.match(readingProblem("Hi", ["en-US /ˈhaɪ<t:Hi> ↘/"]) ?? "", /not one Japanese utterance/);
     assert.match(readingProblem("田中", ["ja /{ja tanaka<t:田中>} ↘/"]) ?? "", /not one Japanese utterance/);
+  });
+});
+
+describe("published course readings", () => {
+  it("every scene of every published course has a reading that matches its narration", () => {
+    const problems = courses.flatMap((course) => {
+      const raw: unknown = JSON.parse(
+        readFileSync(new URL(`../packages/video/${readingsFileName(course.id)}`, import.meta.url), "utf8"),
+      );
+      if (!isCourseReadings(raw)) return [`${course.id}: not readings`];
+      return course.scenes.flatMap((scene) =>
+        readingProblems(scene.narration, raw[scene.id]).map((problem) => `${course.id}/${scene.id}: ${problem}`),
+      );
+    });
+    assert.deepEqual(problems, []);
   });
 });

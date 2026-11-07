@@ -133,6 +133,15 @@ const SPACING = /[\s‖]/gu;
 // Before a vowel the moraic nasal is written ɴ, so `ni` is a misspelled ɲi rather than ン + イ.
 const NASAL_BEFORE_VOWEL = /^[mnɲŋ][aiɯeojw]/u;
 
+// The moraic nasal takes the place of the next consonant (YomiScript's instructions); ɴ elsewhere.
+export const moraicNasalBefore = (next: string): string => {
+  if (/^[pbm]/u.test(next)) return "m";
+  if (/^(dz|[tdnɾ](?![ɕʑ]))/u.test(next)) return "n";
+  if (/^(tɕ|dʑ|ɲ)/u.test(next)) return "ɲ";
+  if (/^[kɡ]/u.test(next)) return "ŋ";
+  return "ɴ";
+};
+
 export type KanaReading = { kana: string; unknown: string[] };
 
 const moraAt = (ipa: string, index: number): string | undefined => MORA_KEYS.find((key) => ipa.startsWith(key, index));
@@ -152,8 +161,11 @@ export const kanaOf = (ipa: string): KanaReading => {
   while (index < sounds.length) {
     const mora = moraAt(sounds, index);
     const length = mora?.length ?? 1;
+    const isMoraicNasal = mora !== undefined && MORAS[mora] === "ン";
+    const expectedNasal = moraicNasalBefore(sounds.slice(index + 1));
     if (NASAL_BEFORE_VOWEL.test(sounds.slice(index)) && mora?.length === 1)
       unknown.push(sounds.slice(index, index + 2));
+    else if (isMoraicNasal && mora !== expectedNasal) unknown.push(`${mora}→${expectedNasal}`);
     else if (mora !== undefined) kana.push(MORAS[mora] ?? "");
     else if (isGeminate(sounds, index)) kana.push("ッ");
     else unknown.push(sounds[index] ?? "");
