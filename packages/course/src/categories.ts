@@ -40,7 +40,15 @@ export const courseCategories: readonly CourseCategory[] = [
     id: "basics",
     title: "まず押さえる基本",
     audience: "すべての人",
-    courseIds: ["passwords", "phishing", "smishing", "sns-posting", "mfa-methods", "master-account", "browser-data-theft"],
+    courseIds: [
+      "passwords",
+      "phishing",
+      "smishing",
+      "sns-posting",
+      "mfa-methods",
+      "master-account",
+      "browser-data-theft",
+    ],
     upcoming: [],
   },
   {

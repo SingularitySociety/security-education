@@ -124,7 +124,11 @@ export const mfaMethodsCourse: Course = {
       steps: [
         { label: "SMS・メールのコード", detail: "偽サイトに弱い。番号やメールの乗っ取りにも", tone: "danger" },
         { label: "承認の通知（照合なし）", detail: "連打の手口に弱い", tone: "danger" },
-        { label: "時刻で変わるコード・照合付きの通知", detail: "SMSより強い。偽サイトでの中継には弱い", tone: "normal" },
+        {
+          label: "時刻で変わるコード・照合付きの通知",
+          detail: "SMSより強い。偽サイトでの中継には弱い",
+          tone: "normal",
+        },
         { label: "パスキー・物理的なセキュリティキー", detail: "偽サイトでは使えない", tone: "safe" },
       ],
       narration:
@@ -269,7 +273,8 @@ export const mfaMethodsCourse: Course = {
     },
     {
       id: "q5",
-      prompt: "夜中、自分はログインしていないのに「ログインを承認しますか？」という通知が何度も届きます。どうしますか？",
+      prompt:
+        "夜中、自分はログインしていないのに「ログインを承認しますか？」という通知が何度も届きます。どうしますか？",
       choices: [
         { id: "a", label: "うるさいので、一度承認して止める" },
         { id: "b", label: "承認せずに拒否し、公式アプリからパスワードを変える" },
@@ -387,7 +392,8 @@ export const mfaMethodsCourse: Course = {
     },
     {
       id: "q14",
-      prompt: "電波のよい場所なのに、スマホが急に圏外のまま直らず、覚えのないログインの通知も届いていました。まず何をしますか？",
+      prompt:
+        "電波のよい場所なのに、スマホが急に圏外のまま直らず、覚えのないログインの通知も届いていました。まず何をしますか？",
       choices: [
         { id: "a", label: "スマホが壊れたと考えて、翌週に修理に出す" },
         { id: "b", label: "家族の電話などから携帯会社の公式窓口に連絡し、金融機関にも連絡する" },

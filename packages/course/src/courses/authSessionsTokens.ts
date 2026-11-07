@@ -288,8 +288,7 @@ export const authSessionsTokensCourse: Course = {
         { id: "d", label: "確かめるのに必要な項目に絞り、個人情報や秘密は入れない" },
       ],
       correctChoiceId: "d",
-      explanation:
-        "署名だけのJWTの中身は誰でも読めます。発行者・宛先・期限など、確かめるのに必要な項目にとどめます。",
+      explanation: "署名だけのJWTの中身は誰でも読めます。発行者・宛先・期限など、確かめるのに必要な項目にとどめます。",
     },
     {
       id: "q6",
@@ -366,8 +365,7 @@ export const authSessionsTokensCourse: Course = {
         { id: "d", label: "HttpOnly を外し、画面のスクリプトから読めるようにする" },
       ],
       correctChoiceId: "b",
-      explanation:
-        "属性を明示し、送られる範囲を狭くします。SameSite も、ブラウザの既定の動きに頼らず明示します。",
+      explanation: "属性を明示し、送られる範囲を狭くします。SameSite も、ブラウザの既定の動きに頼らず明示します。",
     },
     {
       id: "q12",
@@ -463,11 +461,15 @@ export const authSessionsTokensCourse: Course = {
     },
     {
       id: "q19",
-      prompt: "アクセスログに更新トークンがそのまま記録されていました。漏れた範囲が分かりません。最初の対応として適切なものはどれですか？",
+      prompt:
+        "アクセスログに更新トークンがそのまま記録されていました。漏れた範囲が分かりません。最初の対応として適切なものはどれですか？",
       choices: [
         { id: "a", label: "範囲が分かるまで、何もせずに待つ" },
         { id: "b", label: "ログをすぐに削除して、なかったことにする" },
-        { id: "c", label: "失効の仕組みを確かめ、全員分のセッションと更新トークンを失効させ、ログは見られる人を限って保存する" },
+        {
+          id: "c",
+          label: "失効の仕組みを確かめ、全員分のセッションと更新トークンを失効させ、ログは見られる人を限って保存する",
+        },
         { id: "d", label: "更新トークンの有効期限を延ばす" },
       ],
       correctChoiceId: "c",
@@ -476,7 +478,8 @@ export const authSessionsTokensCourse: Course = {
     },
     {
       id: "q20",
-      prompt: "複数のAPIサーバーが、共有の記録を引かずにそれぞれ手元で利用者を確かめたい構成で、選択肢になるものはどれですか？",
+      prompt:
+        "複数のAPIサーバーが、共有の記録を引かずにそれぞれ手元で利用者を確かめたい構成で、選択肢になるものはどれですか？",
       choices: [
         { id: "a", label: "有効期限のないJWTを、localStorage に保存する" },
         { id: "b", label: "宛先を限った有効期限の短いJWTと、入れ替える更新トークン" },
