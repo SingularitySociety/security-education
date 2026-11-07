@@ -18,7 +18,13 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "browser-bookmark-login",
         text: "よく使うサイトには、ブックマークか公式アプリから入る",
-        courseIds: ["phishing", "realtime-phishing", "financial-support-takeover"],
+        courseIds: [
+          "phishing",
+          "realtime-phishing",
+          "financial-support-takeover",
+          "shopping-site-scams",
+          "p2p-trade-scams",
+        ],
       },
       {
         id: "browser-no-search-ads",
@@ -38,7 +44,7 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "browser-warning-phone",
         text: "「ウイルス感染」の警告画面に出た電話番号にかけない",
-        courseIds: ["phone-scams", "stop-and-ask"],
+        courseIds: ["phone-scams", "stop-and-ask", "protect-parents"],
       },
       {
         id: "browser-no-paste-commands",
@@ -49,6 +55,16 @@ export const checklistGroups: readonly ChecklistGroup[] = [
         id: "browser-shop-check",
         text: "安すぎる通販サイトは、メーカーの公式サイトで売っているか確かめてから買う",
         courseIds: ["shopping-site-scams"],
+      },
+      {
+        id: "browser-extension-profile",
+        text: "お金と仕事のサイトは、拡張機能を入れない別のプロファイルで開く",
+        courseIds: ["browser-extensions"],
+      },
+      {
+        id: "browser-leak-notice-official",
+        text: "漏えいのおわびや補償の連絡は、リンクを開かず、公式サイトのお知らせで確かめる",
+        courseIds: ["after-data-leak", "incident-reporting", "supply-chain-breach"],
       },
     ],
   },
@@ -84,7 +100,7 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "computer-backup",
         text: "大事なファイルを外付けの機器にもバックアップし、取るときだけつなぐ",
-        courseIds: ["backup-recovery", "device-basics"],
+        courseIds: ["backup-recovery", "device-basics", "ransomware-before-encryption"],
       },
       {
         id: "computer-backup-restore",
@@ -125,7 +141,7 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "smartphone-screen-lock",
         text: "推測されにくい暗証番号で、画面ロックをかける",
-        courseIds: ["device-basics"],
+        courseIds: ["device-basics", "tracking-stalkerware"],
       },
       {
         id: "smartphone-find-device",
@@ -157,6 +173,21 @@ export const checklistGroups: readonly ChecklistGroup[] = [
         text: "キャリア決済やチャージの上限額を、設定できるなら必要な分まで下げる",
         courseIds: ["mobile-apps-payments"],
       },
+      {
+        id: "smartphone-location-sharing",
+        text: "位置情報を共有している相手を見直す。心当たりのない相手がいたら、止める前に身の安全を考えて相談する",
+        courseIds: ["tracking-stalkerware"],
+      },
+      {
+        id: "smartphone-unknown-tag",
+        text: "知らないタグの通知が来たら、まず安全な場所へ移り、タグは壊さず捨てずに警察へ相談する",
+        courseIds: ["tracking-stalkerware"],
+      },
+      {
+        id: "smartphone-p2p-in-app",
+        text: "フリマなどの取引は、直接の振込やアプリの外のチャットに移らず、アプリの中で終える",
+        courseIds: ["p2p-trade-scams"],
+      },
     ],
   },
   {
@@ -166,7 +197,7 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "account-unique-passwords",
         text: "パスワードはサービスごとに別の長いものにし、パスワードマネージャーに作らせる",
-        courseIds: ["passwords", "master-account"],
+        courseIds: ["passwords", "master-account", "after-data-leak", "shopping-site-scams", "p2p-trade-scams"],
       },
       {
         id: "account-no-personal-hints",
@@ -211,12 +242,28 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "account-review-devices",
         text: "ログイン中の端末の一覧に、知らない端末がないか確かめる",
-        courseIds: ["browser-data-theft", "after-data-leak"],
+        courseIds: [
+          "browser-data-theft",
+          "after-data-leak",
+          "tracking-stalkerware",
+          "fake-job-offers",
+          "p2p-trade-scams",
+        ],
       },
       {
         id: "account-mail-forwarding",
         text: "メールに、覚えのない転送や振り分けの設定がないか確かめる",
         courseIds: ["email-takeover-abuse", "master-account"],
+      },
+      {
+        id: "account-connected-apps",
+        text: "アカウントの「連携アプリ」を見直し、使っていない連携は解除する",
+        courseIds: ["ai-agents-at-work", "browser-extensions"],
+      },
+      {
+        id: "account-legacy-contact",
+        text: "亡くなったときにアクセスできる人を指名できるアカウントでは設定し、その人に伝えておく",
+        courseIds: ["digital-legacy"],
       },
     ],
   },
@@ -227,17 +274,17 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "family-codeword",
         text: "SNSなどから推測できない家族の合言葉を、会って口頭で決め、書き残さない",
-        courseIds: ["ai-voice-impersonation", "chat-impersonation"],
+        courseIds: ["ai-voice-impersonation", "chat-impersonation", "protect-parents"],
       },
       {
         id: "family-call-back",
         text: "家族からのお金の頼みは、前から登録してある番号にかけ直して確かめる",
-        courseIds: ["ai-voice-impersonation", "chat-impersonation"],
+        courseIds: ["ai-voice-impersonation", "chat-impersonation", "protect-parents"],
       },
       {
         id: "family-fake-police",
         text: "「警察がSNSやビデオ通話で連絡してきたら詐欺」と家族で話しておく",
-        courseIds: ["fake-police"],
+        courseIds: ["fake-police", "sextortion"],
       },
       {
         id: "family-kids-account",
@@ -247,7 +294,7 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "family-kids-promise",
         text: "困ったことを話してくれたら叱らない、と子どもと約束する",
-        courseIds: ["kids-games"],
+        courseIds: ["kids-games", "sextortion"],
       },
       {
         id: "family-no-shared-master-password",
@@ -257,7 +304,7 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "family-router-admin-password",
         text: "ルーターの管理用パスワードが初期のままなら、変える",
-        courseIds: ["home-network"],
+        courseIds: ["home-network", "exposed-entry-points", "ddos-continuity", "ransomware-before-encryption"],
       },
       {
         id: "family-wifi-encryption",
@@ -267,7 +314,7 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "family-home-device-updates",
         text: "ルーターやカメラのソフトを最新にし、サポート期限を確かめる",
-        courseIds: ["home-network"],
+        courseIds: ["home-network", "exposed-entry-points", "ddos-continuity"],
       },
       {
         id: "family-photo-check",
@@ -279,6 +326,31 @@ export const checklistGroups: readonly ChecklistGroup[] = [
         text: "旅行中の写真は、帰ってから投稿する",
         courseIds: ["sns-posting"],
       },
+      {
+        id: "family-sextortion",
+        text: "性的な画像で脅されたら、安全を確保し、払わず追加で送らず、できる範囲で証拠を残して相談する（脅された人は悪くない）",
+        courseIds: ["sextortion"],
+      },
+      {
+        id: "family-parents-phone",
+        text: "離れて暮らす親の電話は在宅中も留守番電話にし、カードの引き出し限度額も一緒に確かめる",
+        courseIds: ["protect-parents"],
+      },
+      {
+        id: "family-emoney-card",
+        text: "「電子マネーのカードを買って番号を教えて」は詐欺、と家族で話しておく",
+        courseIds: ["fake-billing"],
+      },
+      {
+        id: "family-job-offer",
+        text: "求人の連絡で、身分証やカードの写真、お金を求められたら応じず、会社の公式サイトで調べた番号で確かめる",
+        courseIds: ["fake-job-offers"],
+      },
+      {
+        id: "family-contract-list",
+        text: "ネット銀行やサブスクなど契約の一覧を作り、置き場所を決めた家族に伝える（パスワードはそのまま書かない）",
+        courseIds: ["digital-legacy"],
+      },
     ],
   },
   {
@@ -287,8 +359,16 @@ export const checklistGroups: readonly ChecklistGroup[] = [
     items: [
       {
         id: "work-report-quickly",
-        text: "怪しいメールを開いた・入力してしまったら、すぐ社内の窓口に報告する",
-        courseIds: ["phishing", "incident-first-response"],
+        text: "怪しいメールを開いた・入力してしまった、または情報が漏れたおそれを知ったら、すぐ社内の窓口に報告する",
+        courseIds: [
+          "phishing",
+          "incident-first-response",
+          "incident-reporting",
+          "supply-chain-breach",
+          "ransomware-before-encryption",
+          "browser-extensions",
+          "ai-agents-at-work",
+        ],
       },
       {
         id: "work-verify-payment-change",
@@ -298,7 +378,7 @@ export const checklistGroups: readonly ChecklistGroup[] = [
       {
         id: "work-ai-input",
         text: "会社が許可したAIだけを使い、顧客情報や社外秘を入れない",
-        courseIds: ["ai-data-and-tools"],
+        courseIds: ["ai-data-and-tools", "secrets-in-code"],
       },
       {
         id: "work-share-by-address",
@@ -314,6 +394,37 @@ export const checklistGroups: readonly ChecklistGroup[] = [
         id: "work-unknown-usb",
         text: "拾った・配られたUSBメモリは挿さず、担当者に渡す",
         courseIds: ["outside-work"],
+      },
+      {
+        id: "work-ai-agent-approval",
+        text: "AIエージェントの権限は仕事に要る範囲だけにし、送信や共有は人が確かめてから承認し、支払いや削除は任せない",
+        courseIds: ["ai-agents-at-work"],
+      },
+      {
+        id: "work-supplier-ledger",
+        text: "委託先ごとに、預けているデータ・接続の方法・事故のときの連絡先を台帳にまとめる",
+        courseIds: ["supply-chain-breach", "incident-reporting"],
+      },
+    ],
+  },
+  {
+    id: "dev-it",
+    title: "開発・IT 担当",
+    items: [
+      {
+        id: "dev-secrets-not-in-code",
+        text: "APIキーやパスワードをコードに書かず、漏れたら消すより先に無効にして作り直す",
+        courseIds: ["secrets-in-code"],
+      },
+      {
+        id: "dev-entry-points",
+        text: "外から見える入口（VPN・管理画面・保守用の接続口）を一覧にし、使わないものは影響を確かめて止め、残す入口のログインには多要素認証を付ける",
+        courseIds: ["exposed-entry-points", "ransomware-before-encryption", "supply-chain-breach"],
+      },
+      {
+        id: "dev-offline-runbook",
+        text: "夜間・休日も含めた連絡網と対応手順を、止まるかもしれないシステムの外（紙など）にも置く",
+        courseIds: ["ddos-continuity"],
       },
     ],
   },
