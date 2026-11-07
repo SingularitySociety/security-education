@@ -19,7 +19,7 @@
     "ja /kiki<t:機器> no<t:の> ɕɯɾɯi<t:種類> to<t:と> ‖<t:、> dʑoːhoː<t:情報> no<t:の> dʑɯːjoːsa<t:重要さ> ɲi<t:に> atta<t:合った> hoːhoː<t:方法> de<t:で> ‖<t:、> kesɯ<t:消す> koto<t:こと> ɡa<t:が> taisetsɯ<t:大切> desɯ<t:です。> ↘/"
   ],
   "methods": [
-    "ja /soːmɯɕoː<t:総務省> no<t:の> ɡaidoɾaiɴ<t:ガイドライン> de<t:で> wa<t:は> ‖<t:、> deːta<t:データ> o<t:を> kesɯ<t:消す> hoːhoː<t:方法> o<t:を> ‖<t:、> hakai<t:破壊> ‖<t:、> dʑokʲo<t:除去> ‖<t:、> ɕoːkʲo<t:消去> no<t:の> mittsɯ<t:三つ> ɲi<t:に> wakete<t:分けて> imasɯ<t:います。> ↘/",
+    "ja /soːmɯɕoː<t:総務省> no<t:の> ‖<t:、> dʑitɕitai<t:自治体> mɯke<t:向け> no<t:の> ɡaidoɾaiɴ<t:ガイドライン> wa<t:は> ‖<t:、> ameɾika<t:アメリカ> no<t:の> kokɯɾitsɯ<t:国立> çoːdʑɯɴ<t:標準> ɡidʑɯtsɯ<t:技術> keŋkʲɯːdʑo<t:研究所> no<t:の> ɕiɕiɴ<t:指針> o<t:を> saŋkoː<t:参考> ɲi<t:に> ‖<t:、> deːta<t:データ> o<t:を> kesɯ<t:消す> hoːhoː<t:方法> o<t:を> ‖<t:、> hakai<t:破壊> ‖<t:、> dʑokʲo<t:除去> ‖<t:、> ɕoːkʲo<t:消去> no<t:の> mittsɯ<t:三つ> ɲi<t:に> wakete<t:分けて> setsɯmeː<t:説明> ɕite<t:して> imasɯ<t:います。> ↘/",
     "ja /hakai<t:破壊> wa<t:は> ‖<t:、> bɯtsɯɾiteki<t:物理的> ɲi<t:に> kowasɯ<t:壊す> hoːhoː<t:方法> desɯ<t:です。> ↘/",
     "ja /eitɕidiːdiː<t:エイチディーディー> ‖<t:、> tsɯmaɾi<t:つまり> haːdodisɯkɯ<t:ハードディスク> naɾa<t:なら> ‖<t:、> sotoɡawa<t:外側> no<t:の> hako<t:箱> de<t:で> wa<t:は> nakɯ<t:なく> ‖<t:、> naka<t:中> no<t:の> embaɴ<t:円盤> made<t:まで> kowasɯ<t:壊す> çitsɯjoː<t:必要> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
     "ja /tadaɕi<t:ただし> ‖<t:、> keɡa<t:けが> ja<t:や> dʑiko<t:事故> no<t:の> moto<t:もと> ɲi<t:に> naɾɯ<t:なる> node<t:ので> ‖<t:、> ɕaiɴ<t:社員> ɡa<t:が> dʑibɯɴ<t:自分> de<t:で> bɯŋkai<t:分解> ɕitaɾi<t:したり> ‖<t:、> kowaɕitaɾi<t:壊したり> ɕite<t:して> wa<t:は> ikemaseɴ<t:いけません。> ↘/",
@@ -58,6 +58,8 @@
     "ja /tsɯɡi<t:次> ɲi<t:に> ‖<t:、> meːɾɯ<t:メール> ja<t:や> tɕatto<t:チャット> ‖<t:、> kɯɾaɯdo<t:クラウド> no<t:の> saːbisɯ<t:サービス> kaɾa<t:から> ɾoɡɯaɯto<t:ログアウト> ɕi<t:し> ‖<t:、> akaɯnto<t:アカウント> no<t:の> setteː<t:設定> ɡameɴ<t:画面> de<t:で> ‖<t:、> ɾoɡɯiɴ<t:ログイン> ɕite<t:して> iɾɯ<t:いる> kiki<t:機器> no<t:の> itɕiɾaɴ<t:一覧> kaɾa<t:から> ‖<t:、> sono<t:その> tammatsɯ<t:端末> o<t:を> sakɯdʑo<t:削除> ɕimasɯ<t:します。> ↘/",
     "ja /tammatsɯ<t:端末> o<t:を> saɡasɯ<t:探す> kinoː<t:機能> o<t:を> oɸɯ<t:オフ> ɲi<t:に> ɕi<t:し> ‖<t:、> ɕimɯkaːdo<t:シムカード> ja<t:や> ‖<t:、> esɯdiːkaːdo<t:エスディーカード> o<t:を> nɯkimasɯ<t:抜きます。> ↘/",
     "ja /saiɡo<t:最後> ɲi<t:に> ‖<t:、> tammatsɯ<t:端末> o<t:を> ɕokika<t:初期化> ɕimasɯ<t:します。> ↘/",
+    "ja /iːɕimɯ<t:イーシム> wa<t:は> nɯkenai<t:抜けない> node<t:ので> ‖<t:、> ɕokika<t:初期化> no<t:の> toki<t:とき> ɲi<t:に> ‖<t:、> iːɕimɯ<t:イーシム> mo<t:も> kesɯ<t:消す> hoː<t:ほう> o<t:を> eɾabimasɯ<t:選びます。> ↘/",
+    "ja /keɕite<t:消して> mo<t:も> keːjakɯ<t:契約> wa<t:は> tsɯdzɯkɯ<t:続く> node<t:ので> ‖<t:、> kaijakɯ<t:解約> ja<t:や> noɾikae<t:乗り換え> wa<t:は> ‖<t:、> keːtaideɴwaɡaiɕa<t:携帯電話会社> de<t:で> tetsɯdzɯki<t:手続き> ɕimasɯ<t:します。> ↘/",
     "ja /komaka<t:細か> na<t:な> tedʑɯɴ<t:手順> wa<t:は> kiɕɯ<t:機種> ɲi<t:に> jotte<t:よって> tɕiɡaɯ<t:違う> node<t:ので> ‖<t:、> sɯmaho<t:スマホ> no<t:の> meːkaː<t:メーカー> ja<t:や> ‖<t:、> keːtaideɴwaɡaiɕa<t:携帯電話会社> no<t:の> annai<t:案内> ɲi<t:に> sotte<t:沿って> ‖<t:、> dʑibɯɴ<t:自分> de<t:で> sɯsɯmemaɕoː<t:進めましょう。> ↘/",
     "ja /nao<t:なお> ‖<t:、> kaiɕa<t:会社> kaɾa<t:から> watasaɾeta<t:渡された> ɡʲoːmɯjoː<t:業務用> no<t:の> sɯmaho<t:スマホ> wa<t:は> ‖<t:、> dʑibɯɴ<t:自分> de<t:で> ɕokika<t:初期化> sedzɯ<t:せず> ‖<t:、> kaiɕa<t:会社> ɲi<t:に> heŋkʲakɯ<t:返却> ɕite<t:して> kɯdasai<t:ください。> ↘/"
   ],
