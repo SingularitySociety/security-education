@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import OrgLinks from "./components/OrgLinks.vue";
+import { ORG_NAME, ORG_SITE_URL } from "./lib/orgLinks.ts";
+</script>
+
 <template>
   <div class="min-h-screen">
     <header class="border-b border-slate-200 bg-white">
@@ -19,11 +24,25 @@
             </RouterLink>
           </nav>
         </div>
-        <span class="hidden text-sm text-slate-500 md:inline">動画を見て、確認テストに合格しよう</span>
+        <div class="flex items-center gap-3 text-xs text-slate-500">
+          <span>{{ ORG_NAME }}</span>
+          <OrgLinks />
+        </div>
       </div>
     </header>
     <main class="mx-auto max-w-4xl px-4 py-8">
       <RouterView />
     </main>
+    <footer class="border-t border-slate-200 bg-white">
+      <div class="mx-auto flex max-w-4xl flex-col gap-2 px-4 py-6 text-sm text-slate-500">
+        <p>
+          運営:
+          <a :href="ORG_SITE_URL" target="_blank" rel="noopener noreferrer" class="font-semibold hover:text-sky-700">{{
+            ORG_NAME
+          }}</a>
+        </p>
+        <OrgLinks />
+      </div>
+    </footer>
   </div>
 </template>
