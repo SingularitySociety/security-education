@@ -1,32 +1,18 @@
 <script setup lang="ts">
 import {
+  audiencePages,
   courseCategories,
   courses,
   draftCourses,
-  formatMinutesSeconds,
   groupCoursesByCategory,
   PASS_THRESHOLD_PERCENT,
   QUIZ_QUESTION_COUNT,
-  videoDurationSeconds,
-  watchedSoFarLabel,
 } from "@security-education/course";
-import StatusBadge from "../components/StatusBadge.vue";
-import { usePlayback } from "../lib/playbackStore.ts";
-import { useProgress } from "../lib/progressStore.ts";
+import CourseCard from "../components/CourseCard.vue";
 
-const { courseProgress } = useProgress();
-const { coursePlayback } = usePlayback();
 const groups = groupCoursesByCategory(courseCategories, courses, draftCourses);
 
 const sectionId = (categoryId: string): string => `category-${categoryId}`;
-
-const videoLengthLabel = (courseId: string): string | undefined => {
-  const seconds = videoDurationSeconds(courseId);
-  return seconds === undefined ? undefined : `動画 ${formatMinutesSeconds(seconds)}`;
-};
-
-const partWatchedLabel = (courseId: string): string | undefined =>
-  courseProgress(courseId).watched ? undefined : watchedSoFarLabel(coursePlayback(courseId).furthestSeconds);
 
 const scrollToCategory = (categoryId: string) => {
   document.getElementById(sectionId(categoryId))?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -41,6 +27,24 @@ const scrollToCategory = (categoryId: string) => {
         PASS_THRESHOLD_PERCENT
       }}%以上の正解で合格です。
     </p>
+    <nav class="mt-6 grid gap-3 sm:grid-cols-3" aria-label="目的から選ぶ">
+      <RouterLink
+        v-for="audience in audiencePages"
+        :key="audience.id"
+        :to="{ name: 'audience', params: { audienceId: audience.id } }"
+        class="rounded-xl border border-sky-200 bg-sky-50 p-4 transition hover:border-sky-400 hover:shadow"
+      >
+        <p class="font-bold text-sky-800">{{ audience.navLabel }}</p>
+        <p class="mt-1 text-sm text-slate-600">{{ audience.tagline }}</p>
+      </RouterLink>
+      <RouterLink
+        :to="{ name: 'checklist' }"
+        class="rounded-xl border border-sky-200 bg-sky-50 p-4 transition hover:border-sky-400 hover:shadow"
+      >
+        <p class="font-bold text-sky-800">安全チェックリスト</p>
+        <p class="mt-1 text-sm text-slate-600">危ないことをしていないか、一つずつ確かめる</p>
+      </RouterLink>
+    </nav>
     <nav class="mt-6 flex flex-wrap gap-2" aria-label="カテゴリー">
       <button
         v-for="group in groups"
@@ -59,27 +63,21 @@ const scrollToCategory = (categoryId: string) => {
       class="mt-10 scroll-mt-4"
     >
       <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-        <h2 class="text-xl font-bold">{{ group.category.title }}</h2>
+        <h2 class="text-xl font-bold">
+          <RouterLink
+            v-if="group.category.courseIds.length > 0"
+            :to="{ name: 'category', params: { categoryId: group.category.id } }"
+            class="hover:text-sky-700 hover:underline"
+          >
+            {{ group.category.title }}
+          </RouterLink>
+          <template v-else>{{ group.category.title }}</template>
+        </h2>
         <span class="rounded-full bg-sky-50 px-3 py-0.5 text-sm text-sky-800">対象：{{ group.category.audience }}</span>
       </div>
       <ul class="mt-4 grid gap-4 sm:grid-cols-2">
         <li v-for="course in group.courses" :key="course.id">
-          <RouterLink
-            :to="{ name: 'course', params: { courseId: course.id } }"
-            class="block h-full rounded-xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-sky-400 hover:shadow"
-          >
-            <div class="flex items-start justify-between gap-3">
-              <h3 class="text-lg font-bold">{{ course.title }}</h3>
-              <StatusBadge :progress="courseProgress(course.id)" />
-            </div>
-            <p class="mt-2 text-sm text-slate-600">{{ course.summary }}</p>
-            <p class="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs text-slate-500">
-              <span v-if="videoLengthLabel(course.id)">{{ videoLengthLabel(course.id) }}</span>
-              <span v-if="partWatchedLabel(course.id)" class="font-semibold text-sky-700">
-                {{ partWatchedLabel(course.id) }}
-              </span>
-            </p>
-          </RouterLink>
+          <CourseCard :course="course" />
         </li>
         <li
           v-for="course in [...group.drafts, ...group.upcoming]"

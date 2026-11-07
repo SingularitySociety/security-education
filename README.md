@@ -90,7 +90,7 @@
 
 - `packages/course` — 台本・クイズ・採点・進捗の純粋関数（動画と Web の共通データ）
 - `packages/video` — Remotion で動画を生成。ナレーションは [yomiscript](https://github.com/receptron/yomiscript) の Kokoro。読みは場面ごとに `packages/video/readings/<courseId>.json` へ YomiScript（発音記号）で書き、エンジンはそのとおりに話す（漢字の読み間違いが起きない）
-- `packages/web` — Vue 3 + Tailwind CSS + TypeScript。動画を最後まで見ると確認テストが解放され、80%以上で合格。結果はブラウザの localStorage に保存。再生位置も10秒ごとに保存し、開き直すと続きから再生する（見たところまでは早送りできる。一覧には「約○分まで視聴」と出す）。「安全チェックリスト」（`/checklist/`）では、コースで教えている行動を一行ずつ確かめてチェックでき、各項目からコースへ飛べる（項目は `packages/course/src/checklist.ts`。チェックも localStorage に保存）
+- `packages/web` — Vue 3 + Tailwind CSS + TypeScript。動画を最後まで見ると確認テストが解放され、80%以上で合格。結果はブラウザの localStorage に保存。再生位置も10秒ごとに保存し、開き直すと続きから再生する（見たところまでは早送りできる。一覧には「約○分まで視聴」と出す）。「安全チェックリスト」（`/checklist/`）では、コースで教えている行動を一行ずつ確かめてチェックでき、各項目からコースへ飛べる（項目は `packages/course/src/checklist.ts`。チェックも localStorage に保存）。カテゴリーごとのページ（`/categories/<id>/`）と、対象別のページ（`/for/family/` 家族に送る用、`/for/smb/` 中小企業用。内容は `packages/course/src/audiencePages.ts`）もある
 
 ## 使い方
 
@@ -103,7 +103,7 @@ yarn dev           # http://localhost:5173
 - `yarn video:voice [courseId...]` — 読みから音声だけ再生成（→ `yarn video:render`）。台本を変えたら、その場面の読みも書き直す
 - `yarn workspace @security-education/video readings:check [courseId...]` — 読みの元の文字（`<t:…>`）をつなげたものが台本と一致するか確かめる（`yarn test` でも確かめる）
 - `yarn video:render [courseId...]` — 動画だけ再レンダリング。描き出した長さを `packages/course/src/videoDurations.json` に書き込み、一覧の「動画 ○分○秒」に使う（このファイルもコミットする）
-- `yarn workspace @security-education/video og [pageKey...]` — SNS で共有したときの画像（1200x630）を `packages/web/public/og/` に描き出す。キーはコースの id、`home`、`checklist`。ヒラギノで描くので macOS で作り、画像はコミットする（`yarn test` が画像の欠けを見つける）
+- `yarn workspace @security-education/video og [pageKey...]` — SNS で共有したときの画像（1200x630）を `packages/web/public/og/` に描き出す。キーはコースの id、`home`、`checklist`、`category-<id>`、`for-<id>`。ヒラギノで描くので macOS で作り、画像はコミットする（`yarn test` が画像の欠けを見つける）
 - `yarn workspace @security-education/video studio` — Remotion Studio でプレビュー
 - `yarn build` — 静的サイトを `packages/web/dist/` に出力。ページごとの HTML（題名・説明文・共有用の画像・構造化データと、JavaScript なしで読める本文）、`404.html`、`sitemap.xml`、`llms.txt`、`llms-full.txt` も書き出す。URL は `/security-education/courses/<id>/` の形で、置き場所は `packages/web/vite.config.ts` の `base` と `packages/course/src/sitePages.ts` の `SITE_URL` で決まる
 
