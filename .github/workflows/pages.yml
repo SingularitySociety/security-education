@@ -14,6 +14,9 @@ concurrency:
 
 env:
   VIDEOS_RELEASE_TAG: videos
+  # GitHub Pages rejects sites over 1 GB; warn well before that so there is time to move videos off Pages.
+  VIDEOS_WARN_BYTES: 850000000
+  VIDEOS_MAX_BYTES: 1000000000
 
 jobs:
   build:
@@ -34,6 +37,18 @@ jobs:
       - run: gh release download "$VIDEOS_RELEASE_TAG" --pattern "*.mp4" --dir packages/web/public/videos
         env:
           GH_TOKEN: ${{ github.token }}
+      # Over the limit, the deploy only fails after a long timeout, so stop here with a clear message.
+      - name: Check the total video size
+        run: |
+          total_bytes=$(du -sb packages/web/public/videos | cut -f1)
+          echo "videos: ${total_bytes} bytes (warn ${VIDEOS_WARN_BYTES}, limit ${VIDEOS_MAX_BYTES})"
+          if [ "$total_bytes" -gt "$VIDEOS_WARN_BYTES" ]; then
+            echo "::warning::Videos total ${total_bytes} bytes, close to the GitHub Pages limit."
+          fi
+          if [ "$total_bytes" -gt "$VIDEOS_MAX_BYTES" ]; then
+            echo "::error::Videos total ${total_bytes} bytes, over ${VIDEOS_MAX_BYTES}. Lower the bitrate or move videos off Pages."
+            exit 1
+          fi
       - run: yarn build
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5

@@ -7,6 +7,8 @@ import { courses, isVideoDurations, videoFileName, withVideoDuration } from "@se
 
 const PROGRESS_LOG_STEP_PERCENT = 20;
 const PERCENT_SCALE = 100;
+// Narration only: a higher audio bitrate mostly adds size, and the Pages site has a total size limit.
+const AUDIO_BITRATE = "64k";
 
 const packageDir = fileURLToPath(new URL("../", import.meta.url));
 const webPublicDir = fileURLToPath(new URL("../../web/public/", import.meta.url));
@@ -29,6 +31,7 @@ const renderCourse = async (serveUrl: string, courseId: string): Promise<void> =
     serveUrl,
     composition,
     codec: "h264",
+    audioBitrate: AUDIO_BITRATE,
     inputProps,
     outputLocation,
     onProgress: ({ progress }) => {
