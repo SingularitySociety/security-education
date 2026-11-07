@@ -37,6 +37,14 @@ import { apiSecurityCourse } from "./courses/apiSecurity.ts";
 import { secureDesignCourse } from "./courses/secureDesign.ts";
 import { intrusionDetectionCourse } from "./courses/intrusionDetection.ts";
 import { forensicsCourse } from "./courses/forensics.ts";
+import { fakePoliceCourse } from "./courses/fakePolice.ts";
+import { browserDataTheftCourse } from "./courses/browserDataTheft.ts";
+import { mfaMethodsCourse } from "./courses/mfaMethods.ts";
+import { authSessionsTokensCourse } from "./courses/authSessionsTokens.ts";
+import { masterAccountCourse } from "./courses/masterAccount.ts";
+import { chatImpersonationCourse } from "./courses/chatImpersonation.ts";
+import { businessSnsTakeoverCourse } from "./courses/businessSnsTakeover.ts";
+import { aiVoiceImpersonationCourse } from "./courses/aiVoiceImpersonation.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -88,6 +96,14 @@ export const courses: readonly Course[] = [
   secureDesignCourse,
   intrusionDetectionCourse,
   forensicsCourse,
+  fakePoliceCourse,
+  browserDataTheftCourse,
+  mfaMethodsCourse,
+  authSessionsTokensCourse,
+  masterAccountCourse,
+  chatImpersonationCourse,
+  businessSnsTakeoverCourse,
+  aiVoiceImpersonationCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.
