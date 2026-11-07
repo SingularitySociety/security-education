@@ -73,11 +73,38 @@
     "ja /koː<t:こう> ɕita<t:した> taioː<t:対応> ɡa<t:が> dekiɾɯ<t:できる> joː<t:よう> ɲi<t:に> ‖<t:、> ɸɯdaɴ<t:普段> kaɾa<t:から> kaiɕa<t:会社> no<t:の> tammatsɯ<t:端末> kanɾi<t:管理> no<t:の> setteː<t:設定> ɲi<t:に> ɕitaɡatte<t:従って> okɯ<t:おく> koto<t:こと> mo<t:も> taisetsɯ<t:大切> desɯ<t:です。> ↘/",
     "ja /soɕite<t:そして> ‖<t:、> ɯketoɾɯ<t:受け取る> ɡawa<t:側> no<t:の> doːɾʲoː<t:同僚> wa<t:は> ‖<t:、> tatoe<t:たとえ> hommono<t:本物> no<t:の> akaɯnto<t:アカウント> kaɾa<t:から> demo<t:でも> ‖<t:、> itsɯmo<t:いつも> to<t:と> tɕiɡaɯ<t:違う> iɾai<t:依頼> wa<t:は> ‖<t:、> deɴwa<t:電話> nado<t:など> betsɯ<t:別> no<t:の> keːɾo<t:経路> de<t:で> hoɲɲiɴ<t:本人> ɲi<t:に> taɕikamemaɕoː<t:確かめましょう。> ↘/"
   ],
+  "not-found": [
+    "ja /eki<t:駅> ɲi<t:に> toiawasete<t:問い合わせて> mo<t:も> ‖<t:、> satoː<t:佐藤> saɴ<t:さん> no<t:の> kabaɴ<t:かばん> wa<t:は> mitsɯkaɾimaseɴ<t:見つかりません。> ↘/",
+    "ja /mitsɯkaɾanai<t:見つからない> toki<t:とき> wa<t:は> ‖<t:、> tomeɾɯ<t:止める> ‖<t:、> todokeɾɯ<t:届ける> ‖<t:、> nokosɯ<t:残す> ‖<t:、> kaeɾɯ<t:変える> ‖<t:、> no<t:の> dʑɯɴ<t:順> ɲi<t:に> sɯsɯmemasɯ<t:進めます。> ↘/",
+    "ja /madzɯ<t:まず> ‖<t:、> tomeɾɯ<t:止める。> ↘/",
+    "ja /kaiɕa<t:会社> no<t:の> tammatsɯ<t:端末> naɾa<t:なら> ‖<t:、> kaiseɴ<t:回線> no<t:の> teːɕi<t:停止> mo<t:も> ɸɯkɯmete<t:含めて> ‖<t:、> kaiɕa<t:会社> no<t:の> tedʑɯɴ<t:手順> ɲi<t:に> ɕitaɡaimasɯ<t:従います。> ↘/",
+    "ja /kodʑiɴ<t:個人> no<t:の> sɯmaho<t:スマホ> naɾa<t:なら> ‖<t:、> betsɯ<t:別> no<t:の> tammatsɯ<t:端末> kaɾa<t:から> koːɕiki<t:公式> no<t:の> kinoː<t:機能> de<t:で> eŋkakɯ<t:遠隔> ɾokkɯ<t:ロック> o<t:を> kake<t:かけ> ‖<t:、> tsɯːɕiɴ<t:通信> ɡaiɕa<t:会社> ɲi<t:に> ɾenɾakɯ<t:連絡> ɕite<t:して> kaiseɴ<t:回線> o<t:を> tomemasɯ<t:止めます。> ↘/",
+    "ja /sɯmaho<t:スマホ> de<t:で> ɕihaɾai<t:支払い> o<t:を> ɕite<t:して> iɾeba<t:いれば> ‖<t:、> kessai<t:決済> saːbisɯ<t:サービス> ja<t:や> kaːdo<t:カード> no<t:の> kaiɕa<t:会社> ɲi<t:に> mo<t:も> ɾenɾakɯ<t:連絡> ɕimasɯ<t:します。> ↘/",
+    "ja /kɯwaɕikɯ<t:くわしく> wa<t:は> ‖<t:、> sɯmaho<t:スマホ> to<t:と> pasokoɴ<t:パソコン> no<t:の> kihoɴ<t:基本> no<t:の> ɾessɯɴ<t:レッスン> de<t:で> manabemasɯ<t:学べます。> ↘/",
+    "ja /tsɯɡi<t:次> ɲi<t:に> ‖<t:、> todokeɾɯ<t:届ける。> ↘/",
+    "ja /mitɕi<t:道> nado<t:など> de<t:で> otoɕita<t:落とした> naɾa<t:なら> ‖<t:、> keːsatsɯɕo<t:警察署> ja<t:や> koːbaɴ<t:交番> ɲi<t:に> iɕitsɯtodoke<t:遺失届> o<t:を> daɕimasɯ<t:出します。> ↘/",
+    "ja /deɴɕa<t:電車> ja<t:や> eki<t:駅> ‖<t:、> omise<t:お店> de<t:で> otoɕita<t:落とした> naɾa<t:なら> ‖<t:、> sono<t:その> ɕisetsɯ<t:施設> ɲi<t:に> mo<t:も> toiawasemasɯ<t:問い合わせます。> ↘/",
+    "ja /nɯsɯmaɾeta<t:盗まれた> to<t:と> omottaɾa<t:思ったら> ‖<t:、> dʑibɯɴ<t:自分> de<t:で> toɾikaeɕi<t:取り返し> ɲi<t:に> ikadzɯ<t:行かず> ‖<t:、> keːsatsɯ<t:警察> ɲi<t:に> soːdaɴ<t:相談> ɕimaɕoː<t:しましょう。> ↘/",
+    "ja /soɕite<t:そして> ‖<t:、> nokosɯ<t:残す。> ↘/",
+    "ja /itsɯ<t:いつ> ‖<t:、> doko<t:どこ> de<t:で> kidzɯita<t:気づいた> ka<t:か> ‖<t:、> tammatsɯ<t:端末> ɲi<t:に> naɲi<t:何> ɡa<t:が> haitte<t:入って> ita<t:いた> ka<t:か> ‖<t:、> daɾe<t:誰> ɲi<t:に> itsɯ<t:いつ> ɾenɾakɯ<t:連絡> ɕita<t:した> ka<t:か> o<t:を> ‖<t:、> memo<t:メモ> ɕite<t:して> okimasɯ<t:おきます。> ↘/"
+  ],
+  "not-found-change": [
+    "ja /saiɡo<t:最後> ɲi<t:に> ‖<t:、> kaeɾɯ<t:変える。> ↘/",
+    "ja /nakɯɕita<t:なくした> tammatsɯ<t:端末> de<t:で> ɾoɡɯiɴ<t:ログイン> ɕite<t:して> ita<t:いた> saːbisɯ<t:サービス> wa<t:は> ‖<t:、> pasɯwaːdo<t:パスワード> o<t:を> kae<t:変え> ‖<t:、> hoka<t:ほか> no<t:の> tammatsɯ<t:端末> kaɾa<t:から> ɾoɡɯaɯto<t:ログアウト> saseɾɯ<t:させる> kinoː<t:機能> ɡa<t:が> aɾeba<t:あれば> tsɯkatte<t:使って> ‖<t:、> ɾoɡɯiɴ<t:ログイン> ɕita<t:した> mama<t:まま> no<t:の> dʑoːtai<t:状態> o<t:を> owaɾasemasɯ<t:終わらせます。> ↘/",
+    "ja /kakɯɲiɴ<t:確認> koːdo<t:コード> o<t:を> ɯketoɾɯ<t:受け取る> sɯmaho<t:スマホ> datta<t:だった> naɾa<t:なら> ‖<t:、> ataɾaɕii<t:新しい> tammatsɯ<t:端末> de<t:で> ‖<t:、> kakɯɲiɴ<t:確認> no<t:の> setteː<t:設定> o<t:を> ɕinaoɕimasɯ<t:し直します。> ↘/",
+    "ja /nakɯɕita<t:なくした> ato<t:あと> ɲi<t:に> todokɯ<t:届く> messeːdʑi<t:メッセージ> ja<t:や> deɴwa<t:電話> de<t:で> ‖<t:、> pasɯkoːdo<t:パスコード> ja<t:や> pasɯwaːdo<t:パスワード> ‖<t:、> kakɯɲiɴ<t:確認> koːdo<t:コード> o<t:を> kikaɾete<t:聞かれて> mo<t:も> ‖<t:、> oɕiete<t:教えて> wa<t:は> ikemaseɴ<t:いけません。> ↘/",
+    "ja /kaiɕa<t:会社> no<t:の> baai<t:場合> wa<t:は> ‖<t:、> tammatsɯ<t:端末> ɲi<t:に> okʲakɯ<t:お客> saɴ<t:さん> no<t:の> kodʑiɴ<t:個人> dʑoːhoː<t:情報> ɡa<t:が> haitte<t:入って> ita<t:いた> naɾa<t:なら> ‖<t:、> sono<t:その> naijoː<t:内容> ɲi<t:に> jotte<t:よって> ‖<t:、> kodʑiɴ<t:個人> dʑoːhoː<t:情報> hoɡo<t:保護> iiŋkai<t:委員会> e<t:へ> no<t:の> hoːkokɯ<t:報告> ja<t:や> ‖<t:、> hoɲɲiɴ<t:本人> e<t:へ> no<t:の> tsɯːtɕi<t:通知> ɡa<t:が> çitsɯjoː<t:必要> ɲi<t:に> naɾɯ<t:なる> koto<t:こと> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
+    "ja /çitsɯjoː<t:必要> ka<t:か> doː<t:どう> ka<t:か> wa<t:は> ‖<t:、> kaiɕa<t:会社> no<t:の> tantoːɕa<t:担当者> ɡa<t:が> handaɴ<t:判断> ɕimasɯ<t:します。> ↘/",
+    "ja /kɯwaɕikɯ<t:くわしく> wa<t:は> ‖<t:、> betsɯ<t:別> no<t:の> ɾessɯɴ<t:レッスン> de<t:で> manabemasɯ<t:学べます。> ↘/",
+    "ja /ato<t:あと> kaɾa<t:から> tammatsɯ<t:端末> ɡa<t:が> mitsɯkatte<t:見つかって> mo<t:も> ‖<t:、> sɯɡɯ<t:すぐ> ɲi<t:に> wa<t:は> tsɯkaihadʑimemaseɴ<t:使い始めません。> ↘/",
+    "ja /kaiɕa<t:会社> no<t:の> tammatsɯ<t:端末> naɾa<t:なら> ‖<t:、> kaiɕa<t:会社> ɲi<t:に> wataɕite<t:渡して> naka<t:中> o<t:を> taɕikamete<t:確かめて> moɾaimasɯ<t:もらいます。> ↘/",
+    "ja /kodʑiɴ<t:個人> no<t:の> sɯmaho<t:スマホ> naɾa<t:なら> ‖<t:、> meːkaː<t:メーカー> ja<t:や> tsɯːɕiɴ<t:通信> ɡaiɕa<t:会社> no<t:の> koːɕiki<t:公式> no<t:の> madoɡɯtɕi<t:窓口> ɲi<t:に> soːdaɴ<t:相談> ɕite<t:して> kaɾa<t:から> tsɯkaimaɕoː<t:使いましょう。> ↘/"
+  ],
   "usb": [
     "ja /saiɡo<t:最後> ɲi<t:に> ‖<t:、> jɯːesɯbiː<t:ユーエスビー> memoɾi<t:メモリ> desɯ<t:です。> ↘/",
     "ja /koːɡekiɕa<t:攻撃者> wa<t:は> ‖<t:、> ɯiɾɯsɯ<t:ウイルス> o<t:を> iɾeta<t:入れた> kiɾokɯ<t:記録> baitai<t:媒体> o<t:を> wadzato<t:わざと> oite<t:置いて> oki<t:おき> ‖<t:、> çiɾotta<t:拾った> çito<t:人> ɡa<t:が> ‖<t:、> motɕinɯɕi<t:持ち主> o<t:を> saɡasoː<t:探そう> to<t:と> ɕite<t:して> sasɯ<t:挿す> no<t:の> o<t:を> matsɯ<t:待つ> koto<t:こと> ɡa<t:が> aɾimasɯ<t:あります。> ↘/",
     "ja /otoɕita<t:落とした> çito<t:人> ɲi<t:に> kaeɕitai<t:返したい> to<t:と> iɯ<t:いう> ɕiɴsetsɯɕiɴ<t:親切心> ɲi<t:に> tsɯkekomɯ<t:つけ込む> teɡɯtɕi<t:手口> desɯ<t:です。> ↘/",
-    "ja /çiɾottaɾi<t:拾ったり> ‖<t:、> kɯbaɾaɾetaɾi<t:配られたり> ɕita<t:した> jɯːesɯbiː<t:ユーエスビー> memoɾi<t:メモリ> wa<t:は> sasadzɯ<t:挿さず> ɲi<t:に> ‖<t:、> tantoːɕa<t:担当者> ɲi<t:に> wataɕimaɕoː<t:渡しましょう。> ↘/",
+    "ja /çiɾottaɾi<t:拾ったり> ‖<t:、> dedokoɾo<t:出どころ> ɡa<t:が> wakaɾanai<t:分からない> mama<t:まま> kɯbaɾaɾetaɾi<t:配られたり> ɕita<t:した> jɯːesɯbiː<t:ユーエスビー> memoɾi<t:メモリ> wa<t:は> sasadzɯ<t:挿さず> ɲi<t:に> ‖<t:、> tantoːɕa<t:担当者> ɲi<t:に> wataɕimaɕoː<t:渡しましょう。> ↘/",
     "ja /kaiɕa<t:会社> ɡa<t:が> kʲoka<t:許可> ɕite<t:して> inai<t:いない> ɕibɯtsɯ<t:私物> no<t:の> kiɾokɯ<t:記録> baitai<t:媒体> o<t:を> ‖<t:、> kaiɕa<t:会社> no<t:の> pasokoɴ<t:パソコン> ɲi<t:に> sasɯ<t:挿す> no<t:の> mo<t:も> jamemasɯ<t:やめます。> ↘/",
     "ja /ɕibɯtsɯ<t:私物> wa<t:は> ‖<t:、> ɕiɾanai<t:知らない> ɯtɕi<t:うち> ɲi<t:に> ɯiɾɯsɯ<t:ウイルス> ɲi<t:に> kaɴseɴ<t:感染> ɕite<t:して> iɾɯ<t:いる> koto<t:こと> ɡa<t:が> aɾɯ<t:ある> kaɾa<t:から> desɯ<t:です。> ↘/",
     "ja /doːɕitemo<t:どうしても> motɕidasɯ<t:持ち出す> naɾa<t:なら> ‖<t:、> kaiɕa<t:会社> ɡa<t:が> mitometa<t:認めた> aŋɡoːka<t:暗号化> dzɯmi<t:済み> no<t:の> mono<t:もの> o<t:を> tsɯkai<t:使い> ‖<t:、> motɕidasɯ<t:持ち出す> deːta<t:データ> wa<t:は> çitsɯjoː<t:必要> na<t:な> bɯɴ<t:分> dake<t:だけ> ɲi<t:に> ɕite<t:して> ‖<t:、> kiɾokɯ<t:記録> o<t:を> nokoɕimasɯ<t:残します。> ↘/",
@@ -87,7 +114,7 @@
     "ja /matome<t:まとめ> desɯ<t:です。> ↘/",
     "ja /ɕaɡai<t:社外> de<t:で> wa<t:は> ‖<t:、> ɡameɴ<t:画面> o<t:を> miɾaɾenai<t:見られない> ‖<t:、> kaiwa<t:会話> o<t:を> kikaɾenai<t:聞かれない> kɯɸɯː<t:工夫> o<t:を> sɯɾɯ<t:する。> ↘/",
     "ja /waiɸai<t:ワイファイ> ja<t:や> kiɾokɯ<t:記録> baitai<t:媒体> wa<t:は> ‖<t:、> taɕikamete<t:確かめて> kaɾa<t:から> tsɯkaɯ<t:使う。> ↘/",
-    "ja /soɕite<t:そして> ‖<t:、> tammatsɯ<t:端末> o<t:を> nakɯɕitaɾa<t:なくしたら> ‖<t:、> sɯɡɯ<t:すぐ> ɲi<t:に> hoːkokɯ<t:報告> sɯɾɯ<t:する。> ↘/",
+    "ja /soɕite<t:そして> ‖<t:、> tammatsɯ<t:端末> o<t:を> nakɯɕitaɾa<t:なくしたら> ‖<t:、> sɯɡɯ<t:すぐ> ɲi<t:に> hoːkokɯ<t:報告> ɕi<t:し> ‖<t:、> mitsɯkaɾanakeɾeba<t:見つからなければ> ‖<t:、> tomeɾɯ<t:止める> ‖<t:、> todokeɾɯ<t:届ける> ‖<t:、> nokosɯ<t:残す> ‖<t:、> kaeɾɯ<t:変える。> ↘/",
     "ja /kono<t:この> ato<t:あと> ‖<t:、> kakɯɲiɴ<t:確認> tesɯto<t:テスト> ɲi<t:に> sɯsɯnde<t:進んで> kɯdasai<t:ください。> ↘/"
   ]
 }
