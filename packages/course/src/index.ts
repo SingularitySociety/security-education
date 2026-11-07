@@ -69,6 +69,8 @@ export * from "./drawQuiz.ts";
 export * from "./reviewPoints.ts";
 export * from "./categories.ts";
 export * from "./videoDuration.ts";
+export * from "./checklist.ts";
+export * from "./checklistProgress.ts";
 
 export const courses: readonly Course[] = [
   passwordsCourse,
