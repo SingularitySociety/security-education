@@ -54,6 +54,11 @@ import { supplyChainBreachCourse } from "./courses/supplyChainBreach.ts";
 import { ransomwareBeforeEncryptionCourse } from "./courses/ransomwareBeforeEncryption.ts";
 import { afterDataLeakCourse } from "./courses/afterDataLeak.ts";
 import { incidentReportingCourse } from "./courses/incidentReporting.ts";
+import { shoppingSiteScamsCourse } from "./courses/shoppingSiteScams.ts";
+import { mobileAppsPaymentsCourse } from "./courses/mobileAppsPayments.ts";
+import { exposedEntryPointsCourse } from "./courses/exposedEntryPoints.ts";
+import { ddosContinuityCourse } from "./courses/ddosContinuity.ts";
+import { aiAgentsAtWorkCourse } from "./courses/aiAgentsAtWork.ts";
 import type { Course } from "./types.ts";
 
 export type * from "./types.ts";
@@ -122,6 +127,11 @@ export const courses: readonly Course[] = [
   ransomwareBeforeEncryptionCourse,
   afterDataLeakCourse,
   incidentReportingCourse,
+  shoppingSiteScamsCourse,
+  mobileAppsPaymentsCourse,
+  exposedEntryPointsCourse,
+  ddosContinuityCourse,
+  aiAgentsAtWorkCourse,
 ];
 
 // Written but not yet published: listed as under construction until their videos are rendered.
