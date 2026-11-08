@@ -1,7 +1,7 @@
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { bundle } from "@remotion/bundler";
+import { withBundle } from "./bundle.ts";
 import { renderMedia, selectComposition } from "@remotion/renderer";
 import { courses, isVideoDurations, videoFileName, withVideoDuration } from "@security-education/course";
 
@@ -13,7 +13,6 @@ const AUDIO_BITRATE = "64k";
 const OUTPUT_SCALE = 2 / 3;
 const VIDEO_CRF = 28;
 
-const packageDir = fileURLToPath(new URL("../", import.meta.url));
 const webPublicDir = fileURLToPath(new URL("../../web/public/", import.meta.url));
 const videoDurationsPath = fileURLToPath(new URL("../../course/src/videoDurations.json", import.meta.url));
 
@@ -55,13 +54,11 @@ const renderCourse = async (serveUrl: string, courseId: string): Promise<void> =
 const main = async (): Promise<void> => {
   const requested = process.argv.slice(2);
   const targets = courses.filter((course) => requested.length === 0 || requested.includes(course.id));
-  const serveUrl = await bundle({
-    entryPoint: path.join(packageDir, "src/index.ts"),
-    publicDir: path.join(packageDir, "public"),
+  await withBundle(async (serveUrl) => {
+    for (const course of targets) {
+      await renderCourse(serveUrl, course.id);
+    }
   });
-  for (const course of targets) {
-    await renderCourse(serveUrl, course.id);
-  }
 };
 
 await main();
