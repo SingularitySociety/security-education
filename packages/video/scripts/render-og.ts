@@ -1,14 +1,13 @@
 import { mkdir } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { bundle } from "@remotion/bundler";
+import { withBundle } from "./bundle.ts";
 import { renderStill, selectComposition } from "@remotion/renderer";
 import { ogImagePath, sitePages } from "@security-education/course";
 import type { SitePage } from "@security-education/course";
 
 const OG_COMPOSITION_ID = "og-image";
 
-const packageDir = fileURLToPath(new URL("../", import.meta.url));
 const webPublicDir = fileURLToPath(new URL("../../web/public/", import.meta.url));
 
 const pagesByImageKey = (pages: readonly SitePage[]): SitePage[] => [
@@ -29,13 +28,11 @@ const main = async (): Promise<void> => {
   const targets = pagesByImageKey(sitePages()).filter(
     (page) => requested.length === 0 || requested.includes(page.ogImageKey),
   );
-  const serveUrl = await bundle({
-    entryPoint: path.join(packageDir, "src/index.ts"),
-    publicDir: path.join(packageDir, "public"),
+  await withBundle(async (serveUrl) => {
+    for (const page of targets) {
+      await renderOgImage(serveUrl, page);
+    }
   });
-  for (const page of targets) {
-    await renderOgImage(serveUrl, page);
-  }
 };
 
 await main();
